@@ -42,7 +42,7 @@
             ?>
         </div>
     </div>
-    <!-- <script defer type="text/javascript">
+    <script defer type="text/javascript">
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
@@ -50,7 +50,7 @@
         document.addEventListener('selectstart', function (e) {
             e.preventDefault();
         });
-    </script> -->
+    </script>
 
 </body>
 
