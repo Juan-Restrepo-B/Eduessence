@@ -1,0 +1,204 @@
+@import url(styles_global.css);
+
+section {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.btn-logging {
+    border-radius: 20px;
+    border: 1px solid var(--Primario);
+    background-color: var(--Primario);
+    color: var(--Blanco);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.btn-logging:active {
+    transform: scale(0.95);
+}
+
+.btn-logging:focus {
+    outline: none;
+}
+
+.btn-logging.ghost {
+    background-color: transparent;
+    border-color: var(--Blanco);
+}
+
+.btn-register {
+    border-radius: 20px;
+    border: 1px solid var(--Primario);
+    background-color: var(--Primario);
+    color: var(--Blanco);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.btn-register:active {
+    transform: scale(0.95);
+}
+
+.btn-register:focus {
+    outline: none;
+}
+
+.btn-register.ghost {
+    background-color: transparent;
+    border-color: var(--Blanco);
+}
+
+.btn-NewCuenta {
+    border-radius: 20px;
+    border: 1px solid var(--Blanco);
+    background-color: var(--Blanco);
+    color: var(--Primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.btn-NewCuenta:active {
+    transform: scale(0.95);
+}
+
+.btn-NewCuenta:focus {
+    outline: none;
+}
+
+.btn-NewCuenta.ghost {
+    background-color: transparent;
+    border-color: var(--Primario);
+}
+
+
+.btn-cuenta {
+    border-radius: 20px;
+    border: 1px solid var(--Blanco);
+    background-color: var(--Blanco);
+    color: var(--Primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.btn-cuenta:active {
+    transform: scale(0.95);
+}
+
+.btn-cuenta:focus {
+    outline: none;
+}
+
+.btn-cuenta.ghost {
+    background-color: transparent;
+    border-color: var(--Primario);
+}
+
+input {
+    background-color: var(--Blanco);
+    border: 2px solid var(--Primario);
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.container {
+    background-color: var(--Blanco);
+    border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 100%;
+    min-height: 90%;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.8s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.right-panel-active {
+    transform: translateX(100%);
+}
+
+.sign-up-container {
+    display: none;
+    right: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+.in-container {
+    display: none;
+    opacity: 0;
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    background-color: var(--Primario)
+}
+
+.up-container {
+    opacity: 1;
+    right: 0;
+    width: 50%;
+    z-index: 1;
+    background-color: var(--Primario);
+}
+
+.panel-active{
+    width: 100%;
+}
+
+ img{
+    width: 40%;
+}
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+.panel-active__texto {
+    width: 80%;
+    margin: 0 auto;
+    color: var(--Blanco);
+}
