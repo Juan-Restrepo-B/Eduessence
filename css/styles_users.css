@@ -40,67 +40,111 @@ body {
     overflow: hidden;
     font-family: var(--FuentePrincipal);
 }
+
 main {
     padding: 20px 20px;
 }
+
 .container {
     width: 100%;
     display: flex;
 }
+
 .title {
     width: 100%;
     text-align: center;
 }
+
 .title__h2 {
     font-size: 2.5rem;
     color: var(--Primario);
 }
+
 .container-left {
     width: 30%;
 }
+
 .container-left__img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .container-left__img img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
     border: 2px solid var(--Primario);
 }
+
 .container-left__name-user {
     margin: 10px 0;
     text-align: center;
 }
+
 .container-left__link-user {
     text-align: center;
 }
+
 .container-left__main {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ;
 }
-.container-left__main-ul {
-}
+
 .container-left__main-il {
+    list-style: none;
+    text-decoration: none;
 }
+
+.container-left__main-il a {
+    text-decoration: none;
+    color: var(--Primario);
+}
+
+.container-left__main-il__svg {
+    background-color: #c6c6c697;
+    border: 1px solid var(--Blancogit);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+span {
+    border-left: 2px solid var(--Primario);
+    padding: 0 10px;
+}
+
 .container-rigth {
     width: 70%;
     display: flex;
     flex-direction: column;
 }
+
+.container-rigth__input input {
+    width: 80%;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1.5rem;
 }
-.container-rigth__title {
+
+.btn-update {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-color: var(--Primario);
+    background: none;
+    color: var(--Primario);
+    margin: 10px 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
 }
-.container-rigth__users {
-}
-.container-rigth__Nombre {
-}
-.container-rigth__Apellidos {
-}
-.container-rigth__Documentos {
-}
-.container-rigth__email {
-}
-.container-rigth__telefono {
-}
-.container-rigth__pais {
+
+.btn-update:hover {
+    box-shadow: 0 0 20px var(--Primario);
 }
