@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+/*Estructura Color y Caligrafia*/
+:root {
+    --Primario: #004aad;
+    --PrimarioClaro: #a2caff;
+    --SecundarioRojo: #d13633;
+    --SecundarioAmarrillo: #ecad43;
+    --Blanco: #FFF;
+    --Gris: #535353;
+    --Negro: #000;
+
+    --FuentePrincipal: 'Montserrat', sans-serif;
+    --FuenteSecundaria: ;
+
+    --navbar-size: 50px;
+    --icon-size: 25px;
+}
+
+/*Globales*/
+html {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: var(--Negro);
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow: hidden;
+    font-family: var(--FuentePrincipal);
+}
+main {
+    padding: 20px 20px;
+}
+.container {
+    width: 100%;
+    display: flex;
+}
+.title {
+    width: 100%;
+    text-align: center;
+}
+.title__h2 {
+    font-size: 2.5rem;
+    color: var(--Primario);
+}
+.container-left {
+    width: 30%;
+}
+.container-left__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-left__img img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--Primario);
+}
+.container-left__name-user {
+    margin: 10px 0;
+    text-align: center;
+}
+.container-left__link-user {
+    text-align: center;
+}
+.container-left__main {
+}
+.container-left__main-ul {
+}
+.container-left__main-il {
+}
+.container-rigth {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+}
+.container-rigth__title {
+}
+.container-rigth__users {
+}
+.container-rigth__Nombre {
+}
+.container-rigth__Apellidos {
+}
+.container-rigth__Documentos {
+}
+.container-rigth__email {
+}
+.container-rigth__telefono {
+}
+.container-rigth__pais {
+}

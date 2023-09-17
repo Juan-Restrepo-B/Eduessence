@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+    $usuario = $_SESSION['user'];
 function showButtons($buttonNumber)
 {
     $user_permission = $_SESSION['user_permission'];

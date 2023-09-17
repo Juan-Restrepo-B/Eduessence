@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $row = mysqli_fetch_assoc($query);
                 $user_permission = $row['USERS_PERMISOS'];
                 $_SESSION['user_permission'] = $user_permission;
+                $_SESSION['user'] = $usuario;
                 header("Location: main.php");
                 exit();
             } else {
