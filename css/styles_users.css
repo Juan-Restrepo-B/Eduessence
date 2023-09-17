@@ -93,9 +93,11 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    ;
 }
-
+.container-left__main-ul{
+    border-radius: 20px;
+    background-color: #c6c6c697;
+}
 .container-left__main-il {
     list-style: none;
     text-decoration: none;
@@ -107,8 +109,7 @@ main {
 }
 
 .container-left__main-il__svg {
-    background-color: #c6c6c697;
-    border: 1px solid var(--Blancogit);
+    border: 2px solid var(--Blanco);
     display: flex;
     align-items: center;
     padding: 5px 10px;
