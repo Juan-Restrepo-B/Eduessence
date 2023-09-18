@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+/*Estructura Color y Caligrafia*/
+:root {
+    --Primario: #004aad;
+    --PrimarioClaro: #a2caff;
+    --SecundarioRojo: #d13633;
+    --SecundarioAmarrillo: #ecad43;
+    --Blanco: #FFF;
+    --Gris: #535353;
+    --Negro: #000;
+
+    --FuentePrincipal: 'Montserrat', sans-serif;
+    --FuenteSecundaria: ;
+
+    --navbar-size: 50px;
+    --icon-size: 25px;
+}
+
+/*Globales*/
+html {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: var(--Negro);
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow: hidden;
+    font-family: var(--FuentePrincipal);
+}
+
+main {
+    padding: 20px 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.title__h2 {
+    font-size: 2.5rem;
+    color: var(--Primario);
+}
+
+.container-left {
+    width: 30%;
+}
+
+.container-left__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-left__img img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--Primario);
+}
+
+.container-left__name-user {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.container-left__link-user {
+    text-align: center;
+}
+
+.container-left__main {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-left__main-ul{
+    border-radius: 20px;
+    background-color: #c6c6c697;
+}
+.container-left__main-il {
+    list-style: none;
+    text-decoration: none;
+}
+
+.container-left__main-il a {
+    text-decoration: none;
+    color: var(--Primario);
+}
+
+.container-left__main-il__svg {
+    border: 2px solid var(--Blanco);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+span {
+    border-left: 2px solid var(--Primario);
+    padding: 0 10px;
+}
+
+.container-rigth {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-rigth__input input {
+    width: 80%;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1.5rem;
+}
+
+.btn-update {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-color: var(--Primario);
+    background: none;
+    color: var(--Primario);
+    margin: 10px 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+
+.btn-update:hover {
+    box-shadow: 0 0 20px var(--Primario);
+}
