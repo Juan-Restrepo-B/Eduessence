@@ -37,7 +37,6 @@
             <li><a href="#">CUMBRES</a></li>
             <li><a href="#cursos">CURSOS</a></li>
         </ul>
-
     </header>
     <main>
         <section>
@@ -271,7 +270,7 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/redirect.js"></script>
+<script src="js/redirect-index.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/nav.js"></script>
 <script defer type="text/javascript">

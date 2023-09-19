@@ -31,11 +31,12 @@
         </nav>
         <div class="fondMain"></div>
         <ul class="ul-main" id="main-menu">
-            <h2>MAIN</h2>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="php/about.php">ABOUT</a></li>
-            <li><a href="#">PRODUCTS</a></li>
-            <li><a href="#form-contact">CONTACT</a></li>
+        <ul class="ul-main" id="main-menu">
+            <h2>MENÚ</h2>
+            <li><a href="index.php">INICIO</a></li>
+            <li><a href="#services">SERVICIOS</a></li>
+            <li><a href="#">CUMBRES</a></li>
+            <li><a href="#cursos">CURSOS</a></li>
         </ul>
     </header>
     <main>
