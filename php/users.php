@@ -5,11 +5,68 @@ $usuario = $_SESSION['user'];
 
 include('conexion.php');
 
-$result = mysqli_query($conn, "SELECT * FROM PERSONA WHERE PER_CORREO =  '" . $usuario . "'");
+$result = mysqli_query($conn, "SELECT * FROM PERSONA INNER JOIN USERS ON USER = PER_CORREO WHERE PER_CORREO =  '" . $usuario . "'");
 
 if ($result) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+            $actualizacionRealizada = false;
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST["actualizarCuenta"])) { // Verificar si se presionó el botón "ACTUALIZAR CUENTA"
+                    $actualizacionRealizada = true;
+
+                    // Recuperar los datos del formulario
+                    $nombres = isset($_POST["nombres"]) ? $_POST["nombres"] : $row["PER_NOMBRES"];
+                    $apellidos = isset($_POST["apellidos"]) ? $_POST["apellidos"] : $row["PER_APELLIDOS"];
+                    $documento = isset($_POST["documento"]) ? $_POST["documento"] : $row["PER_DOCUMENTO"];
+                    $telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : $row["PER_TELEFONO"];
+                    $pais = isset($_POST["pais"]) ? $_POST["pais"] : $row["PER_PAIS"];
+
+                    // Verificar si la variable $usuario no está vacía
+                    if (!empty($usuario)) {
+                        // Inicializar un array para almacenar los campos que se van a actualizar
+                        $updates = array();
+
+                        if ($nombres !== $row["PER_NOMBRES"]) {
+                            $updates[] = "PER_NOMBRES = '$nombres'";
+                        }
+
+                        if ($apellidos !== $row["PER_APELLIDOS"]) {
+                            $updates[] = "PER_APELLIDOS = '$apellidos'";
+                        }
+
+                        if ($documento !== $row["PER_DOCUMENTO"]) {
+                            $updates[] = "PER_DOCUMENTO = '$documento'";
+                        }
+
+                        if ($telefono !== $row["PER_TELEFONO"]) {
+                            $updates[] = "PER_TELEFONO = '$telefono'";
+                        }
+
+                        if ($pais !== $row["PER_PAIS"]) {
+                            $updates[] = "PER_PAIS = '$pais'";
+                        }
+
+                        // Verificar si se van a realizar actualizaciones
+                        if (!empty($updates)) {
+                            // Construir la consulta SQL de actualización
+                            $sql = "UPDATE PERSONA SET " . implode(", ", $updates) . " WHERE PER_CORREO = '$usuario'";
+
+                            // Ejecutar la consulta SQL
+                            if ($conn->query($sql) === TRUE) {
+                                header("Location: " . $_SERVER['PHP_SELF']);
+                                exit;
+                            } else {
+                                echo "Error al actualizar los datos: " . $conn->error;
+                            }
+                        } else {
+                        }
+                    } else {
+                        echo "El campo de correo está vacío.";
+                    }
+                }
+            }
             ?>
             <!DOCTYPE html>
             <html lang="es">
@@ -58,7 +115,8 @@ if ($result) {
                                                 <span>CUENTA</span>
                                             </div>
                                         </a></li>
-                                    <li class="container-left__main-il"><a href="">
+                                    <li class="container-left__main-il"><a href="#" id="mostrarFormulario"
+                                            data-idpersona="<?php echo $row['PER_CORREO']; ?>">
                                             <div class="container-left__main-il__svg">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                                     style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
@@ -93,38 +151,109 @@ if ($result) {
                                     <?php echo strtoupper($row["PER_USERS"]); ?>
                                 </h2>
                             </div>
-                            <form action="">
+                            <form action="" method="post">
+                                <label for="nombres">NOMBRES:</label>
                                 <div class="container-rigth__Nombre container-rigth__input">
-                                    <input type="text" placeholder="<?php echo strtoupper($row["PER_NOMBRES"]); ?>">
+                                    <input type="text" name="nombres" placeholder="<?php echo strtoupper($row["PER_NOMBRES"]); ?>"
+                                        value="<?php echo strtoupper($row["PER_NOMBRES"]); ?>">
                                 </div>
+                                <label for="apellidos">APELLIDOS:</label>
                                 <div class="container-rigth__Apellidos container-rigth__input">
-                                    <input type="text" placeholder="<?php echo strtoupper($row["PER_APELLIDOS"]); ?>">
+                                    <input type="text" name="apellidos"
+                                        placeholder="<?php echo strtoupper($row["PER_APELLIDOS"]); ?>"
+                                        value="<?php echo strtoupper($row["PER_APELLIDOS"]); ?>">
                                 </div>
+                                <label for="documento">DOCUMENTO:</label>
                                 <div class="container-rigth__Documentos container-rigth__input">
-                                    <input type="text" placeholder="<?php echo strtoupper($row["PER_DOCUMENTO"]); ?>">
+                                    <input type="text" name="documento"
+                                        placeholder="<?php echo strtoupper($row["PER_DOCUMENTO"]); ?>"
+                                        value="<?php echo strtoupper($row["PER_DOCUMENTO"]); ?>">
                                 </div>
+                                <label for="correo">CORREO:</label>
                                 <div class="container-rigth__email container-rigth__input">
-                                    <input type="text" placeholder="<?php echo $row["PER_CORREO"]; ?>">
+                                    <input type="text" name="correo" placeholder="<?php echo $row["PER_CORREO"]; ?>" readonly>
                                 </div>
+                                <label for="telefono">TELEFONO:</label>
                                 <div class="container-rigth__telefono container-rigth__input">
-                                    <input type="text" placeholder="<?php echo strtoupper($row["PER_TELEFONO"]); ?>">
+                                    <input type="text" name="telefono" placeholder="<?php echo strtoupper($row["PER_TELEFONO"]); ?>"
+                                        value="<?php echo strtoupper($row["PER_TELEFONO"]); ?>">
                                 </div>
+                                <label for="pais">PAÍS:</label>
                                 <div class="container-rigth__pais container-rigth__input">
-                                    <input type="text" placeholder="<?php echo strtoupper($row["PER_PAIS"]); ?>">
+                                    <input type="text" name="pais" placeholder="<?php echo strtoupper($row["PER_PAIS"]); ?>"
+                                        value="<?php echo strtoupper($row["PER_PAIS"]); ?>">
                                 </div>
-                                <?php
+                                <button class="btn-update" name="actualizarCuenta">ACTUALIZAR CUENTA</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div id="formularioEmergente" class="formularioEmergent" style="display: none;">
+                        <div class="order">
+                            <div class="formulario">
+                                <div>
+                                    <form id="cambioClaveForm" action="" method="post">
+                                        <label div="left" for="formerPassword">CLAVE ANTERIOR:</label>
+                                        <div class="container-rigth__email container-rigth__input central margin">
+                                            <input type="password" name="formerPassword" id="formerPassword">
+                                        </div>
+                                        <label div="left" for="newPassword">NUEVA CLAVE:</label>
+                                        <div class="container-rigth__telefono container-rigth__input central margin">
+                                            <input type="password" name="newPassword" id="newPassword">
+                                        </div>
+                                        <label div="left" for="confirmPassword">CONFIRME CLAVE:</label>
+                                        <div class="container-rigth__pais container-rigth__input central margin">
+                                            <input type="password" name="confirmPassword" id="confirmPassword">
+                                        </div><br>
+                                        <div class="central">
+                                            <button class="btn-secundary btn-block" type="button" name="close"
+                                                onclick="ocultarFormulario()">CERRAR</button>
+                                            <button class="btn btn-primary btn-block" type="button" name="change"
+                                                onclick="validarClave()">CAMBIAR</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </body>
+            <?php
         }
     }
 }
 ?>
-                    <button class="btn-update">ACTUALIZAR CUENTA</button>
-                </form>
-            </div>
-        </div>
-    </main>
-</body>
 <script src="../js/redirect.js"></script>
-<script>
+<script defer>
+    function mostrarFormulario(event) {
+        var formularioEmergente = document.getElementById("formularioEmergente");
+        formularioEmergente.style.display = "block";
+
+        // Obtener el IDPERSONA del atributo data del enlace
+        var idPersona = event.target.getAttribute("data-idpersona");
+
+        // Realizar una solicitud AJAX para obtener los detalles del registro
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "get_persona_details.php?id=" + idPersona, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var password = response.PASS;
+            }
+        };
+        xhr.send();
+    }
+
+    function ocultarFormulario() {
+        var formularioEmergente = document.getElementById("formularioEmergente");
+        formularioEmergente.style.display = "none";
+    }
+
+    var enlacesMostrarFormulario = document.querySelectorAll("#mostrarFormulario");
+    enlacesMostrarFormulario.forEach(function (enlace) {
+        enlace.addEventListener("click", mostrarFormulario);
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         const inputFields = document.querySelectorAll('.container-rigth__input input');
 
@@ -145,6 +274,83 @@ if ($result) {
             });
         });
     });
+
+    function validarClave() {
+    var formerPassword = document.getElementById("formerPassword").value;
+    var newPassword = document.getElementById("newPassword").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (formerPassword === "") {
+        alert("Debes ingresar la contraseña anterior.");
+        return;
+    }
+
+    if (newPassword === "") {
+        alert("Debes ingresar la nueva contraseña.");
+        return;
+    }
+
+    if (confirmPassword === "") {
+        alert("Debes confirmar la nueva contraseña.");
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        alert("La nueva contraseña y la confirmación de contraseña no coinciden.");
+        return;
+    }
+
+    // Realizar una solicitud AJAX para validar la contraseña anterior en el servidor
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "validar_clave.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+
+                if (response.success) {
+                    // La contraseña anterior es correcta, proceder con el cambio de contraseña
+                    var nuevaClave = document.getElementById("newPassword").value;
+                    cambiarClaveEnServidor(nuevaClave);
+                } else {
+                    alert("La contraseña anterior es incorrecta.");
+                }
+            } else {
+                alert("Error al validar la contraseña anterior.");
+            }
+        }
+    };
+
+    // Enviar la contraseña anterior al servidor para validarla
+    xhr.send("formerPassword=" + formerPassword);
+}
+
+function cambiarClaveEnServidor(nuevaClave) {
+    // Realizar una solicitud AJAX para cambiar la contraseña en el servidor
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "cambiar_clave.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+
+                if (response.success) {
+                    alert("Cambio de contraseña exitoso.");
+                } else {
+                    alert("Error al cambiar la contraseña en el servidor.");
+                }
+            } else {
+                alert("Error al cambiar la contraseña en el servidor.");
+            }
+        }
+    };
+
+    // Enviar la nueva contraseña al servidor para cambiarla
+    xhr.send("newPassword=" + nuevaClave);
+}
+
 </script>
 
 </html>

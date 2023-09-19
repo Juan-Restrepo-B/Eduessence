@@ -94,10 +94,12 @@ main {
     align-items: center;
     flex-direction: column;
 }
-.container-left__main-ul{
+
+.container-left__main-ul {
     border-radius: 20px;
     background-color: #c6c6c697;
 }
+
 .container-left__main-il {
     list-style: none;
     text-decoration: none;
@@ -148,4 +150,85 @@ span {
 
 .btn-update:hover {
     box-shadow: 0 0 20px var(--Primario);
+}
+
+/*Floating Window*/
+#formularioEmergente {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.89);
+    color: white;
+    display: flex;
+}
+
+.order {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/*REGISTRO FORMULARIO*/
+.formulario {
+    width: 395px;
+    height: 340px;
+    display: block;
+    margin: 190px auto;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.formulario h2 {
+    padding-top: 35px;
+}
+
+.formulario form {
+    margin-top: 40px;
+}
+
+.btn-secundary {
+    padding: 10px;
+    border-radius: 10px;
+    border-color: var(--SecundarioRojo);
+    background: var(--Negro);
+    color: var(--Blanco);
+}
+
+.btn-primary {
+    padding: 10px;
+    border-radius: 10px;
+    border-color: var(--Primario);
+    background: var(--Negro);
+    color: var(--Blanco);
+}
+.btn {
+    margin-left: 20px;
+}
+.central {
+    text-align: center;
+}
+
+.margin {
+    margin: 10px;
+}
+.tablePassword {
+    padding-top: 40px;
+}
+
+.tablePassword label{
+    padding-left: 65px;
+}
+
+label {
+    font-size: 1rem;
+    margin: 0;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.container-rigth__input {
+    margin-top: -5px;
 }
