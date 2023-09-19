@@ -33,11 +33,11 @@
         <ul class="ul-main" id="main-menu">
             <h2>MENÚ</h2>
             <li><a href="index.php">INICIO</a></li>
-            <li><a href="#">SERVICIOS</a></li>
+            <li><a href="#services">SERVICIOS</a></li>
             <li><a href="#">CUMBRES</a></li>
-            <li><a href="#">CURSOS</a></li>
-            <li><a href="#">SIMPOSIOS</a></li>
+            <li><a href="#cursos">CURSOS</a></li>
         </ul>
+
     </header>
     <main>
         <section>
@@ -110,7 +110,7 @@
                 <div class="fondB"></div>
                 <div class="rowB">
                     <div class="rowB2">
-                        <div class="rowB3">
+                        <div class="rowB3" id="cursos">
                             <div class="fondB3"></div>
                             <div class="containerRowB3">
                                 <div class="titleB3">
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="rowB4">
+                        <div class="rowB4" id="services">
                             <div class="fondB4"></div>
                             <div class="containerRowB4">
                                 <div class="titleB4">

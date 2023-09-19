@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="assets/css/Bootstrap-Calendar.css">
 	<link rel="stylesheet" href="assets/css/Calendar-BS4-news.css">
 	<link rel="stylesheet" href="assets/css/Calendar-BS4.css">
-	<link rel="stylesheet" href="../css/styles_calendar.css">
 
 </head>
 <?php

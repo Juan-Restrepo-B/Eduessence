@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var menu = document.querySelector('.ul-main');
             menu.style.display = 'none';
 
-             // Oculta el menú
-             var menu = document.querySelector('.fondMain');
-             menu.style.display = 'none';
+            // Oculta el menú
+            var menu = document.querySelector('.fondMain');
+            menu.style.display = 'none';
         });
     });
 
