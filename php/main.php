@@ -93,6 +93,24 @@ function showButtons($buttonNumber)
                         </a>
                     </div>
                 <?php endif; ?>
+                    <div class="icon-container">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+                            <path
+                                d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
+                            </path>
+                        </svg>
+                        <!-- <div class="drop-menu">
+                            <?php if (showButtons(9)): ?>
+                                <div class="button6 button_wrapper">
+                                    <a href="#" class="button">
+                                        INFORMES ASISTENCIA
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div> -->
+                    </div>
                 <?php if (showButtons(3)): ?>
                     <div class="icon-container">
                         <a href=".." class="menu-icon" target="contentMain">
@@ -130,26 +148,6 @@ function showButtons($buttonNumber)
                         </div>
                     </div>
                 <?php endif; ?>
-                <?php if (showButtons(4)): ?>
-                    <div class="icon-container">
-                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            style="fill: rgba(0, 0, 0, 1);">
-                            <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
-                            <path
-                                d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
-                            </path>
-                        </svg>
-                        <div class="drop-menu">
-                            <?php if (showButtons(9)): ?>
-                                <div class="button6 button_wrapper">
-                                    <a href="#" class="button">
-                                        INFORMES ASISTENCIA
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
                 <div class="icon-container end-option">
                     <a href="users.php" class="menu-icon" target="contentMain">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -159,7 +157,7 @@ function showButtons($buttonNumber)
                             </path>
                         </svg>
                     </a>
-                    <div class="dropup-menu">
+                    <!-- <div class="dropup-menu">
                         <?php if (showButtons(1)): ?>
                             <div class="button5 button_wrapper">
                                 <a href="#" class="button">
@@ -174,7 +172,7 @@ function showButtons($buttonNumber)
                                 </a>
                             </div>
                         <?php endif; ?>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </Section>

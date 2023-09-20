@@ -1,38 +1,28 @@
 <?php
-session_start();
+// Conexión a la base de datos (debes configurar estos valores)
+include('conexion.php');
 
-$usuario = $_SESSION['user'];
+// Obtener datos del formulario
+$userID = $_POST["userID"];
+$newPassword = $_POST["newPassword"];
+$confirmPassword = $_POST["confirmPassword"];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["newPassword"])) {
-        $newPassword = $_POST["newPassword"];
+// Verificar que las contraseñas coincidan
+if ($newPassword === $confirmPassword) {
+    // Las contraseñas coinciden, actualizar la nueva clave
+    $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+    $updateSql = "UPDATE USERS SET PASS = '$hashedNewPassword' WHERE USER = '$userID'";
 
-        // Verificar si el usuario está autenticado y si $newPassword no está vacío
-        if (!empty($usuario) && !empty($newPassword)) {
-            // Hash de la nueva contraseña antes de almacenarla en la BD
-            $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-
-            include('conexion.php'); // Incluye el archivo de conexión a la base de datos
-
-            // Actualizar la contraseña en la BD
-            $updateSql = "UPDATE USERS SET PASS = '$hashedNewPassword' WHERE USER = '$usuario'";
-            if ($conn->query($updateSql) === TRUE) {
-                // La contraseña se cambió con éxito
-                $response = array("success" => true);
-                echo json_encode($response);
-            } else {
-                // Error al actualizar la contraseña
-                $response = array("success" => false);
-                echo json_encode($response);
-            }
-
-            // Cierra la conexión a la base de datos
-            $conn->close();
-        } else {
-            // Datos incompletos
-            $response = array("success" => false);
-            echo json_encode($response);
-        }
+    if ($conn->query($updateSql) === TRUE) {
+        echo "La clave se ha cambiado con éxito.";
+        header('main.php');
+    } else {
+        echo "Error al cambiar la clave: " . $conn->error;
     }
+} else {
+    echo "Las contraseñas no coinciden.";
 }
+
+// Cerrar la conexión
+$conn->close();
 ?>

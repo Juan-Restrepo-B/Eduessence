@@ -67,6 +67,7 @@ if ($result) {
                     }
                 }
             }
+
             ?>
             <!DOCTYPE html>
             <html lang="es">
@@ -192,24 +193,20 @@ if ($result) {
                         <div class="order">
                             <div class="formulario">
                                 <div>
-                                    <form id="cambioClaveForm" action="" method="post">
-                                        <label div="left" for="formerPassword">CLAVE ANTERIOR:</label>
-                                        <div class="container-rigth__email container-rigth__input central margin">
-                                            <input type="password" name="formerPassword" id="formerPassword">
-                                        </div>
-                                        <label div="left" for="newPassword">NUEVA CLAVE:</label>
+                                    <form id="cambioClaveForm" action="cambiar_clave.php" method="post">
+                                        <label for="newPassword">NUEVA CLAVE:</label>
                                         <div class="container-rigth__telefono container-rigth__input central margin">
-                                            <input type="password" name="newPassword" id="newPassword">
+                                            <input type="password" name="newPassword" id="newPassword" required>
                                         </div>
-                                        <label div="left" for="confirmPassword">CONFIRME CLAVE:</label>
+                                        <label for="confirmPassword">CONFIRME CLAVE:</label>
                                         <div class="container-rigth__pais container-rigth__input central margin">
-                                            <input type="password" name="confirmPassword" id="confirmPassword">
+                                            <input type="password" name="confirmPassword" id="confirmPassword" required>
                                         </div><br>
+                                        <input type="hidden" name="userID" id="userID" value="<?php echo $usuario; ?>">
                                         <div class="central">
                                             <button class="btn-secundary btn-block" type="button" name="close"
                                                 onclick="ocultarFormulario()">CERRAR</button>
-                                            <button class="btn btn-primary btn-block" type="button" name="change"
-                                                onclick="validarClave()">CAMBIAR</button>
+                                            <button class="btn btn-primary btn-block" type="submit" name="change">CAMBIAR</button>
                                         </div>
                                     </form>
                                 </div>
@@ -228,20 +225,6 @@ if ($result) {
     function mostrarFormulario(event) {
         var formularioEmergente = document.getElementById("formularioEmergente");
         formularioEmergente.style.display = "block";
-
-        // Obtener el IDPERSONA del atributo data del enlace
-        var idPersona = event.target.getAttribute("data-idpersona");
-
-        // Realizar una solicitud AJAX para obtener los detalles del registro
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "get_persona_details.php?id=" + idPersona, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                var password = response.PASS;
-            }
-        };
-        xhr.send();
     }
 
     function ocultarFormulario() {
@@ -274,82 +257,6 @@ if ($result) {
             });
         });
     });
-
-    function validarClave() {
-    var formerPassword = document.getElementById("formerPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (formerPassword === "") {
-        alert("Debes ingresar la contraseña anterior.");
-        return;
-    }
-
-    if (newPassword === "") {
-        alert("Debes ingresar la nueva contraseña.");
-        return;
-    }
-
-    if (confirmPassword === "") {
-        alert("Debes confirmar la nueva contraseña.");
-        return;
-    }
-
-    if (newPassword !== confirmPassword) {
-        alert("La nueva contraseña y la confirmación de contraseña no coinciden.");
-        return;
-    }
-
-    // Realizar una solicitud AJAX para validar la contraseña anterior en el servidor
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "validar_clave.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-
-                if (response.success) {
-                    // La contraseña anterior es correcta, proceder con el cambio de contraseña
-                    var nuevaClave = document.getElementById("newPassword").value;
-                    cambiarClaveEnServidor(nuevaClave);
-                } else {
-                    alert("La contraseña anterior es incorrecta.");
-                }
-            } else {
-                alert("Error al validar la contraseña anterior.");
-            }
-        }
-    };
-
-    // Enviar la contraseña anterior al servidor para validarla
-    xhr.send("formerPassword=" + formerPassword);
-}
-
-function cambiarClaveEnServidor(nuevaClave) {
-    // Realizar una solicitud AJAX para cambiar la contraseña en el servidor
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "cambiar_clave.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-
-                if (response.success) {
-                    alert("Cambio de contraseña exitoso.");
-                } else {
-                    alert("Error al cambiar la contraseña en el servidor.");
-                }
-            } else {
-                alert("Error al cambiar la contraseña en el servidor.");
-            }
-        }
-    };
-
-    // Enviar la nueva contraseña al servidor para cambiarla
-    xhr.send("newPassword=" + nuevaClave);
-}
 
 </script>
 
