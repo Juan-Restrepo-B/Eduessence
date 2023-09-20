@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="48x48" href="../img/logo1.png">
-    <link rel="stylesheet" href="../css/styles_main.css">
+    <link rel="stylesheet" href="../css/styles_summit21.css">
+    
     <title>EDUESSENCE</title>
 </head>
 
-<body>
+<body>  
 <header>
         <nav>
             <div class="logo">
@@ -40,22 +41,30 @@
     </header>
     <main>
         <section>
-            <div class="container">
-                <div class="container-row">
+            <div class="main-container">
+                <div class="main-content main-left-side">
+
                     <div class="container-row__title">
-                        <h2 class="container-row__title-h2">SUMMIT <span>2021</span></h2>
+                        <h2 class="container-row__title-h2">SUMMIT <br> <span>2021</span></h2>
                     </div>
                     <div class="container-row__text">
                         <p class="container-row__text-p">
-                            Es un espacio dedicado al crecimiento profesional tanto teórico como práctico por intermedio
-                            de la
-                            educación continuada del personal médico y paramédico.
+                        Es un espacio dedicado al crecimiento profesional tanto teórico como práctico por intermedio
+                        de la
+                        educación continuada del personal médico y paramédico.
                         </p>
                     </div>
                     <div class="container-row__button">
-                        <button>Repetición Charlas SUMMIT 2021</button>
+                        <button id="viewBtnRepCharlas">Repetición Charlas SUMMIT 2021</button>
+                    </div>
+                    <div class="max-900px">
+                            <h3 class="c-gray">PIE DIABÉTICO Y HERIDAS COMPLEJA 27, 28 Y 29 DE AGOSTO DE 2021</h3>
                     </div>
                 </div>
+                <div class="main-content main-right-side">
+                    <img src="../img/fondos/fondo_summit_21.png" alt="">
+                </div>
+                
             </div>
         </section>
 

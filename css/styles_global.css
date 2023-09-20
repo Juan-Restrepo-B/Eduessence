@@ -219,6 +219,7 @@ nav {
     width: 102%;
     color: var(--Blanco);
     font-size: 2rem;
+    z-index: 99;
   }
   
   .row {
