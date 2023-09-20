@@ -10,45 +10,48 @@ date_default_timezone_set('America/Bogota');
 // Variables
 $color = 'red';
 $currentHour = date('H');
-
-// Recibe la informacion del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe el usuario y en caso contrario asigna una cadena vacía
-    $usuario = isset($_POST["email"]) ? $_POST["email"] : '';
-    // Recibe el password y en caso contrario asigna una cadena vacía
-    $password = isset($_POST["password"]) ? $_POST["password"] : '';
+    // Recibir el correo electrónico y la contraseña enviados por el usuario
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-    // Verifica si ambos campos están llenos
-    if (!empty($usuario) && !empty($password)) {
-        // Realiza la validación del usuario
-        $query = mysqli_query($conn, "SELECT USERS_PERMISOS FROM USERS WHERE USER = '" . $usuario . "'");
-        $nr = mysqli_num_rows($query);
+    // Realizar la consulta SQL para verificar las credenciales
+    $sql = "SELECT USER, PASS, USERS_PERMISOS FROM USERS WHERE USER = ?";
+     // Preparar la consulta
+     $stmt = $conn->prepare($sql);
+     $stmt->bind_param("s", $email);
+     $stmt->execute();
+     // Obtener el resultado de la consulta
+    $result = $stmt->get_result();
 
-        if ($nr == 1) {
-            // Realiza la validación de la contraseña
-            $query1 = mysqli_query($conn, "SELECT PASS FROM USERS WHERE USER = '" . $usuario . "' AND PASS = '" . $password . "'");
-            $nr1 = mysqli_num_rows($query1);
+    // Verificar si se encontró un usuario con ese correo electrónico
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $storedPassword = $row["PASS"];
 
-            if ($nr1 == 1) {
-                $row = mysqli_fetch_assoc($query);
-                $user_permission = $row['USERS_PERMISOS'];
-                $_SESSION['user_permission'] = $user_permission;
-                $_SESSION['user'] = $usuario;
-                header("Location: main.php");
-                exit();
-            } else {
-                $color = 'red';
-                $error_message = 'Contraseña incorrecta';
-            }
+        // Verificar si la contraseña es válida
+        if (password_verify($password, $storedPassword)) {
+            $user_permission = $row['USERS_PERMISOS'];
+            $_SESSION['user_permission'] = $user_permission;
+            // Las credenciales son válidas, iniciar sesión
+            $_SESSION['user'] = $email;
+            header("Location: main.php"); // Redirigir a la página principal
+            exit();
         } else {
             $color = 'red';
-            $error_message = 'Usuario incorrecto';
+            $error_message = "Contraseña incorrecta.";
         }
     } else {
         $color = 'red';
-        $error_message = 'Por favor, completa ambos campos';
+        $error_message = "Usuario no encontrado.";
     }
+
+    // Cerrar la consulta preparada
+    $stmt->close();
 }
+
+// Cerrar la conexión a la base de datos
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="es">
