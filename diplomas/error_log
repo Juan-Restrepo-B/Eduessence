@@ -1,0 +1,41 @@
+[20-Aug-2023 16:03:48 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection timed out in /home/fze9tnn90jh4/public_html/diplomas/con_db.php on line 15
+[20-Aug-2023 16:03:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/fze9tnn90jh4/public_html/diplomas/button.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/button.php on line 49
+[20-Aug-2023 16:17:20 UTC] PHP Fatal error:  Uncaught SendGrid\Mail\TypeException: "$emailAddress" must be a valid email address. Got: luisa.gueche@unisimon.edu..co in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php:61
+Stack trace:
+#0 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(69): SendGrid\Helper\Assert::email('luisa.gueche@un...', 'emailAddress')
+#1 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(47): SendGrid\Mail\EmailAddress->setEmailAddress('luisa.gueche@un...')
+#2 /home/fze9tnn90jh4/public_html/diplomas/button.php(85): SendGrid\Mail\EmailAddress->__construct('luisa.gueche@un...', 'LUISA ANDREA GU...')
+#3 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php on line 61
+[24-Aug-2023 01:09:22 UTC] PHP Fatal error:  Uncaught SendGrid\Mail\TypeException: "$emailAddress" must be a valid email address. Got: luisa.gueche@unisimon.edu..co in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php:61
+Stack trace:
+#0 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(69): SendGrid\Helper\Assert::email('luisa.gueche@un...', 'emailAddress')
+#1 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(47): SendGrid\Mail\EmailAddress->setEmailAddress('luisa.gueche@un...')
+#2 /home/fze9tnn90jh4/public_html/diplomas/button.php(85): SendGrid\Mail\EmailAddress->__construct('luisa.gueche@un...', 'LUISA ANDREA GU...')
+#3 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php on line 61
+[24-Aug-2023 01:13:27 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection timed out in /home/fze9tnn90jh4/public_html/diplomas/con_db.php on line 15
+[24-Aug-2023 01:13:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/fze9tnn90jh4/public_html/diplomas/button.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/button.php on line 49
+[24-Aug-2023 01:13:52 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection timed out in /home/fze9tnn90jh4/public_html/diplomas/con_db.php on line 15
+[24-Aug-2023 01:13:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/fze9tnn90jh4/public_html/diplomas/button.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/button.php on line 49
+[24-Aug-2023 01:14:56 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection timed out in /home/fze9tnn90jh4/public_html/diplomas/con_db.php on line 15
+[24-Aug-2023 01:14:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/fze9tnn90jh4/public_html/diplomas/button.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/button.php on line 49
+[24-Aug-2023 01:15:24 UTC] PHP Fatal error:  Uncaught SendGrid\Mail\TypeException: "$emailAddress" must be a valid email address. Got: luisa.gueche@unisimon.edu..co in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php:61
+Stack trace:
+#0 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(69): SendGrid\Helper\Assert::email('luisa.gueche@un...', 'emailAddress')
+#1 /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/mail/EmailAddress.php(47): SendGrid\Mail\EmailAddress->setEmailAddress('luisa.gueche@un...')
+#2 /home/fze9tnn90jh4/public_html/diplomas/button.php(84): SendGrid\Mail\EmailAddress->__construct('luisa.gueche@un...', 'LUISA ANDREA GU...')
+#3 {main}
+  thrown in /home/fze9tnn90jh4/public_html/diplomas/Mail/vendor/sendgrid/sendgrid/lib/helper/Assert.php on line 61
