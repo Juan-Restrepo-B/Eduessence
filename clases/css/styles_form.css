@@ -89,13 +89,15 @@ main {
 .contentIframe {
     width: 70%;
     height: 95vh;
+    display: flex;
+    align-items: center;
 }
 
 .contentIframe iframe {
     border: 2px solid var(--Primario);
     border-radius: 20px;
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
 
 .row {

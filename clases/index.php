@@ -41,7 +41,7 @@
             </table>
         </div>
         <div class="contentIframe">
-            <iframe name="contentIframe" frameborder="0"></iframe>
+            <iframe src="class.php?classId=1" name="contentIframe" frameborder="0"></iframe>
         </div>
     </div>
 </body>
