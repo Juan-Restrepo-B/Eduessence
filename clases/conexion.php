@@ -4,7 +4,7 @@
 $host = "68.178.246.37";
 $user = "Desarrollo";
 $pass = "y9B>^y=>FT+G`C@,";
-$database = "Desarrollo";
+$database = "Eduessence";
 
 // Conexión a la base de datos
 $conn = mysqli_connect($host, $user, $pass, $database);
