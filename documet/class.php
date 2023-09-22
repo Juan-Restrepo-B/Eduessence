@@ -31,8 +31,8 @@
                     $title = $row["DOCUMENT_TITULO"];
                     $videoUrl = $row["DOCUMENT_URL"];
 
-                    echo "<div class='class'>";
-                    echo "<h2>$title</h2>";
+                    echo "<div class='class'><br>";
+                    echo "<h2>$title</h2><br><br>";
                     echo "<iframe src='documeta/$videoUrl' frameborder='0'></iframe>";
                     echo "<input type='hidden' class='class-id' value='$classId'>";
                     echo "</div>";
