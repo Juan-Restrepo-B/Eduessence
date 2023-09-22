@@ -58,11 +58,12 @@ function showButtons($buttonNumber)
         </nav>
         <div class="fondMain"></div>
         <ul class="ul-main" id="main-menu">
-            <h2>MAIN</h2>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="php/about.php">ABOUT</a></li>
-            <li><a href="#">PRODUCTS</a></li>
-            <li><a href="#form-contact">CONTACT</a></li>
+            <h2>MENÚ</h2>
+            <li><a href="../index.php">INICIO</a></li>
+            <li><a href="#">SERVICIOS</a></li>
+            <li><a href="#">CUMBRES</a></li>
+            <li><a href="#">CURSOS</a></li>
+            <li><a href="#">SIMPOSIOS</a></li>
         </ul>
     </header>
     <main class="screen-manager">
