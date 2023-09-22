@@ -2,6 +2,9 @@
 body {
   overflow: hidden;
 }
+nav {
+  margin-top: 2rem;
+}
 
 .logs {
     width: 100%;
@@ -46,6 +49,7 @@ body {
   .screen-manager {
     /* main */
     display: flex;
+    height: 90vh;
   }
   
   /* estilo de menú */

@@ -3,6 +3,7 @@ session_start();
 
 // Conxion con BD
 include("conexion.php");
+$ip_cliente = $_SERVER['REMOTE_ADDR'];
 
 // Establecer la zona horaria a "America/Bogota"
 date_default_timezone_set('America/Bogota');
@@ -17,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Realizar la consulta SQL para verificar las credenciales
     $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS INNER JOIN TR_PERSONA ON USUARIO_NOMBRE = PERSONA_CORREO WHERE USUARIO_USER = ? AND PERSONA_ESTADO = 'ACTIVO'";
-     // Preparar la consulta
-     $stmt = $conn->prepare($sql);
-     $stmt->bind_param("s", $email);
-     $stmt->execute();
-     // Obtener el resultado de la consulta
+    // Preparar la consulta
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    // Obtener el resultado de la consulta
     $result = $stmt->get_result();
 
     // Verificar si se encontró un usuario con ese correo electrónico
@@ -31,12 +32,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar si la contraseña es válida
         if (password_verify($password, $storedPassword)) {
-        //     $user_permission = $row['USERS_PERMISOS'];
-        //     $_SESSION['user_permission'] = $user_permission;
-        // Las credenciales son válidas, iniciar sesión
-        $useremail = $row["USUARIO_NOMBRE"];
-        $_SESSION['useremail'] = $useremail; // Store the value in the session
-                
+            //     $user_permission = $row['USERS_PERMISOS'];
+            //     $_SESSION['user_permission'] = $user_permission;
+            // Las credenciales son válidas, iniciar sesión
+            $useremail = $row["USUARIO_NOMBRE"];
+
+            $_SESSION['useremail'] = $useremail; // Store the value in the session
+
+            $sql = "INSERT INTO LOG_USUARIO
+            (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
+            VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Éxito', 'Inicio de sesión exitoso', 'ACTIVO')";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($sql);
+
+            // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
+            $stmt->bind_param("ss", $useremail, $ip_cliente);
+
+            // Ejecutar la consulta
+            $stmt->execute();
+
             header("Location: main.php"); // Redirigir a la página principal
             exit();
         } else {
@@ -186,7 +201,7 @@ $conn->close();
                     <p class="text-muted small mb-4 mb-lg-0">© Juan Restrepo 2023. All Rights Reserved.</p>
                 </div>
                 <div class="logos">
-                <ul class="list-inline mb-0">
+                    <ul class="list-inline mb-0">
                         <li class="list-inline-item"><a href="https://www.facebook.com/EduessenceSimposio"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
                                     style="fill: rgba(255, 255, 255, 1)">

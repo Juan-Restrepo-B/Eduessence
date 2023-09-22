@@ -81,6 +81,7 @@
                     </tr>
                     <?php
                     include("conexion.php");
+                    $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
                     date_default_timezone_set('America/Bogota');
 
