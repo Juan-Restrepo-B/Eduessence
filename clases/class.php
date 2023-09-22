@@ -31,8 +31,8 @@
                     $title = $row["VIDEO_TITULO"];
                     $videoUrl = $row["VIDEO_URL"];
 
-                    echo "<div class='class'>";
-                    echo "<h2>$title</h2>";
+                    echo "<div class='class'><br>";
+                    echo "<h2>$title</h2><br><br>";
                     echo "<video src='videos/$videoUrl' controls controlsList='nodownload'></video>";
                     echo "<input type='hidden' class='class-id' value='$classId'>";
                     echo "</div>";

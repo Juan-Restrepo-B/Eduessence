@@ -61,12 +61,13 @@ video::-webkit-media-controls-panel {
 
 .class h2 {
     color: var(--Primario);
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .class video {
     border: 3px solid var(--SecundarioRojo);
     border-radius: 20px;
     width: 90%;
+    height: 75vh;
     margin: 0 auto;
 }

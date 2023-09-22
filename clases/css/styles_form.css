@@ -97,7 +97,7 @@ main {
     border: 2px solid var(--Primario);
     border-radius: 20px;
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 
 .row {
@@ -144,6 +144,7 @@ td {
 }
 
 .cal a{
+    font-size: 1.6rem;
     text-decoration: none;
     color: var(--Blanco);
 }

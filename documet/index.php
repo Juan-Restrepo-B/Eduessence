@@ -62,7 +62,7 @@
             </table>
         </div>
         <div class="contentIframe">
-            <iframe src="class.php?classId=1" name="contentIframe" frameborder="0"></iframe>
+            <iframe src="" name="contentIframe" frameborder="0"></iframe>
         </div>
     </div>
 </body>
