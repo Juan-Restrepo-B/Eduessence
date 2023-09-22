@@ -229,6 +229,7 @@ function showButtons($buttonNumber)
     </footer>
 </body>
 <script defer src="../js/redirect.js"></script>
+<script defer src="../js/nav.js"></script>
 <script defer>
     function cerrarSesion() {
         var xhr = new XMLHttpRequest();
