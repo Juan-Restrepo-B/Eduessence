@@ -33,7 +33,7 @@
 
                     echo "<div class='class'><br>";
                     echo "<h2>$title</h2><br><br>";
-                    echo "<iframe src='documeta/$videoUrl' frameborder='0'></iframe>";
+                    echo "<iframe src='documeta/$videoUrl' id='mi-iframe' frameborder='0'></iframe>";
                     echo "<input type='hidden' class='class-id' value='$classId'>";
                     echo "</div>";
                 }
@@ -54,12 +54,16 @@
         e.preventDefault();
     });
 
-    setTimeout(function() {
-            var loadingMessage = document.getElementById('loading-message');
+    // Función para ocultar el h3 cuando el iframe haya cargado
+    var iframe = document.getElementById('mi-iframe');
+        var loadingMessage = document.getElementById('loading-message');
+
+        iframe.addEventListener('load', function() {
+            // Ocultar el elemento <h3> cuando el iframe ha cargado
             if (loadingMessage) {
                 loadingMessage.style.display = 'none';
             }
-        }, 20000);
+        });
 </script>
 
 </html>
