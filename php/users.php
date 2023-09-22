@@ -2,6 +2,7 @@
 session_start();
 
 $usuario = $_SESSION['useremail'];
+$ip_cliente = $_SERVER['REMOTE_ADDR'];
 
 include('conexion.php');
 
@@ -55,6 +56,22 @@ if ($result) {
 
                             // Ejecutar la consulta SQL
                             if ($conn->query($sql) === TRUE) {
+
+                                $useremail = $row["USUARIO_NOMBRE"];
+                                $ip_cliente = $_SERVER['REMOTE_ADDR'];
+                    
+                                $sql = "INSERT INTO LOG_USUARIO
+                                (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
+                                VALUES(NOW(), ?, ?, 'ACTALZACIÓN DE DATOS', 'Éxito', 'Actualización de datos exitoso', 'ACTIVO')";
+                    
+                                // Preparar la consulta
+                                $stmt = $conn->prepare($sql);
+                    
+                                // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
+                                $stmt->bind_param("ss", $useremail, $ip_cliente);
+                    
+                                // Ejecutar la consulta
+                                $stmt->execute();
                                 header("Location: " . $_SERVER['PHP_SELF']);
                                 exit;
                             } else {

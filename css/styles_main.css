@@ -46,6 +46,7 @@ body {
   .screen-manager {
     /* main */
     display: flex;
+    height: 90vh;
   }
   
   /* estilo de menú */

@@ -2,27 +2,40 @@
 session_start();
 
 $usuario = $_SESSION['useremail'];
+$ip_cliente = $_SERVER['REMOTE_ADDR'];
+
+
 function showButtons($buttonNumber)
 {
-    $user_permission = $_SESSION['user_permission'];
+    include("conexion.php");
 
-    if ($user_permission == 1) { // Administrador
-        return true;
-    } elseif ($user_permission == 2) { // Asistente
-        return in_array($buttonNumber, [2]);
-    } elseif ($user_permission == 5) { // Apoyo
-        return in_array($buttonNumber, []);
-    } elseif ($user_permission == 3) { // Organizador
-        return in_array($buttonNumber, []);
-    } elseif ($user_permission == 4) { // Terceros
-        return in_array($buttonNumber, []);
+    $usuario = $_SESSION['useremail'];
+
+    $sql = "SELECT PERMISSION_USER, PERMISSION_IDTIPPERMISSION
+    FROM UN_PERMISSIONS WHERE PERMISSION_USER = '" . $usuario . "'";
+
+    // Preparar la consulta
+    $stmt = $conn->query($sql);
+
+    while ($mostrar = mysqli_fetch_array($stmt)) {
+
+        $user_permission = $mostrar['PERMISSION_IDTIPPERMISSION'];
+
+        if ($user_permission == 1) { // Administrador
+            return true;
+        } elseif ($user_permission == 2) {
+            return in_array($buttonNumber, [2]);
+        } elseif ($user_permission == 5) {
+            return in_array($buttonNumber, []);
+        } elseif ($user_permission == 3) {
+            return in_array($buttonNumber, []);
+        } elseif ($user_permission == 4) {
+            return in_array($buttonNumber, []);
+        }
+
+        return false;
     }
-
-    return false;
 }
-
-// Verificar si el usuario ha iniciado sesión
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,8 +56,9 @@ function showButtons($buttonNumber)
             </div>
             <div class="option">
                 <div class="start">
-                    <button class="btn-login" type="submit" name="logout" onclick="cerrarSesion()">CERRAR
-                        SESION</button>
+                    <form method="post" action="logout.php">
+                        <button class="btn-login" type="submit" name="logout">CERRAR SESIÓN</button>
+                    </form>
                 </div>
                 <div class="main">
                     <input type="checkbox" id="btn-main" class="btn-main">
@@ -69,19 +83,19 @@ function showButtons($buttonNumber)
     <main class="screen-manager">
         <Section class="options">
             <div class="main-menu">
-                <?php //if (showButtons(1)): ?>
-                <div class="icon-container">
-                    <a href="calendar_edit.php" class="menu-icon" target="contentMain">
-                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            style="fill: rgba(0, 0, 0, 1);">
-                            <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4-4h2v2h-2zm4-4h2v2h-2z"></path>
-                            <path
-                                d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
-                <?php //endif; ?>
+                <?php if (showButtons(1)): ?>
+                    <div class="icon-container">
+                        <a href="calendar_edit.php" class="menu-icon" target="contentMain">
+                            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1);">
+                                <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4-4h2v2h-2zm4-4h2v2h-2z"></path>
+                                <path
+                                    d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                <?php endif; ?>
                 <?php //if (showButtons(2)): ?>
                 <div class="icon-container">
                     <a href="../clases/index.php" class="menu-icon" target="contentMain">
@@ -127,43 +141,43 @@ function showButtons($buttonNumber)
                             <?php //endif; ?>
                         </div> -->
                 </div>
-                <?php //if (showButtons(3)): ?>
-                <div class="icon-container">
-                    <!-- <a href="#" class="menu-icon" target="contentMain"> -->
-                    <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        style="fill: rgba(0, 0, 0, 1);">
-                        <path
-                            d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z">
-                        </path>
-                        <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
-                        </path>
-                    </svg>
-                    <!-- </a> -->
-                    <div class="drop-menu">
-                        <?php //if (showButtons(9)): ?>
-                        <div class="button6 button_wrapper">
-                            <a href="#" class="button">
-                                INFORMES ASISTENCIA
-                            </a>
+                <?php if (showButtons(3)): ?>
+                    <div class="icon-container">
+                        <!-- <a href="#" class="menu-icon" target="contentMain"> -->
+                        <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path
+                                d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z">
+                            </path>
+                            <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
+                            </path>
+                        </svg>
+                        <!-- </a> -->
+                        <div class="drop-menu">
+                            <?php //if (showButtons(9)): ?>
+                            <div class="button6 button_wrapper">
+                                <a href="#" class="button">
+                                    INFORMES ASISTENCIA
+                                </a>
+                            </div>
+                            <?php //endif; ?>
+                            <?php //if (showButtons(9)): ?>
+                            <div class="button5 button_wrapper">
+                                <a href="#" class="button">
+                                    DIPLOMAS
+                                </a>
+                            </div>
+                            <?php //endif; ?>
+                            <?php //if (showButtons(9)): ?>
+                            <div class="button9 button_wrapper">
+                                <a href="#" class="button">
+                                    USUARIOS
+                                </a>
+                            </div>
+                            <?php //endif; ?>
                         </div>
-                        <?php //endif; ?>
-                        <?php //if (showButtons(9)): ?>
-                        <div class="button5 button_wrapper">
-                            <a href="#" class="button">
-                                DIPLOMAS
-                            </a>
-                        </div>
-                        <?php //endif; ?>
-                        <?php //if (showButtons(9)): ?>
-                        <div class="button9 button_wrapper">
-                            <a href="#" class="button">
-                                USUARIOS
-                            </a>
-                        </div>
-                        <?php //endif; ?>
                     </div>
-                </div>
-                <?php //endif; ?>
+                <?php endif; ?>
                 <div class="icon-container end-option">
                     <a href="users.php" class="menu-icon" target="contentMain">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -246,29 +260,9 @@ function showButtons($buttonNumber)
 </body>
 <script defer src="../js/redirect.js"></script>
 <script defer src="../js/nav.js"></script>
-<script defer>
-    function cerrarSesion() {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "main.php", true); // Cambia "logout.php" por el nombre de tu script de cierre de sesión si es diferente
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Logout was successful, perform any additional actions here
-                    console.log("Sesión cerrada correctamente.");
-                    // Redirige al usuario a la página de inicio de sesión después del cierre de sesión
-                    window.location.href = "../index.php";
-                } else {
-                    // Something went wrong with the logout process
-                    console.error("Error al cerrar sesión.");
-                }
-            }
-        };
-        xhr.send();
-    }
-</script><script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    </script>
-
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script>
 </html>
