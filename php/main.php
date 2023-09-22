@@ -265,6 +265,10 @@ function showButtons($buttonNumber)
         };
         xhr.send();
     }
-</script>
+</script><script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
 
 </html>
