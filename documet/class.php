@@ -40,7 +40,7 @@
             }
             $conn->close();
             ?>
-            <h1>PROCESANDO POR FAVOR ESPERE UNOS SEGUNDOS</h1>
+            <h3>CARGANDO POR FAVOR ESPERE</h3>
         </div>
     </div>
 </body>
