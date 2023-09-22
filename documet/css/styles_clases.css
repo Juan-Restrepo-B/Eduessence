@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+/*Estructura Color y Caligrafia*/
+:root {
+    --Primario: #004aad;
+    --PrimarioClaro: #a2caff;
+    --SecundarioRojo: #d13633;
+    --SecundarioAmarrillo: #ecad43;
+    --Blanco: #FFF;
+    --Gris: #535353;
+    --Negro: #000;
+
+    --FuentePrincipal: 'Montserrat', sans-serif;
+    --FuenteSecundaria: ;
+
+    --navbar-size: 50px;
+    --icon-size: 25px;
+}
+/*Globales*/
+html {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: var(--Negro);
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    padding: 5px 20px;
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    overflow: hidden;
+    font-family: var(--FuentePrincipal);
+}
+main {
+    padding-top: 0rem;
+}
+
+
+iframe::-webkit-media-controls-enclosure {
+    overflow: hidden !important;
+}
+
+iframe::-webkit-media-controls-panel {
+    width: calc(100%) !important;
+}
+
+/* ESTILOS VIDEOS */
+.container {
+    text-align: center;
+}
+
+.class h2 {
+    color: var(--Primario);
+    font-size: 4rem;
+}
+
+iframe {
+    border: 3px solid var(--SecundarioRojo);
+    border-radius: 20px;
+    width: 90%;
+    height: 75vh;
+    margin: 0 auto;
+}

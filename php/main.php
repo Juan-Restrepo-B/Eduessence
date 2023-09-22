@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    $usuario = $_SESSION['useremail'];
+$usuario = $_SESSION['useremail'];
 function showButtons($buttonNumber)
 {
     $user_permission = $_SESSION['user_permission'];
@@ -70,39 +70,54 @@ function showButtons($buttonNumber)
         <Section class="options">
             <div class="main-menu">
                 <?php //if (showButtons(1)): ?>
-                    <div class="icon-container">
-                        <a href="calendar_edit.php" class="menu-icon" target="contentMain">
-                            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
-                                <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4-4h2v2h-2zm4-4h2v2h-2z"></path>
-                                <path
-                                    d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                <?php //endif; ?>
-                <?php //if (showButtons(2)): ?>
-                    <div class="icon-container">
-                        <a href="../clases/index.php" class="menu-icon" target="contentMain">
-                            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
-                                <path
-                                    d="M18 11c0-.959-.68-1.761-1.581-1.954C16.779 8.445 17 7.75 17 7c0-2.206-1.794-4-4-4-1.516 0-2.822.857-3.5 2.104C8.822 3.857 7.516 3 6 3 3.794 3 2 4.794 2 7c0 .902.312 1.726.817 2.396A1.993 1.993 0 0 0 2 11v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-2.637l4 2v-7l-4 2V11zm-5-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zM6 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                <?php //endif; ?>
-                    <div class="icon-container">
+                <div class="icon-container">
+                    <a href="calendar_edit.php" class="menu-icon" target="contentMain">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             style="fill: rgba(0, 0, 0, 1);">
-                            <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+                            <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4-4h2v2h-2zm4-4h2v2h-2z"></path>
                             <path
-                                d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
+                                d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
                             </path>
                         </svg>
-                        <!-- <div class="drop-menu">
+                    </a>
+                </div>
+                <?php //endif; ?>
+                <?php //if (showButtons(2)): ?>
+                <div class="icon-container">
+                    <a href="../clases/index.php" class="menu-icon" target="contentMain">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path
+                                d="M18 11c0-.959-.68-1.761-1.581-1.954C16.779 8.445 17 7.75 17 7c0-2.206-1.794-4-4-4-1.516 0-2.822.857-3.5 2.104C8.822 3.857 7.516 3 6 3 3.794 3 2 4.794 2 7c0 .902.312 1.726.817 2.396A1.993 1.993 0 0 0 2 11v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-2.637l4 2v-7l-4 2V11zm-5-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zM6 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <?php //endif; ?>
+                <?php //if (showButtons(2)): ?>
+                <div class="icon-container">
+                    <a href="../documet/index.php" class="menu-icon" target="contentMain">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path
+                                d="M8.267 14.68c-.184 0-.308.018-.372.036v1.178c.076.018.171.023.302.023.479 0 .774-.242.774-.651 0-.366-.254-.586-.704-.586zm3.487.012c-.2 0-.33.018-.407.036v2.61c.077.018.201.018.313.018.817.006 1.349-.444 1.349-1.396.006-.83-.479-1.268-1.255-1.268z">
+                            </path>
+                            <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM9.498 16.19c-.309.29-.765.42-1.296.42a2.23 2.23 0 0 1-.308-.018v1.426H7v-3.936A7.558 7.558 0 0 1 8.219 14c.557 0 .953.106 1.22.319.254.202.426.533.426.923-.001.392-.131.723-.367.948zm3.807 1.355c-.42.349-1.059.515-1.84.515-.468 0-.799-.03-1.024-.06v-3.917A7.947 7.947 0 0 1 11.66 14c.757 0 1.249.136 1.633.426.415.308.675.799.675 1.504 0 .763-.279 1.29-.663 1.615zM17 14.77h-1.532v.911H16.9v.734h-1.432v1.604h-.906V14.03H17v.74zM14 9h-1V4l5 5h-4z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <?php //endif; ?>
+                <div class="icon-container">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1);">
+                        <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+                        <path
+                            d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
+                        </path>
+                    </svg>
+                    <!-- <div class="drop-menu">
                             <?php //if (showButtons(9)): ?>
                                 <div class="button6 button_wrapper">
                                     <a href="#" class="button">
@@ -111,43 +126,43 @@ function showButtons($buttonNumber)
                                 </div>
                             <?php //endif; ?>
                         </div> -->
-                    </div>
+                </div>
                 <?php //if (showButtons(3)): ?>
-                    <div class="icon-container">
-                        <!-- <a href="#" class="menu-icon" target="contentMain"> -->
-                            <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
-                                <path
-                                    d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z">
-                                </path>
-                                <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
-                                </path>
-                            </svg>
-                        <!-- </a> -->
-                        <div class="drop-menu">
-                            <?php //if (showButtons(9)): ?>
-                                <div class="button6 button_wrapper">
-                                    <a href="#" class="button">
-                                        INFORMES ASISTENCIA
-                                    </a>
-                                </div>
-                            <?php //endif; ?>
-                            <?php //if (showButtons(9)): ?>
-                                <div class="button5 button_wrapper">
-                                    <a href="#" class="button">
-                                        DIPLOMAS
-                                    </a>
-                                </div>
-                            <?php //endif; ?>
-                            <?php //if (showButtons(9)): ?>
-                                <div class="button9 button_wrapper">
-                                    <a href="#" class="button">
-                                        USUARIOS
-                                    </a>
-                                </div>
-                            <?php //endif; ?>
+                <div class="icon-container">
+                    <!-- <a href="#" class="menu-icon" target="contentMain"> -->
+                    <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1);">
+                        <path
+                            d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z">
+                        </path>
+                        <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
+                        </path>
+                    </svg>
+                    <!-- </a> -->
+                    <div class="drop-menu">
+                        <?php //if (showButtons(9)): ?>
+                        <div class="button6 button_wrapper">
+                            <a href="#" class="button">
+                                INFORMES ASISTENCIA
+                            </a>
                         </div>
+                        <?php //endif; ?>
+                        <?php //if (showButtons(9)): ?>
+                        <div class="button5 button_wrapper">
+                            <a href="#" class="button">
+                                DIPLOMAS
+                            </a>
+                        </div>
+                        <?php //endif; ?>
+                        <?php //if (showButtons(9)): ?>
+                        <div class="button9 button_wrapper">
+                            <a href="#" class="button">
+                                USUARIOS
+                            </a>
+                        </div>
+                        <?php //endif; ?>
                     </div>
+                </div>
                 <?php //endif; ?>
                 <div class="icon-container end-option">
                     <a href="users.php" class="menu-icon" target="contentMain">
@@ -197,7 +212,7 @@ function showButtons($buttonNumber)
                     <p class="text-muted small mb-4 mb-lg-0">© Juan Restrepo 2023. All Rights Reserved.</p>
                 </div>
                 <div class="logos">
-                <ul class="list-inline mb-0">
+                    <ul class="list-inline mb-0">
                         <li class="list-inline-item"><a href="https://www.facebook.com/EduessenceSimposio"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
                                     style="fill: rgba(255, 255, 255, 1)">
