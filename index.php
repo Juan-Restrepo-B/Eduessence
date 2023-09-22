@@ -139,7 +139,7 @@
                                         <li class="list-inline-item"><a href="#">WEBINARS / CHARLAS / TALLERES</a></li>
                                         <li class="list-inline-item"><a href="#">CONGRESOS / SIMPOSIOS</a></li>
                                         <li class="list-inline-item"><a href="#">CURSOS A LA MEDIDA</a></li>
-                                        <li class="list-inline-item"><a href="#">PROTOCOLOS / CONCENSOS / PATIENT
+                                        <li class="list-inline-item"><a href="#">PROTOCOLOS / CONSENSOS / PATIENT
                                                 JOURNEY</a></li>
                                     </ul>
                                 </div>
