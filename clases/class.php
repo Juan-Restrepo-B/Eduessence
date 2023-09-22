@@ -45,26 +45,27 @@
         </div>
     </div>
     <script defer type="text/javascript">
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+
+    // Función para ocultar el h3 cuando el iframe haya cargado
+    var iframe = document.getElementById('mi-video');
+    var loadingMessage = document.getElementById('loading-message');
+
+    // Verifica si el elemento de video y el mensaje de carga existen
+    if (iframe && loadingMessage) {
+        iframe.addEventListener('loadedmetadata', function () {
+            // Ocultar el elemento <h3> cuando el video ha cargado sus metadatos
+            loadingMessage.style.display = 'none';
         });
+    }
+</script>
 
-
-        document.addEventListener('selectstart', function (e) {
-            e.preventDefault();
-        });
-
-        // Función para ocultar el h3 cuando el iframe haya cargado
-        var iframe = document.getElementById('mi-video');
-        var loadingMessage = document.getElementById('loading-message');
-
-        iframe.addEventListener('load', function () {
-            // Ocultar el elemento <h3> cuando el iframe ha cargado
-            if (loadingMessage) {
-                loadingMessage.style.display = 'none';
-            }
-        });
-    </script>
 
 </body>
 
