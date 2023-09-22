@@ -35,10 +35,12 @@
                         <?php
                         $idCurso = $row["IDCURSOS"];
 
-                        $sql1 = "SELECT IDVIDEO, VIDEO_TITULO FROM UN_CARRERA uc 
+                        $sql1 = "SELECT IDVIDEO, VIDEO_TITULO
+                        FROM UN_CARRERA uc
                         INNER JOIN TR_VIDEOS tv ON uc.CARRERA_IDCURSO = tv.VIDEO_IDCURSO
                         WHERE CARRERA_CURESTADO = 'ACTIVO'
-                        AND tv.VIDEO_IDCURSO = '" . $idCurso . "'";
+                        AND tv.VIDEO_IDCURSO = 1
+                        GROUP BY IDVIDEO, VIDEO_TITULO = '" . $idCurso . "'";
                         $result1 = $conn->query($sql1);
 
                         if ($result1) {
