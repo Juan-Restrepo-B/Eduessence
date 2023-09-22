@@ -41,6 +41,7 @@
             }
             $conn->close();
             ?>
+            <h3 id="loading-message">CARGANDO POR FAVOR ESPERE</h3>
         </div>
     </div>
     <script defer type="text/javascript">
@@ -48,8 +49,20 @@
             e.preventDefault();
         });
 
+
         document.addEventListener('selectstart', function (e) {
             e.preventDefault();
+        });
+
+        // Función para ocultar el h3 cuando el iframe haya cargado
+        var iframe = document.getElementById('mi-iframe');
+        var loadingMessage = document.getElementById('loading-message');
+
+        iframe.addEventListener('load', function () {
+            // Ocultar el elemento <h3> cuando el iframe ha cargado
+            if (loadingMessage) {
+                loadingMessage.style.display = 'none';
+            }
         });
     </script>
 
