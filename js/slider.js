@@ -12,5 +12,5 @@ $(document).ready(function() {
       // Mueve el primer slide al final de la lista en ambos sliders
       $(".left .slide:first").appendTo(".left .slider");
       $(".right .slide:first").appendTo(".right .slider");
-  }, 9000); // Cambia de slide cada 3 segundos
+  }, 20000); // Cambia de slide cada 3 segundos
 });
