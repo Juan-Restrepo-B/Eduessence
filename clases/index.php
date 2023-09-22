@@ -35,7 +35,7 @@
                         </tr>
                         <?php
                         $idCurso = $row["IDCURSOS"];
-
+                        
                         $sql1 = "SELECT IDVIDEO, VIDEO_TITULO
                         FROM UN_CARRERA uc
                         INNER JOIN TR_VIDEOS tv ON uc.CARRERA_IDCURSO = tv.VIDEO_IDCURSO
