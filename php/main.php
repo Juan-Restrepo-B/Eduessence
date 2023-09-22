@@ -113,7 +113,7 @@ function showButtons($buttonNumber)
                     </div>
                 <?php //if (showButtons(3)): ?>
                     <div class="icon-container">
-                        <a href="#" class="menu-icon" target="contentMain">
+                        <!-- <a href="#" class="menu-icon" target="contentMain"> -->
                             <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 style="fill: rgba(0, 0, 0, 1);">
                                 <path
@@ -122,7 +122,7 @@ function showButtons($buttonNumber)
                                 <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
                                 </path>
                             </svg>
-                        </a>
+                        <!-- </a> -->
                         <div class="drop-menu">
                             <?php //if (showButtons(9)): ?>
                                 <div class="button6 button_wrapper">
