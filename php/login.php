@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Realizar la consulta SQL para verificar las credenciales
-    $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS WHERE USUARIO_USER = ?";
+    $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS INNER JOIN TR_PERSONA ON USUARIO_NOMBRE = PERSONA_CORREO WHERE USUARIO_USER = ? AND PERSONA_ESTADO = 'ACTIVO'";
      // Preparar la consulta
      $stmt = $conn->prepare($sql);
      $stmt->bind_param("s", $email);
@@ -34,7 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //     $user_permission = $row['USERS_PERMISOS'];
         //     $_SESSION['user_permission'] = $user_permission;
         // Las credenciales son válidas, iniciar sesión
-            $_SESSION['user'];
+        $useremail = $row["USUARIO_NOMBRE"];
+        $_SESSION['useremail'] = $useremail; // Store the value in the session
+                
             header("Location: main.php"); // Redirigir a la página principal
             exit();
         } else {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    $usuario = $_SESSION['user'];
+    $usuario = $_SESSION['useremail'];
 function showButtons($buttonNumber)
 {
     $user_permission = $_SESSION['user_permission'];
@@ -111,7 +111,7 @@ function showButtons($buttonNumber)
                             <?php endif; ?>
                         </div> -->
                     </div>
-                <?php if (showButtons(3)): ?>
+                <!-- <?php if (showButtons(3)): ?>
                     <div class="icon-container">
                         <a href=".." class="menu-icon" target="contentMain">
                             <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -147,7 +147,7 @@ function showButtons($buttonNumber)
                             <?php endif; ?>
                         </div>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 <div class="icon-container end-option">
                     <a href="users.php" class="menu-icon" target="contentMain">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
