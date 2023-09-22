@@ -40,7 +40,7 @@
             }
             $conn->close();
             ?>
-            <h3>CARGANDO POR FAVOR ESPERE</h3>
+            <h3 id="loading-message">CARGANDO POR FAVOR ESPERE</h3>
         </div>
     </div>
 </body>
@@ -53,6 +53,13 @@
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
     });
+
+    setTimeout(function() {
+            var loadingMessage = document.getElementById('loading-message');
+            if (loadingMessage) {
+                loadingMessage.style.display = 'none';
+            }
+        }, 20000);
 </script>
 
 </html>
