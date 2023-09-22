@@ -46,14 +46,14 @@ function showButtons($buttonNumber)
                     <button class="btn-login" type="submit" name="logout" onclick="cerrarSesion()">CERRAR
                         SESION</button>
                 </div>
-                <!-- <div class="main">
+                <div class="main">
                     <input type="checkbox" id="btn-main" class="btn-main">
                     <label for="btn-main" class="lbl-main">
                         <span id="spn1"></span>
                         <span id="spn2"></span>
                         <span id="spn3"></span>
                     </label>
-                </div> -->
+                </div>
             </div>
         </nav>
         <div class="fondMain"></div>
