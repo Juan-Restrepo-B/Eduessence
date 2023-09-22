@@ -85,11 +85,12 @@ $conn->close();
         </nav>
         <div class="fondMain"></div>
         <ul class="ul-main" id="main-menu">
-            <h2>MAIN</h2>
-            <li><a href="../index.php">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">PRODUCTS</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <h2>MENÚ</h2>
+            <li><a href="../index.php">INICIO</a></li>
+            <li><a href="#">SERVICIOS</a></li>
+            <li><a href="#">CUMBRES</a></li>
+            <li><a href="#">CURSOS</a></li>
+            <li><a href="#">SIMPOSIOS</a></li>
         </ul>
     </header>
     <main>
@@ -104,7 +105,7 @@ $conn->close();
                 <div class="right-panel-active form-container up-container">
                     <div class="panel-active">
                         <div class="panel-active__texto">
-                            <h2>¡Eduessence: Tu Puerta al Conocimiento actualizado en el trabajo Ilimitado!
+                            <h2>¡Eduessence: Tu Puerta al Conocimiento actualizado en el trabajo ilimitado!
                                 <br><br>
                                 ¿Estás listo para desbloquear un mundo de oportunidades? Únete a Eduessence hoy y accede
                                 a eventos de élite, cursos innovadores y conexiones globales. Transforma tu aprendizaje
@@ -174,9 +175,9 @@ $conn->close();
             <div class="row">
                 <div class="optionL">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="../index.php">HOME</a></li>
+                        <li class="list-inline-item"><a href="index.php">HOME</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="">ABOUT</a></li>
+                        <li class="list-inline-item"><a href="php/about.php">ABOUT</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
                         <li class="list-inline-item"><a href="#">PRODUCTS</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
