@@ -68,7 +68,7 @@ function showButtons($buttonNumber)
     <main class="screen-manager">
         <Section class="options">
             <div class="main-menu">
-                <?php if (showButtons(1)): ?>
+                <?php //if (showButtons(1)): ?>
                     <div class="icon-container">
                         <a href="calendar_edit.php" class="menu-icon" target="contentMain">
                             <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -80,8 +80,8 @@ function showButtons($buttonNumber)
                             </svg>
                         </a>
                     </div>
-                <?php endif; ?>
-                <?php if (showButtons(2)): ?>
+                <?php //endif; ?>
+                <?php //if (showButtons(2)): ?>
                     <div class="icon-container">
                         <a href="../clases/index.php" class="menu-icon" target="contentMain">
                             <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ function showButtons($buttonNumber)
                             </svg>
                         </a>
                     </div>
-                <?php endif; ?>
+                <?php //endif; ?>
                     <div class="icon-container">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             style="fill: rgba(0, 0, 0, 1);">
@@ -102,16 +102,16 @@ function showButtons($buttonNumber)
                             </path>
                         </svg>
                         <!-- <div class="drop-menu">
-                            <?php if (showButtons(9)): ?>
+                            <?php //if (showButtons(9)): ?>
                                 <div class="button6 button_wrapper">
                                     <a href="#" class="button">
                                         INFORMES ASISTENCIA
                                     </a>
                                 </div>
-                            <?php endif; ?>
+                            <?php //endif; ?>
                         </div> -->
                     </div>
-                <!-- <?php if (showButtons(3)): ?>
+                <?php //if (showButtons(3)): ?>
                     <div class="icon-container">
                         <a href=".." class="menu-icon" target="contentMain">
                             <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -124,30 +124,30 @@ function showButtons($buttonNumber)
                             </svg>
                         </a>
                         <div class="drop-menu">
-                            <?php if (showButtons(9)): ?>
+                            <?php //if (showButtons(9)): ?>
                                 <div class="button6 button_wrapper">
                                     <a href="#" class="button">
                                         INFORMES ASISTENCIA
                                     </a>
                                 </div>
-                            <?php endif; ?>
-                            <?php if (showButtons(9)): ?>
+                            <?php //endif; ?>
+                            <?php //if (showButtons(9)): ?>
                                 <div class="button5 button_wrapper">
                                     <a href="#" class="button">
                                         DIPLOMAS
                                     </a>
                                 </div>
-                            <?php endif; ?>
-                            <?php if (showButtons(9)): ?>
+                            <?php //endif; ?>
+                            <?php //if (showButtons(9)): ?>
                                 <div class="button9 button_wrapper">
                                     <a href="#" class="button">
                                         USUARIOS
                                     </a>
                                 </div>
-                            <?php endif; ?>
+                            <?php //endif; ?>
                         </div>
                     </div>
-                <?php endif; ?> -->
+                <?php //endif; ?>
                 <div class="icon-container end-option">
                     <a href="users.php" class="menu-icon" target="contentMain">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -177,7 +177,7 @@ function showButtons($buttonNumber)
             </div>
         </Section>
         <section class="main-menu-container">
-            <iframe name="contentMain" frameborder="0"></iframe>
+            <iframe src="sers.php" name="contentMain" frameborder="0"></iframe>
         </section>
     </main>
     <footer class="bg-light footer">
