@@ -34,7 +34,7 @@
 
                     echo "<div class='class'><br>";
                     echo "<h2>$title</h2><br><br>";
-                    echo "<video src='videos/$videoUrl' controls controlsList='nodownload'></video>";
+                    echo "<video id='mi-video' src='videos/$videoUrl' controls controlsList='nodownload'></video>";
                     echo "<input type='hidden' class='class-id' value='$classId'>";
                     echo "</div>";
                 }
@@ -55,7 +55,7 @@
         });
 
         // Función para ocultar el h3 cuando el iframe haya cargado
-        var iframe = document.getElementById('mi-iframe');
+        var iframe = document.getElementById('mi-video');
         var loadingMessage = document.getElementById('loading-message');
 
         iframe.addEventListener('load', function () {
