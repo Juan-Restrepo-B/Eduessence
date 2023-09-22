@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$usuario = $_SESSION['user'];
+$usuario = $_SESSION['useremail'];
 
 include('conexion.php');
 
-$result = mysqli_query($conn, "SELECT * FROM PERSONA INNER JOIN USERS ON USER = PER_CORREO WHERE PER_CORREO =  '" . $usuario . "'");
+$result = mysqli_query($conn, "SELECT * FROM TR_PERSONA INNER JOIN TR_USUARIOS ON USUARIO_NOMBRE = PERSONA_CORREO WHERE PERSONA_CORREO =  '" . $usuario . "'");
 
 if ($result) {
     if ($result->num_rows > 0) {
@@ -17,41 +17,41 @@ if ($result) {
                     $actualizacionRealizada = true;
 
                     // Recuperar los datos del formulario
-                    $nombres = isset($_POST["nombres"]) ? $_POST["nombres"] : $row["PER_NOMBRES"];
-                    $apellidos = isset($_POST["apellidos"]) ? $_POST["apellidos"] : $row["PER_APELLIDOS"];
-                    $documento = isset($_POST["documento"]) ? $_POST["documento"] : $row["PER_DOCUMENTO"];
-                    $telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : $row["PER_TELEFONO"];
-                    $pais = isset($_POST["pais"]) ? $_POST["pais"] : $row["PER_PAIS"];
+                    $nombres = isset($_POST["nombres"]) ? $_POST["nombres"] : $row["PERSONA_NOMBRES"];
+                    $apellidos = isset($_POST["apellidos"]) ? $_POST["apellidos"] : $row["PERSONA_APELLIDOS"];
+                    $documento = isset($_POST["documento"]) ? $_POST["documento"] : $row["PERSONA_DOCUMENTO"];
+                    $telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : $row["PERSONA_TELEFONO"];
+                    $pais = isset($_POST["pais"]) ? $_POST["pais"] : $row["PERSONA_PAIS"];
 
                     // Verificar si la variable $usuario no está vacía
                     if (!empty($usuario)) {
                         // Inicializar un array para almacenar los campos que se van a actualizar
                         $updates = array();
 
-                        if ($nombres !== $row["PER_NOMBRES"]) {
-                            $updates[] = "PER_NOMBRES = '$nombres'";
+                        if ($nombres !== $row["PERSONA_NOMBRES"]) {
+                            $updates[] = "PERSONA_NOMBRES = '$nombres'";
                         }
 
-                        if ($apellidos !== $row["PER_APELLIDOS"]) {
-                            $updates[] = "PER_APELLIDOS = '$apellidos'";
+                        if ($apellidos !== $row["PERSONA_APELLIDOS"]) {
+                            $updates[] = "PERSONA_APELLIDOS = '$apellidos'";
                         }
 
-                        if ($documento !== $row["PER_DOCUMENTO"]) {
-                            $updates[] = "PER_DOCUMENTO = '$documento'";
+                        if ($documento !== $row["PERSONA_DOCUMENTO"]) {
+                            $updates[] = "PERSONA_DOCUMENTO = '$documento'";
                         }
 
-                        if ($telefono !== $row["PER_TELEFONO"]) {
-                            $updates[] = "PER_TELEFONO = '$telefono'";
+                        if ($telefono !== $row["PERSONA_TELEFONO"]) {
+                            $updates[] = "PERSONA_TELEFONO = '$telefono'";
                         }
 
-                        if ($pais !== $row["PER_PAIS"]) {
-                            $updates[] = "PER_PAIS = '$pais'";
+                        if ($pais !== $row["PERSONA_PAIS"]) {
+                            $updates[] = "PERSONA_PAIS = '$pais'";
                         }
 
                         // Verificar si se van a realizar actualizaciones
                         if (!empty($updates)) {
                             // Construir la consulta SQL de actualización
-                            $sql = "UPDATE PERSONA SET " . implode(", ", $updates) . " WHERE PER_CORREO = '$usuario'";
+                            $sql = "UPDATE TR_PERSONA SET " . implode(", ", $updates) . " WHERE PERSONA_CORREO = '" . $usuario . "'";
 
                             // Ejecutar la consulta SQL
                             if ($conn->query($sql) === TRUE) {
@@ -90,13 +90,13 @@ if ($result) {
                     <div class="container">
                         <div class="container-left">
                             <div class="container-left__img">
-                                <img src="../img/users/<?php echo $row["PER_IMG"]; ?>" alt="">
+                                <img src="../img/users/<?php echo $row["USUARIO_IMAGEN"]; ?>" alt="">
                             </div>
                             <div class="container-left__name-user">
                                 <h3>
-                                    <?php echo strtoupper($row["PER_NOMBRES"]); ?>
+                                    <?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>
                                     <br>
-                                    <?php echo strtoupper($row["PER_APELLIDOS"]); ?>
+                                    <?php echo strtoupper($row["PERSONA_APELLIDOS"]); ?>
                                 </h3>
                             </div>
                             <div class="container-left__link-user">
@@ -117,7 +117,7 @@ if ($result) {
                                             </div>
                                         </a></li>
                                     <li class="container-left__main-il"><a href="#" id="mostrarFormulario"
-                                            data-idpersona="<?php echo $row['PER_CORREO']; ?>">
+                                            data-idpersona="<?php echo $row['PERSONA_CORREO']; ?>">
                                             <div class="container-left__main-il__svg">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                                     style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
@@ -149,40 +149,40 @@ if ($result) {
                         <div class="container-rigth">
                             <div class="container-rigth__users">
                                 <h2>Cuenta:
-                                    <?php echo strtoupper($row["PER_USERS"]); ?>
+                                    <?php echo strtoupper($row["USUARIO_USER"]); ?>
                                 </h2>
                             </div>
                             <form action="" method="post">
                                 <label for="nombres">NOMBRES:</label>
                                 <div class="container-rigth__Nombre container-rigth__input">
-                                    <input type="text" name="nombres" placeholder="<?php echo strtoupper($row["PER_NOMBRES"]); ?>"
-                                        value="<?php echo strtoupper($row["PER_NOMBRES"]); ?>">
+                                    <input type="text" name="nombres" placeholder="<?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>"
+                                        value="<?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>">
                                 </div>
                                 <label for="apellidos">APELLIDOS:</label>
                                 <div class="container-rigth__Apellidos container-rigth__input">
                                     <input type="text" name="apellidos"
-                                        placeholder="<?php echo strtoupper($row["PER_APELLIDOS"]); ?>"
-                                        value="<?php echo strtoupper($row["PER_APELLIDOS"]); ?>">
+                                        placeholder="<?php echo strtoupper($row["PERSONA_APELLIDOS"]); ?>"
+                                        value="<?php echo strtoupper($row["PERSONA_APELLIDOS"]); ?>">
                                 </div>
                                 <label for="documento">DOCUMENTO:</label>
                                 <div class="container-rigth__Documentos container-rigth__input">
                                     <input type="text" name="documento"
-                                        placeholder="<?php echo strtoupper($row["PER_DOCUMENTO"]); ?>"
-                                        value="<?php echo strtoupper($row["PER_DOCUMENTO"]); ?>">
+                                        placeholder="<?php echo strtoupper($row["PERSONA_DOCUMENTO"]); ?>"
+                                        value="<?php echo strtoupper($row["PERSONA_DOCUMENTO"]); ?>">
                                 </div>
                                 <label for="correo">CORREO:</label>
                                 <div class="container-rigth__email container-rigth__input">
-                                    <input type="text" name="correo" placeholder="<?php echo $row["PER_CORREO"]; ?>" readonly>
+                                    <input type="text" name="correo" placeholder="<?php echo $row["PERSONA_CORREO"]; ?>" readonly>
                                 </div>
                                 <label for="telefono">TELEFONO:</label>
                                 <div class="container-rigth__telefono container-rigth__input">
-                                    <input type="text" name="telefono" placeholder="<?php echo strtoupper($row["PER_TELEFONO"]); ?>"
-                                        value="<?php echo strtoupper($row["PER_TELEFONO"]); ?>">
+                                    <input type="text" name="telefono" placeholder="<?php echo strtoupper($row["PERSONA_TELEFONO"]); ?>"
+                                        value="<?php echo strtoupper($row["PERSONA_TELEFONO"]); ?>">
                                 </div>
                                 <label for="pais">PAÍS:</label>
                                 <div class="container-rigth__pais container-rigth__input">
-                                    <input type="text" name="pais" placeholder="<?php echo strtoupper($row["PER_PAIS"]); ?>"
-                                        value="<?php echo strtoupper($row["PER_PAIS"]); ?>">
+                                    <input type="text" name="pais" placeholder="<?php echo strtoupper($row["PERSONA_PAIS"]); ?>"
+                                        value="<?php echo strtoupper($row["PERSONA_PAIS"]); ?>">
                                 </div>
                                 <button class="btn-update" name="actualizarCuenta">ACTUALIZAR CUENTA</button>
                             </form>

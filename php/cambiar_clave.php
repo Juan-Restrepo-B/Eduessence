@@ -11,7 +11,7 @@ $confirmPassword = $_POST["confirmPassword"];
 if ($newPassword === $confirmPassword) {
     // Las contraseñas coinciden, actualizar la nueva clave
     $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-    $updateSql = "UPDATE USERS SET PASS = '$hashedNewPassword' WHERE USER = '$userID'";
+    $updateSql = "UPDATE TR_USUARIOS SET USUARIO_CLAVE = '$hashedNewPassword' WHERE USUARIO_NOMBRE = '$userID'";
 
     if ($conn->query($updateSql) === TRUE) {
         echo "La clave se ha cambiado con éxito.";

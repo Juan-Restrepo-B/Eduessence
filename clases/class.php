@@ -19,17 +19,17 @@
             // Obtener el classId deseado o usar uno predeterminado
             $classId = isset($_GET['classId']) ? $_GET['classId'] : 1;
 
-            $sql = "SELECT id, title, video_url
-            FROM classes WHERE id = $classId";
+            $sql = "SELECT IDVIDEO, VIDEO_TITULO, VIDEO_URL
+            FROM TR_VIDEOS WHERE IDVIDEO = $classId";
 
             //
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $classId = $row["id"];
-                    $title = $row["title"];
-                    $videoUrl = $row["video_url"];
+                    $classId = $row["IDVIDEO"];
+                    $title = $row["VIDEO_TITULO"];
+                    $videoUrl = $row["VIDEO_URL"];
 
                     echo "<div class='class'>";
                     echo "<h2>$title</h2>";

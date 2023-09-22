@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Realizar la consulta SQL para verificar las credenciales
-    $sql = "SELECT USER, PASS, USERS_PERMISOS FROM USERS WHERE USER = ?";
+    $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS INNER JOIN TR_PERSONA ON USUARIO_NOMBRE = PERSONA_CORREO WHERE USUARIO_USER = ? AND PERSONA_ESTADO = 'ACTIVO'";
      // Preparar la consulta
      $stmt = $conn->prepare($sql);
      $stmt->bind_param("s", $email);
@@ -27,14 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si se encontró un usuario con ese correo electrónico
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        $storedPassword = $row["PASS"];
+        $storedPassword = $row["USUARIO_CLAVE"];
 
         // Verificar si la contraseña es válida
         if (password_verify($password, $storedPassword)) {
-            $user_permission = $row['USERS_PERMISOS'];
-            $_SESSION['user_permission'] = $user_permission;
-            // Las credenciales son válidas, iniciar sesión
-            $_SESSION['user'] = $email;
+        //     $user_permission = $row['USERS_PERMISOS'];
+        //     $_SESSION['user_permission'] = $user_permission;
+        // Las credenciales son válidas, iniciar sesión
+        $useremail = $row["USUARIO_NOMBRE"];
+        $_SESSION['useremail'] = $useremail; // Store the value in the session
+                
             header("Location: main.php"); // Redirigir a la página principal
             exit();
         } else {
@@ -143,7 +145,7 @@ $conn->close();
                             <a href="" class="social"><i class="fab fa-gooogle-plus-g"></i></a>
                             <a href="" class="social"><i class="fab fa-likendin-in"></i></a>
                         </div>
-                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="text" placeholder="Usuario" name="email" required>
                         <input type="password" placeholder="Password" name="password" required>
                         <br>
                         <?php if (isset($error_message)): ?>
