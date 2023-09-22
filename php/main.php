@@ -113,7 +113,7 @@ function showButtons($buttonNumber)
                     </div>
                 <?php //if (showButtons(3)): ?>
                     <div class="icon-container">
-                        <a href="g" class="menu-icon" target="contentMain">
+                        <a href="#" class="menu-icon" target="contentMain">
                             <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 style="fill: rgba(0, 0, 0, 1);">
                                 <path
