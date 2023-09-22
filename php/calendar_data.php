@@ -78,6 +78,7 @@
                 <table>
                     <?php
                     session_start();
+                    $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
                     include("conexion.php");
 
