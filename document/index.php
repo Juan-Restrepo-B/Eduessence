@@ -36,10 +36,12 @@
                         <?php
                         $idCurso = $row["IDCURSOS"];
 
-                        $sql1 = "SELECT IDOCUMENT, DOCUMENT_TITULO FROM UN_CARRERA uc 
+                        $sql1 = 
+                        "SELECT IDOCUMENT, DOCUMENT_TITULO FROM UN_CARRERA uc 
                         INNER JOIN TR_DOCUMENTS td ON uc.CARRERA_IDCURSO = td.DOCUMENT_IDCURSO
                         WHERE CARRERA_CURESTADO = 'ACTIVO'
-                        AND td.DOCUMENT_IDCURSO = '" . $idCurso . "'";
+                        AND td.DOCUMENT_IDCURSO =  '" . $idCurso . "'
+                        GROUP BY IDOCUMENT, DOCUMENT_TITULO";
                         $result1 = $conn->query($sql1);
 
                         if ($result1) {

@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="right">
+                    <div class="right right hidden">
                         <div class="slider">
                             <div class="slide">
                                 <div class="info">

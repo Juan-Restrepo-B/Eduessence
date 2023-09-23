@@ -40,8 +40,8 @@
                         FROM UN_CARRERA uc
                         INNER JOIN TR_VIDEOS tv ON uc.CARRERA_IDCURSO = tv.VIDEO_IDCURSO
                         WHERE CARRERA_CURESTADO = 'ACTIVO'
-                        AND tv.VIDEO_IDCURSO = 1
-                        GROUP BY IDVIDEO, VIDEO_TITULO = '" . $idCurso . "'";
+                        AND tv.VIDEO_IDCURSO = '" . $idCurso . "'
+                        GROUP BY IDVIDEO, VIDEO_TITULO";
                         $result1 = $conn->query($sql1);
 
                         if ($result1) {

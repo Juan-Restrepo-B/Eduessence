@@ -11,6 +11,9 @@
     padding: 20px;
 }
 
+.right.hidden {
+    display: none;
+}
 .contecS {
     width: 40%;
     display: flex;
