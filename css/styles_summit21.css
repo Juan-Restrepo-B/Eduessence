@@ -26,7 +26,7 @@
 /* general setting */
 h2{
     font-size: 62px;
-    text-align: left;
+    text-align: center;
     display: block;
     margin: 0;
     padding: 0;
@@ -34,9 +34,12 @@ h2{
 }
 h3{
     font-size: 32px;
+    text-align: center;
 }
 p{
-    text-align: justify;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .max-900px{
     max-width: 900px;
@@ -52,6 +55,7 @@ p{
     padding-left: 75px;
     padding-right: 30px;
 }
+
 .main-content{
     padding: 15px;
 }
@@ -88,6 +92,11 @@ img{
     width: 30vw;
 
 }
+.container-row__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #viewBtnRepCharlas{
     padding: 15px 20px;
     border-radius: 10px;
@@ -98,7 +107,6 @@ img{
     cursor: pointer;
     font-weight: bold;
     transition: box-shadow 0.3s;
-    
 }
 #viewBtnRepCharlas:hover {
     box-shadow: 0 0 20px var(--Primario);
