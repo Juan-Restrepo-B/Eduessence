@@ -60,13 +60,13 @@ function showButtons($buttonNumber)
                         <button class="btn-login" type="submit" name="logout">CERRAR SESIÓN</button>
                     </form>
                 </div>
-                <div class="main">
+                <!-- <div class="main">
                     <input type="checkbox" id="btn-main" class="btn-main">
                     <label for="btn-main" class="lbl-main">
                         <span id="spn1"></span>
                         <span id="spn2"></span>
                         <span id="spn3"></span>
-                    </label>
+                    </label> -->
                 </div>
             </div>
         </nav>
@@ -259,7 +259,7 @@ function showButtons($buttonNumber)
     </footer>
 </body>
 <script defer src="../js/redirect.js"></script>
-<script defer src="../js/nav.js"></script>
+<!-- <script defer src="../js/nav.js"></script> -->
 <script>
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
