@@ -62,9 +62,8 @@
                     </div>
                 </div>
                 <div class="main-content main-right-side">
-                    <img src="../img/fondos/fondo_summit_21.png" alt="">
+                        <img id="main-doc-img" src="../img/fondos/fondo_summit_21.png" alt="">
                 </div>
-                
             </div>
         </section>
 
