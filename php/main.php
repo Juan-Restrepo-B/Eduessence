@@ -36,6 +36,71 @@ function showButtons($buttonNumber)
         return false;
     }
 }
+
+
+// Verificar si el usuario ya tiene una sesión activa en otro navegador
+if (isset($_SESSION['useremail'])) {
+    // Obtener el nombre de usuario actual
+    $currentUsername = $_SESSION['useremail'];
+
+    // Consultar la base de datos para verificar si el nombre de usuario tiene una sesión activa en otro lugar
+    // Supongamos que tienes una tabla llamada 'LOG_USUARIO' donde almacenas información sobre los eventos de inicio y cierre de sesión
+    include("conexion.php");
+
+    // Consulta para obtener el último evento de inicio o cierre de sesión del usuario actual
+    $sql = "SELECT * FROM LOG_USUARIO WHERE LU_USUARIO_USER = '$currentUsername' AND LU_RESULTACTION = 'Éxito' ORDER BY LU_FECHORA DESC LIMIT 1";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $lastEvent = $row["LU_ACTIONEVNET"];
+        $lastResultAction = $row["LU_RESULTACTION"];
+
+        // Verificar el último evento y el resultado de la acción
+        if ($lastEvent === "INICIO DE SESIÓN" && $lastResultAction === "Éxito") {
+            include("conexion.php");
+
+            $useremail = $_SESSION['useremail'];
+            $ip_cliente = $_SERVER['REMOTE_ADDR'];
+
+            $sql = "INSERT INTO LOG_USUARIO
+            (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
+            VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Fallido', 'Inicio de sesión fallido ya cuenta con una sesion iniciada', 'ACTIVO')";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($sql);
+
+            // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
+            $stmt->bind_param("ss", $useremail, $ip_cliente);
+
+            // Ejecutar la consulta
+            $stmt->execute();
+            
+            header("Location: ../index.php");
+            exit();
+        } elseif ($lastEvent === "CERRAR SESIÓN" && $lastResultAction === "Éxito") {
+            include("conexion.php");
+
+            $useremail = $_SESSION['useremail'];
+            $ip_cliente = $_SERVER['REMOTE_ADDR'];
+
+            $sql = "INSERT INTO LOG_USUARIO
+            (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
+            VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Éxito', 'Inicio de sesión exitoso', 'ACTIVO')";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($sql);
+
+            // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
+            $stmt->bind_param("ss", $useremail, $ip_cliente);
+
+            // Ejecutar la consulta
+            $stmt->execute();
+        }
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -67,7 +132,7 @@ function showButtons($buttonNumber)
                         <span id="spn2"></span>
                         <span id="spn3"></span>
                     </label> -->
-                </div>
+            </div>
             </div>
         </nav>
         <div class="fondMain"></div>
@@ -265,4 +330,5 @@ function showButtons($buttonNumber)
         e.preventDefault();
     });
 </script>
+
 </html>

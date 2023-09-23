@@ -36,21 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //     $_SESSION['user_permission'] = $user_permission;
             // Las credenciales son válidas, iniciar sesión
             $useremail = $row["USUARIO_NOMBRE"];
-
             $_SESSION['useremail'] = $useremail; // Store the value in the session
-
-            $sql = "INSERT INTO LOG_USUARIO
-            (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
-            VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Éxito', 'Inicio de sesión exitoso', 'ACTIVO')";
-
-            // Preparar la consulta
-            $stmt = $conn->prepare($sql);
-
-            // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
-            $stmt->bind_param("ss", $useremail, $ip_cliente);
-
-            // Ejecutar la consulta
-            $stmt->execute();
 
             header("Location: main.php"); // Redirigir a la página principal
             exit();
