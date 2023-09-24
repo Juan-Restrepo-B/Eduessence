@@ -208,30 +208,22 @@
                 <div class="rowD">
                     <h2>VIDEOS</h2>
                     <div class="videos">
-                        <div class="itemvideo">
                             <iframe src="https://www.youtube.com/embed/EVBPerfuz6Q?si=m1qK1ZiyFegSxiNQ"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
-                        </div>
-                        <div class="itemvideo">
                             <iframe src="https://www.youtube.com/embed/zzRJ-sBBICw?si=goVnV6rPNaYM_SlX"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
-                        </div>
-                        <div class="itemvideo">
                             <iframe src="https://www.youtube.com/embed/r2K6EorZotU?si=m-S5BeiIfhHTsBnc"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
-                        </div>
-                        <div class="itemvideo">
                             <iframe src="https://www.youtube.com/embed/Es3v5XfaR0c?si=a-aWlNqVOJmPJeEl"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -263,6 +255,46 @@
                                 <img src="img/logos/Colombia_UniversidadSimonBolivar.png" alt="">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="containerF">
+                <div class="rowF">
+                    <h2>PATROCINADORES</h2>
+                    <div class="videos">
+                        <div class="itemvideo">
+                            <h2></h2>
+                            <iframe src="https://www.youtube.com/embed/EVBPerfuz6Q?si=m1qK1ZiyFegSxiNQ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="itemvideo">
+                            <h2></h2>
+                            <iframe src="https://www.youtube.com/embed/zzRJ-sBBICw?si=goVnV6rPNaYM_SlX"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="itemvideo">
+                            <h2></h2>
+                            <iframe src="https://www.youtube.com/embed/r2K6EorZotU?si=m-S5BeiIfhHTsBnc"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="itemvideo">
+                            <h2></h2>
+                            <iframe src="https://www.youtube.com/embed/Es3v5XfaR0c?si=a-aWlNqVOJmPJeEl"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="patrocinadores">
+
                     </div>
                 </div>
             </div>
