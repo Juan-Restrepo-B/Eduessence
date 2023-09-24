@@ -177,7 +177,9 @@
 .left-gift{
     height: 512px;
     width: 512px;
-    border-radius: 15px;
+    border-radius: 100%;
+    object-fit: cover;
+    background-position: center;
     /* box-shadow: 0 0 7px gray; */
 }
 .right {
