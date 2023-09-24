@@ -16,6 +16,7 @@
     --navbar-size: 50px;
     --icon-size: 25px;
 }
+
 /*Globales*/
 html {
     width: 100vw;
@@ -41,6 +42,7 @@ body {
     overflow: hidden;
     font-family: var(--FuentePrincipal);
 }
+
 main {
     padding-top: 0rem;
 }
@@ -69,5 +71,34 @@ video::-webkit-media-controls-panel {
     border-radius: 20px;
     width: 90%;
     height: 75vh;
+    margin: 0 auto;
+}
+
+
+.containerAlertLoad {
+    width: 100%;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertLoad {
+    padding: 10px;
+    width: 35%;
+    height: 95%;
+    background-color: var(--SecundarioAmarrillo);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.alertLoad h3 {
+    width: 70%;
+    color: var(--Blanco);
+    font-size: 1.8rem;
     margin: 0 auto;
 }
