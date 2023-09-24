@@ -184,6 +184,7 @@ $conn->close();
                         <li class="list-inline-item"><a href="#">CURSOS</a></li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">© Juan Restrepo 2023. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">© Diego Bastidas 2023. All Rights Reserved.</p>
                 </div>
                 <div class="logos">
                     <ul class="list-inline mb-0">

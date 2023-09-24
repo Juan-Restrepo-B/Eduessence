@@ -2,20 +2,24 @@
 
 /*Estructura Color y Caligrafia*/
 :root {
-    --Primario: #004aad;
-    --PrimarioClaro: #a2caff;
-    --SecundarioRojo: #d13633;
-    --SecundarioAmarrillo: #ecad43;
-    --Blanco: #FFF;
-    --Gris: #535353;
-    --Negro: #000;
+  --Primario: #004aad;
+  --PrimarioClaro: #a2caff;
+  --SecundarioRojo: #d13633;
+  --SecundarioAmarrillo: #ecad43;
+  --Blanco: #FFF;
+  --Gris: #535353;
+  --Negro: #000;
 
-    --FuentePrincipal: 'Montserrat', sans-serif;
-    --FuenteSecundaria: ;
+  --FuentePrincipal: 'Montserrat', sans-serif;
+  --FuenteSecundaria: ;
 
-    --navbar-size: 50px;
-    --icon-size: 25px;
+  --PrimarioA40: rgba(0, 75, 173,0.4);
+  --SecundarioRojoA40: rgba(209, 54, 51,0.4);
+
+  --navbar-size: 50px;
+  --icon-size: 25px;
 }
+
 /*Globales*/
 html {
     width: 100vw;

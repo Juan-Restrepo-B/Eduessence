@@ -42,24 +42,70 @@
         <section>
             <div class="containerA">
                 <div class="rowA">
+
                     <div class="left">
-                        <div class="contecS">
+                        <img class="left-gift" src="img/index/section1/fondogif.gif" alt="companylogo">
+                        <!-- <div class="contecS">
                             <div class="slider">
-                                <div class="slide titleS">
+                                <div id="slide-tile1" class="slide titleS">
                                     <h2>¿QUE ES EL SUMMIT?</h2>
                                 </div>
-                                <div class="slide titleS">
+                                <div id="slide-title2" class="slide titleS">
                                     <h2>¿QUIENES SOMOS?</h2>
                                 </div>
-                                <!-- <div class="slide titleS">
-                                    <h2>title3</h2>
-                                </div> -->
+                                
+                                
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="center">
+                        <div class="sub-slider">
+                            <div id="title-slide1" class="sub-slide visible">
+                                <h2>¿Qué es <br> summit?</h2>
+                            </div>
+                            <div id="title-slide2" class="sub-slide invisible">
+                                <h2>¿Quiénes <br> somos?</h2>
                             </div>
                         </div>
                     </div>
-
-                    <div class="right right hidden">
+                    <div class="right">
                         <div class="slider">
+                            <div id="slide1" class="slide-content visible">
+                                <div class="slide-background">
+                                    <p>Es un espacio dedicado al crecimiento
+                                        profesional tanto teórico como práctico
+                                        por intermedio de la educación continuada
+                                        del personal médico y paramédico.
+                                        Rompiendo paradigmas al compartir
+                                        experiencias con los pares de otras latitudes,
+                                        en iguales o parecidas limitantes.
+                                        Así mismo, la correlación con la
+                                        medicina basada en la evidencia y el
+                                        conocimiento de nuevas tendencias en
+                                        el cuidado integral de las personas.</p>
+                                    </div>
+                                </div>
+                            <div id="slide2" class="slide-content invisible">
+                                <div class="slide-background bg-secundario">
+                                    <p>Edu-Essence® Es una compañía que se
+                                        especializa en educación para el trabajo
+                                        y desarrollo humano,teniendo como objetivos,
+                                        promover la formación en la practica del trabajo
+                                        mediante el desarrollo de conocimientos
+                                        técnicos y habilidades para el aprovechamiento
+                                        de competencias laborales especificas,
+                                        contribuyendo al proceso deformación integral
+                                        y permanente en aspectos académicos
+                                        o laborales, mediante programas flexibles
+                                        y coherentes con las necesidades
+                                        y expectativas de la persona, la sociedad,
+                                        las demandas del mercado laboral,
+                                        del sector productivo y del entorno.
+                                    </p>
+                                </div>        
+                            </div>
+                        </div>
+                        <!-- <div class="slider">
                             <div class="slide">
                                 <div class="info">
                                     <h2>Es un espacio dedicado al crecimiento
@@ -93,23 +139,19 @@
                                         del sector productivo y del entorno.</h2>
                                 </div>
                             </div>
-                            <!-- <div class="slide">
-                                <div class="info3">
-                                    <h2>texto</h2>
-                                </div>
-                            </div> -->
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
             </div>
+
         </section>
         <section>
             <div class="containerB">
                 <div class="fondB"></div>
                 <div class="rowB">
                     <div class="rowB2">
-                        <div class="rowB3">
+                        <div class="rowB3" id="cursos">
                             <div class="fondB3"></div>
                             <div class="containerRowB3">
                                 <div class="titleB3">
@@ -138,7 +180,7 @@
                                         <li class="list-inline-item"><a href="#">WEBINARS / CHARLAS / TALLERES</a></li>
                                         <li class="list-inline-item"><a href="#">CONGRESOS / SIMPOSIOS</a></li>
                                         <li class="list-inline-item"><a href="#">CURSOS A LA MEDIDA</a></li>
-                                        <li class="list-inline-item"><a href="#">PROTOCOLOS / CONSENSOS / PATIENT
+                                        <li class="list-inline-item"><a href="#">PROTOCOLOS / CONCENSOS / PATIENT
                                                 JOURNEY</a></li>
                                     </ul>
                                 </div>
@@ -240,6 +282,7 @@
                         <li class="list-inline-item"><a href="#form-contact">CURSOS</a></li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">© Juan Restrepo 2023. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">© Diego Bastidas 2023. All Rights Reserved.</p>
                 </div>
                 <div class="logos">
                 <ul class="list-inline mb-0">
