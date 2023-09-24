@@ -264,5 +264,6 @@ nav {
   }
   
   .text-muted {
-    margin-top: 10px;
+    margin: 0;
+    font-size: 10px;
   }
