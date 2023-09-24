@@ -265,14 +265,14 @@
                     <h2>PATROCINADORES</h2>
                     <div class="videos">
                         <div>
-                            <h3>NAPTROX</h3>
+                            <h3>NATROX</h3>
                             <iframe src="https://www.youtube.com/embed/EVBPerfuz6Q?si=m1qK1ZiyFegSxiNQ"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         </div>
                         <div>
-                            <h3>EPIROT</h3>
+                            <h3>EPPIROT</h3>
                             <iframe src="https://www.youtube.com/embed/zzRJ-sBBICw?si=goVnV6rPNaYM_SlX"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
