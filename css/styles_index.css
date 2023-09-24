@@ -527,3 +527,48 @@
     width: 235px;
     height: 15%;
 }
+
+
+.gallery {
+    width: 83%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.sponsor {
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sponsor h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.sponsor p {
+    font-size: 1rem;
+}
+
+.sponsor a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
