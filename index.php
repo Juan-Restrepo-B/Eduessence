@@ -262,7 +262,7 @@
         <section>
             <div class="containerF">
                 <div class="rowF">
-                    <h2>PATROCINADORES</h2>
+                    <h2>SIMPOSIOS COMERCIALES</h2>
                     <div class="videos">
                         <div>
                             <h3>NATROX</h3>
@@ -293,6 +293,7 @@
                                 allowfullscreen></iframe>
                         </div>
                     </div>
+                    <h2>PATROCINADORES</h2>
                 </div>
                 <div class="patrocinadores">
                     <div class="gallery">
