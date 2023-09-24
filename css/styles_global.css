@@ -13,6 +13,9 @@
     --FuentePrincipal: 'Montserrat', sans-serif;
     --FuenteSecundaria: ;
 
+    --PrimarioA40: rgba(0, 75, 173,0.4);
+    --SecundarioRojoA40: rgba(209, 54, 51,0.4);
+
     --navbar-size: 50px;
     --icon-size: 25px;
 }
