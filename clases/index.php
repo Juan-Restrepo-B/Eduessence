@@ -22,6 +22,7 @@
                 $sql = "SELECT CURSO_NOMBRE, IDCURSOS FROM UN_CARRERA uc 
                 INNER JOIN TR_CURSOS tc ON uc.CARRERA_IDCURSO = tc.IDCURSOS
                 WHERE CARRERA_CURESTADO = 'ACTIVO'
+                AND IDCURSOS = 1
                 AND CARRERA_USUARIO_NOMBRE = '" . $usuario . "'";
                 $result = $conn->query($sql);
 

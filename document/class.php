@@ -41,7 +41,11 @@
             }
             $conn->close();
             ?>
-            <h3 id="loading-message">CARGANDO POR FAVOR ESPERE</h3>
+            <div class="containerAlertLoad">
+                <div class="alertLoad" id="loading-message" >
+                    <h3>Cargando, por favor, espere ...</h3>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -49,7 +53,7 @@
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     });
-    
+
 
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
@@ -57,14 +61,14 @@
 
     // Función para ocultar el h3 cuando el iframe haya cargado
     var iframe = document.getElementById('mi-iframe');
-        var loadingMessage = document.getElementById('loading-message');
+    var loadingMessage = document.getElementById('loading-message');
 
-        iframe.addEventListener('load', function() {
-            // Ocultar el elemento <h3> cuando el iframe ha cargado
-            if (loadingMessage) {
-                loadingMessage.style.display = 'none';
-            }
-        });
+    iframe.addEventListener('load', function () {
+        // Ocultar el elemento <h3> cuando el iframe ha cargado
+        if (loadingMessage) {
+            loadingMessage.style.display = 'none';
+        }
+    });
 </script>
 
 </html>
