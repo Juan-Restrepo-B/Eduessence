@@ -22,14 +22,15 @@
                 $sql = "SELECT CURSO_NOMBRE, IDCURSOS FROM UN_CARRERA uc 
                 INNER JOIN TR_CURSOS tc ON uc.CARRERA_IDCURSO = tc.IDCURSOS
                 WHERE CARRERA_CURESTADO = 'ACTIVO'
+                AND IDCURSOS = 2
                 AND CARRERA_USUARIO_NOMBRE = '" . $usuario . "'";
                 $result = $conn->query($sql);
 
                 if ($result) {
                     while ($row = $result->fetch_assoc()) {
                         ?>
-                        <tr>
-                            <td class title>
+                        <tr class="titleQuery">
+                            <td>
                                 <?php echo strtoupper($row["CURSO_NOMBRE"]); ?>
                             </td>
                         </tr>

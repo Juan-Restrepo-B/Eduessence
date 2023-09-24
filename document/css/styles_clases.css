@@ -4,7 +4,7 @@
 :root {
     --Primario: #004aad;
     --PrimarioClaro: #a2caff;
-    --SecundarioRojo: #d13633;
+    --SecundarioRojo: hsl(1, 63%, 51%);
     --SecundarioAmarrillo: #ecad43;
     --Blanco: #FFF;
     --Gris: #535353;
@@ -56,9 +56,14 @@ iframe::-webkit-media-controls-panel {
 
 /* ESTILOS VIDEOS */
 .container {
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
-
+.class-list {
+    width: 100%;
+}
 .class h2 {
     color: var(--Primario);
     font-size: 2rem;
@@ -66,8 +71,36 @@ iframe::-webkit-media-controls-panel {
 
 iframe {
     border: 3px solid var(--SecundarioRojo);
-    border-radius: 20px;
+    border-radius: 10px;
     width: 90%;
     height: 75vh;
     margin: 0 auto;
 }
+
+.containerAlertLoad {
+    width: 100%;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .alertLoad {
+    padding: 10px;
+    width: 35%;
+    height: 95%;
+    background-color: var(--SecundarioAmarrillo);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+.alertLoad h3 {
+    width: 70%;
+    color: var(--Blanco);
+    font-size: 1.8rem;
+    margin: 0 auto;
+  }
