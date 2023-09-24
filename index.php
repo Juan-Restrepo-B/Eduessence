@@ -266,74 +266,36 @@
                     <div class="videos">
                         <div>
                             <h3>NATROX</h3>
-                            <iframe src="https://www.youtube.com/embed/EVBPerfuz6Q?si=m1qK1ZiyFegSxiNQ"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <video src="videos/SIMPOSIO COMERCIAL NATROX.mp4"></video>
                         </div>
                         <div>
-                            <h3>EPPIROT</h3>
-                            <iframe src="https://www.youtube.com/embed/zzRJ-sBBICw?si=goVnV6rPNaYM_SlX"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <h3>EPIPROT</h3>
+                            <video src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4"></video>
                         </div>
                         <div>
                             <h3>ESSITY</h3>
-                            <iframe src="https://www.youtube.com/embed/r2K6EorZotU?si=m-S5BeiIfhHTsBnc"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <video src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4"></video>
                         </div>
                         <div>
                             <h3>CERAVE</h3>
-                            <iframe src="https://www.youtube.com/embed/Es3v5XfaR0c?si=a-aWlNqVOJmPJeEl"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <video src="videos/SIMPOSIO COMERCIAL CERAVE.mp4"></video>
                         </div>
                     </div>
-                    <h2>PATROCINADORES</h2>
                 </div>
                 <div class="patrocinadores">
+                    <h2>PATROCINADORES</h2>
                     <div class="gallery">
-                        <div class="sponsor">
-                            <img src="img/patrocinadores/cardynal-removebg-preview.png" alt="Patrocinador 1">
-                            <!-- <h2>Patrocinador 1</h2>
-                            <p>Descripción del patrocinador 1.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                        </div>
 
                         <div class="sponsor">
-                            <img src="img/patrocinadores/HUMAX-removebg-preview.png" alt="Patrocinador 3">
+                            <img src="img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
+                                alt="Patrocinador 6">
                             <!-- <h2>Patrocinador 2</h2>
                             <p>Descripción del patrocinador 2.</p>
                             <a href="#">Visitar sitio web</a> -->
                         </div>
 
                         <div class="sponsor">
-                            <img src="img/patrocinadores/innovacure-removebg-preview.png" alt="Patrocinador 4">
-                            <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                        </div>
-
-                        <div class="sponsor">
-                            <img src="img/patrocinadores/LOGO_CERAVE-1-removebg-preview CORTA.png" alt="Patrocinador 5">
-                            <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                        </div>
-
-                        <div class="sponsor">
-                            <img src="img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png" alt="Patrocinador 6">
-                            <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                        </div>
-
-                        <div class="sponsor">
-                            <img src="img/patrocinadores/logo_diabetrics-removebg-preview.png" alt="Patrocinador 7">
+                            <img src="img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
                             <!-- <h2>Patrocinador 2</h2>
                             <p>Descripción del patrocinador 2.</p>
                             <a href="#">Visitar sitio web</a> -->
@@ -347,7 +309,36 @@
                         </div>
 
                         <div class="sponsor">
-                            <img src="img/patrocinadores/LogoViva1AIPS_page-0001-removebg-preview.png" alt="Patrocinador 9">
+                            <img src="img/patrocinadores/LOGO_CERAVE-1-removebg-preview CORTA.png" alt="Patrocinador 5">
+                            <!-- <h2>Patrocinador 2</h2>
+                            <p>Descripción del patrocinador 2.</p>
+                            <a href="#">Visitar sitio web</a> -->
+                        </div>
+
+                        <div class="sponsor">
+                            <img src="img/patrocinadores/LogoViva1AIPS_page-0001-removebg-preview.png"
+                                alt="Patrocinador 9">
+                            <!-- <h2>Patrocinador 2</h2>
+                            <p>Descripción del patrocinador 2.</p>
+                            <a href="#">Visitar sitio web</a> -->
+                        </div>
+
+                        <div class="sponsor">
+                            <img src="img/patrocinadores/cardynal-removebg-preview.png" alt="Patrocinador 1">
+                            <!-- <h2>Patrocinador 1</h2>
+                            <p>Descripción del patrocinador 1.</p>
+                            <a href="#">Visitar sitio web</a> -->
+                        </div>
+
+                        <div class="sponsor">
+                            <img src="img/patrocinadores/innovacure-removebg-preview.png" alt="Patrocinador 4">
+                            <!-- <h2>Patrocinador 2</h2>
+                            <p>Descripción del patrocinador 2.</p>
+                            <a href="#">Visitar sitio web</a> -->
+                        </div>
+
+                        <div class="sponsor">
+                            <img src="img/patrocinadores/HUMAX-removebg-preview.png" alt="Patrocinador 3">
                             <!-- <h2>Patrocinador 2</h2>
                             <p>Descripción del patrocinador 2.</p>
                             <a href="#">Visitar sitio web</a> -->
@@ -361,12 +352,12 @@
                         </div>
 
                         <div class="sponsor">
-                            <img src="img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
+                            <img src="img/patrocinadores/logo_diabetrics-removebg-preview.png" alt="Patrocinador 7">
                             <!-- <h2>Patrocinador 2</h2>
                             <p>Descripción del patrocinador 2.</p>
                             <a href="#">Visitar sitio web</a> -->
                         </div>
-                        
+
                         <div class="sponsor">
                             <img src="img/patrocinadores/VICMEGA-removebg-preview.png" alt="Patrocinador 12">
                             <!-- <h2>Patrocinador 2</h2>
