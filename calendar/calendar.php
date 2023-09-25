@@ -98,9 +98,16 @@ $resultado = $con->query($sql);
 		}
 		?>
 	</div>
-
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </body>
 

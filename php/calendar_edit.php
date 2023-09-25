@@ -134,5 +134,13 @@
     </main>
 </body>
 <script src="../js/redirect.js"></script>
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 </html>

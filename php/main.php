@@ -171,13 +171,12 @@ if (isset($_SESSION['useremail'])) {
                                 d="M18 11c0-.959-.68-1.761-1.581-1.954C16.779 8.445 17 7.75 17 7c0-2.206-1.794-4-4-4-1.516 0-2.822.857-3.5 2.104C8.822 3.857 7.516 3 6 3 3.794 3 2 4.794 2 7c0 .902.312 1.726.817 2.396A1.993 1.993 0 0 0 2 11v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-2.637l4 2v-7l-4 2V11zm-5-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zM6 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z">
                             </path>
                         </svg>
-                            <div class="hover-text">CHARLAS</div>
+                        <div class="hover-text">CHARLAS</div>
                     </a>
                 </div>
                 <div class="icon-container">
                     <a href="../document/index.php" class="menu-icon" target="contentMain"> <!-- CUADERNILLOS -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            style="fill: rgba(0, 0, 0, 1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
                             <path
                                 d="M8.267 14.68c-.184 0-.308.018-.372.036v1.178c.076.018.171.023.302.023.479 0 .774-.242.774-.651 0-.366-.254-.586-.704-.586zm3.487.012c-.2 0-.33.018-.407.036v2.61c.077.018.201.018.313.018.817.006 1.349-.444 1.349-1.396.006-.83-.479-1.268-1.255-1.268z">
                             </path>
@@ -209,7 +208,7 @@ if (isset($_SESSION['useremail'])) {
                             <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
                             </path>
                         </svg>
-                    <div class="hover-text">WORDPRES</div>
+                        <div class="hover-text">WORDPRES</div>
                         <!-- </a> -->
                     </div>
                 <?php endif; ?>
@@ -221,7 +220,7 @@ if (isset($_SESSION['useremail'])) {
                                 d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z">
                             </path>
                         </svg>
-                    <div class="hover-text">USUARIO</div>
+                        <div class="hover-text">USUARIO</div>
                     </a>
                     <!-- <div class="dropup-menu">
                         <?php if (showButtons(1)): ?>
@@ -295,6 +294,14 @@ if (isset($_SESSION['useremail'])) {
 <script defer src="../js/redirect.js"></script>
 <script>
     document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
         e.preventDefault();
     });
 </script>

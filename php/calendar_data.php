@@ -83,7 +83,7 @@
                     $user = "Desarrollo";
                     $pass = "y9B>^y=>FT+G`C@,";
                     $database = "Eduessence_Calendar";
-                    
+
                     // Conexión a la base de datos
                     $conn = mysqli_connect($host, $user, $pass, $database);
                     mysqli_set_charset($conn, "utf8");
@@ -163,5 +163,14 @@
     </main>
 </body>
 <script src="../js/redirect.js"></script>
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </html>

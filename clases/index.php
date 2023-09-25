@@ -71,5 +71,14 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </html>

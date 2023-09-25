@@ -218,7 +218,7 @@ $conn->close();
                                     </path>
                                 </svg>
                             </a>
-                        </i>
+                            </i>
                     </ul>
                 </div>
             </div>
@@ -228,5 +228,14 @@ $conn->close();
 <script src="../js/redirect.js"></script>
 <script src="../js/login.js"></script>
 <script src="../js/nav.js"></script>
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </html>

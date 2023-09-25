@@ -59,17 +59,17 @@ if ($result) {
 
                                 $useremail = $row["USUARIO_NOMBRE"];
                                 $ip_cliente = $_SERVER['REMOTE_ADDR'];
-                    
+
                                 $sql = "INSERT INTO LOG_USUARIO
                                 (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
                                 VALUES(NOW(), ?, ?, 'ACTALZACIÓN DE DATOS', 'Éxito', 'Actualización de datos exitoso', 'ACTIVO')";
-                    
+
                                 // Preparar la consulta
                                 $stmt = $conn->prepare($sql);
-                    
+
                                 // Asignar los valores utilizando bind_param o bindValue, por ejemplo:
                                 $stmt->bind_param("ss", $useremail, $ip_cliente);
-                    
+
                                 // Ejecutar la consulta
                                 $stmt->execute();
                                 header("Location: " . $_SERVER['PHP_SELF']);
@@ -172,7 +172,8 @@ if ($result) {
                             <form action="" method="post">
                                 <label for="nombres">NOMBRES:</label>
                                 <div class="container-rigth__Nombre container-rigth__input">
-                                    <input type="text" name="nombres" placeholder="<?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>"
+                                    <input type="text" name="nombres"
+                                        placeholder="<?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>"
                                         value="<?php echo strtoupper($row["PERSONA_NOMBRES"]); ?>">
                                 </div>
                                 <label for="apellidos">APELLIDOS:</label>
@@ -193,7 +194,8 @@ if ($result) {
                                 </div>
                                 <label for="telefono">TELEFONO:</label>
                                 <div class="container-rigth__telefono container-rigth__input">
-                                    <input type="text" name="telefono" placeholder="<?php echo strtoupper($row["PERSONA_TELEFONO"]); ?>"
+                                    <input type="text" name="telefono"
+                                        placeholder="<?php echo strtoupper($row["PERSONA_TELEFONO"]); ?>"
                                         value="<?php echo strtoupper($row["PERSONA_TELEFONO"]); ?>">
                                 </div>
                                 <label for="pais">PAÍS:</label>
@@ -274,7 +276,13 @@ if ($result) {
             });
         });
     });
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
 </script>
 
 </html>
