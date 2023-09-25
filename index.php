@@ -280,7 +280,7 @@
                         </div>
                         <div>
                             <h3>CERAVE</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL CERAVE.mp4" controls></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL CERAVE.mp4" controls controlsList="nodownload"></video>
                         </div>
                     </div>
                 </div>
