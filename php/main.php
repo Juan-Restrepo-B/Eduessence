@@ -149,7 +149,8 @@ if (isset($_SESSION['useremail'])) {
             <div class="main-menu">
                 <?php if (showButtons(1)): ?>
                     <div class="icon-container">
-                        <a href="calendar_edit.php" class="menu-icon" target="contentMain"> <!-- CALENDARIO -->
+                        <a href="calendar_edit.php" class="menu-icon" target="contentMain">
+                            <!-- CALENDARIO -->
                             <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 style="fill: rgba(0, 0, 0, 1);">
                                 <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm4-4h2v2h-2zm4-4h2v2h-2z"></path>
@@ -157,8 +158,10 @@ if (isset($_SESSION['useremail'])) {
                                     d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
                                 </path>
                             </svg>
+                            <div class="hover-text">CALENDARIO</div>
                         </a>
                     </div>
+
                 <?php endif; ?>
                 <div class="icon-container">
                     <a href="../clases/index.php" class="menu-icon" target="contentMain"> <!-- CHARLAS -->
@@ -168,11 +171,12 @@ if (isset($_SESSION['useremail'])) {
                                 d="M18 11c0-.959-.68-1.761-1.581-1.954C16.779 8.445 17 7.75 17 7c0-2.206-1.794-4-4-4-1.516 0-2.822.857-3.5 2.104C8.822 3.857 7.516 3 6 3 3.794 3 2 4.794 2 7c0 .902.312 1.726.817 2.396A1.993 1.993 0 0 0 2 11v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-2.637l4 2v-7l-4 2V11zm-5-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zM6 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z">
                             </path>
                         </svg>
+                            <div class="hover-text">CHARLAS</div>
                     </a>
                 </div>
                 <div class="icon-container">
                     <a href="../document/index.php" class="menu-icon" target="contentMain"> <!-- CUADERNILLOS -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             style="fill: rgba(0, 0, 0, 1);">
                             <path
                                 d="M8.267 14.68c-.184 0-.308.018-.372.036v1.178c.076.018.171.023.302.023.479 0 .774-.242.774-.651 0-.366-.254-.586-.704-.586zm3.487.012c-.2 0-.33.018-.407.036v2.61c.077.018.201.018.313.018.817.006 1.349-.444 1.349-1.396.006-.83-.479-1.268-1.255-1.268z">
@@ -182,6 +186,7 @@ if (isset($_SESSION['useremail'])) {
                             </path>
                         </svg>
                     </a>
+                    <div class="hover-text">CUADERNILLOS</div>
                 </div>
                 <div class="icon-container"> <!-- DIPLOMMAS -->
                     <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -191,9 +196,10 @@ if (isset($_SESSION['useremail'])) {
                             d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
                         </path>
                     </svg>
+                    <div class="hover-text">DIPLOMAS</div>
                 </div>
                 <?php if (showButtons(3)): ?>
-                    <div class="icon-container"> <!-- MAQUETEADOR -->
+                    <div class="icon-container"> <!-- WORDPRES -->
                         <!-- <a href="#" class="menu-icon" target="contentMain"> -->
                         <svg class="admin menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             style="fill: rgba(0, 0, 0, 1);">
@@ -203,6 +209,7 @@ if (isset($_SESSION['useremail'])) {
                             <path d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z">
                             </path>
                         </svg>
+                    <div class="hover-text">WORDPRES</div>
                         <!-- </a> -->
                     </div>
                 <?php endif; ?>
@@ -214,6 +221,7 @@ if (isset($_SESSION['useremail'])) {
                                 d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z">
                             </path>
                         </svg>
+                    <div class="hover-text">USUARIO</div>
                     </a>
                     <!-- <div class="dropup-menu">
                         <?php if (showButtons(1)): ?>

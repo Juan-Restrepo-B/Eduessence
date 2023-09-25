@@ -329,3 +329,23 @@ button:focus {
   align-items: center;
   gap: 2rem;
 }
+
+.icon-container {
+  position: relative;
+}
+
+.hover-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(6, 3, 182, 0.7);
+  color: white;
+  padding: 5px 10px;
+  display: none;
+  border-radius: 20px;
+}
+
+.menu-icon:hover + .hover-text {
+  display: block;
+  margin-left: 30px;
+}
