@@ -228,6 +228,7 @@ nav {
 .row {
   width: 99%;
   display: flex;
+  justify-content: center;
 }
 
 .add svg {
