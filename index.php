@@ -266,17 +266,17 @@
                     <div class="videos">
                         <div>
                             <h3>NATROX</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL NATROX.mp4" controls></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL NATROX.mp4" controls controlsList="nodownload"></video>
                         </div>
                         <div>
                             <h3>EPIPROT</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4" controls></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4" controls controlsList="nodownload"></video>
                         </div>
                         <div>
                             <h3>ESSITY</h3>
                             <video id="miVideo"
                                 src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4"
-                                controls></video>
+                                controls controlsList="nodownload"></video>
                         </div>
                         <div>
                             <h3>CERAVE</h3>
