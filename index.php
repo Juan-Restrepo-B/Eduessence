@@ -266,19 +266,21 @@
                     <div class="videos">
                         <div>
                             <h3>NATROX</h3>
-                            <video src="videos/SIMPOSIO COMERCIAL NATROX.mp4"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL NATROX.mp4" controls></video>
                         </div>
                         <div>
                             <h3>EPIPROT</h3>
-                            <video src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4" controls></video>
                         </div>
                         <div>
                             <h3>ESSITY</h3>
-                            <video src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4"></video>
+                            <video id="miVideo"
+                                src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4"
+                                controls></video>
                         </div>
                         <div>
                             <h3>CERAVE</h3>
-                            <video src="videos/SIMPOSIO COMERCIAL CERAVE.mp4"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL CERAVE.mp4" controls></video>
                         </div>
                     </div>
                 </div>
@@ -436,6 +438,31 @@
 
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
+    });
+    // Obtén el elemento de video
+    var video = document.getElementById("miVideo");
+
+    // Agrega un manejador de eventos para el clic en el video
+    video.addEventListener("click", function () {
+        if (video.paused) {
+            // Si el video está pausado, reproducelo
+            video.play();
+        } else {
+            // Si el video se está reproduciendo, ponlo en pausa
+            video.pause();
+        }
+    });
+
+    // Agrega un manejador de eventos para el doble clic en el video
+    video.addEventListener("dblclick", function () {
+        if (video.requestFullscreen) {
+            // Si el navegador admite la función de pantalla completa, entra en pantalla completa
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen(); // Firefox
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen(); // Chrome, Safari y Opera
+        }
     });
 </script>
 
