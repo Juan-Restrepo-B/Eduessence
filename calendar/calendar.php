@@ -22,7 +22,7 @@
 $host = "68.178.246.37";
 $user = "Desarrollo";
 $pass = "y9B>^y=>FT+G`C@,";
-$database = "Desarrollo";
+$database = "Eduessence_Calendar";
 
 // Conexión a la base de datos
 $con = mysqli_connect($host, $user, $pass, $database);
@@ -37,8 +37,7 @@ $sql = "SELECT
 		TIME_FORMAT(cal_fecha_in, '%H:%i:%s') AS HoraIn, 
 		TIME_FORMAT(cal_fecha_out, '%H:%i:%s') AS HoraOut, 
 		cal_ubicacion, cal_speaker, cal_pais, cal_description, cal_event
-	FROM calendar_event";
-										//WHERE fecha_in >= CONVERT_TZ(NOW(), '+00:00', '-05:00')";
+	FROM Calendar_Principal WHERE cal_fecha_in >= CONVERT_TZ(NOW(), '+00:00', '-05:00')";
 $resultado = $con->query($sql);
 ?>
 

@@ -80,7 +80,15 @@
                         <td class title>NOMBRE CALENDARIO</td>
                     </tr>
                     <?php
-                    include("conexion.php");
+                    $host = "68.178.246.37";
+                    $user = "Desarrollo";
+                    $pass = "y9B>^y=>FT+G`C@,";
+                    $database = "Eduessence_Calendar";
+                    
+                    // Conexión a la base de datos
+                    $conn = mysqli_connect($host, $user, $pass, $database);
+                    mysqli_set_charset($conn, "utf8");
+
                     $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
                     date_default_timezone_set('America/Bogota');
