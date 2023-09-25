@@ -306,10 +306,10 @@ button:focus {
   0% {
     transform: translateX(-150%);
   }
-  25% {
+  15% {
     transform: translateX(0);
   }
-  75% {
+  85% {
     transform: translateX(0);
   }
   100% {

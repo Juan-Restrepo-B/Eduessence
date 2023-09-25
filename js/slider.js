@@ -6,7 +6,7 @@ setInterval(function(){
   slide1.classList.toggle('invisible');
   slide2.classList.toggle('invisible');
   slide2.classList.toggle('visible');
-},4000);
+},20000);
 
 
 const titleslide1 = document.querySelector('#title-slide1');
@@ -17,4 +17,4 @@ setInterval(function(){
   titleslide1.classList.toggle('invisible');
   titleslide2.classList.toggle('invisible');
   titleslide2.classList.toggle('visible');
-},4000);
+},20000);
