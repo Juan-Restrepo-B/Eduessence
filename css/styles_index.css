@@ -81,7 +81,13 @@
 .slide-content p {
     text-align: justify;
     color: var(--Blanco);
+}
+
+.txt p {
     font-size: 2.1rem;
+}
+.txt1 p {
+    font-size: 2rem;
 }
 
 .contecS {

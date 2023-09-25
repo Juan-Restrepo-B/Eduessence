@@ -71,7 +71,7 @@
                     <div class="right">
                         <div class="slider">
                             <div id="slide1" class="slide-content visible">
-                                <div class="slide-background">
+                                <div class="slide-background txt">
                                     <p>Es un espacio dedicado al crecimiento
                                         profesional tanto teórico como práctico
                                         por intermedio de la educación continuada
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <div id="slide2" class="slide-content invisible">
-                                <div class="slide-background bg-secundario">
+                                <div class="slide-background bg-secundario txt1">
                                     <p>Edu-Essence® Es una compañía que se
                                         especializa en educación para el trabajo
                                         y desarrollo humano,teniendo como objetivos,
