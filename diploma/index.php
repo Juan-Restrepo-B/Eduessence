@@ -49,7 +49,7 @@ $result = $conn->query($sql);
                             </h2>
                             <div class="btn">
                                 <a href="certificados/Diplomas.php?idUser=<?php echo $row["CARRERA_USUARIO_NOMBRE"]; ?>&tipA=<?php echo $row["CARRERA_IDTIPARTICIPANTE"]; ?>&idCurso=<?php echo $row["CARRERA_IDCURSO"]; ?>" target="_blank">Ver</a>
-                                <a href="certificados/Diplomas.php?idUser=<?php echo $row["CARRERA_USUARIO_NOMBRE"]; ?>&tipA=<?php echo $row["CARRERA_IDTIPARTICIPANTE"]; ?>&idCurso=<?php echo $row["CARRERA_IDCURSO"]; ?>">Descargar</a>
+                                <a href="certificados/Diplomad.php?idUser=<?php echo $row["CARRERA_USUARIO_NOMBRE"]; ?>&tipA=<?php echo $row["CARRERA_IDTIPARTICIPANTE"]; ?>&idCurso=<?php echo $row["CARRERA_IDCURSO"]; ?>">Descargar</a>
                             </div>
                         </div>
                         <?php
