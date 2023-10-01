@@ -43,7 +43,7 @@ $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                         ?>
                         <div class="sponsor">
-                            <img src="../img/logos/<?php echo strtoupper($row["CURSO_LOGOIMG"]); ?>" alt="Logo Curso">
+                            <img src="../img/logos/<?php echo $row["CURSO_LOGOIMG"]; ?>" alt="Logo Curso">
                             <h2>
                                 <?php echo strtoupper($row["CURSO_NOMBRE"]); ?>
                             </h2>
