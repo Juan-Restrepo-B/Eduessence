@@ -35,7 +35,7 @@ $result = $conn->query($sql);
     <section>
         <div class="patrocinadores">
             <div class="title">
-                <h1>DIPLOMAS</h1>
+                <h1>CERTIFICADOS</h1>
             </div>
             <div class="gallery">
                 <?php
