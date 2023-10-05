@@ -66,7 +66,7 @@
             </table>
         </div>
         <div class="contentIframe">
-            <iframe name="contentIframe" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+            <iframe src="" name="contentIframe" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
         </div>
     </div>
 </body>
