@@ -54,9 +54,9 @@
                                             target="contentIframe">
                                             <?php echo strtoupper($row1["VIDEO_TITULO"]); ?>
                                         </a> -->
-                                        <a href="class.php?classId=<?php echo $row1["IDOCUMENT"]; ?>" class="mostrarFormulario5"
+                                        <a href="class.php?classId=<?php echo $row1["IDVIDEO"]; ?>" class="mostrarFormulario5"
                                             target="contentIframe">
-                                            <?php echo strtoupper($row1["DOCUMENT_TITULO"]); ?>
+                                            <?php echo strtoupper($row1["VIDEO_TITULO"]); ?>
                                         </a>
                                     </td>
                                 </tr>
