@@ -50,10 +50,6 @@
                                 ?>
                                 <tr>
                                     <td class="cal">
-                                        <!-- <a href="class.php?classId=<?php echo $row1["IDVIDEO"]; ?>" class="buttonSimposio"
-                                            target="contentIframe">
-                                            <?php echo strtoupper($row1["VIDEO_TITULO"]); ?>
-                                        </a> -->
                                         <a href="class.php?classId=<?php echo $row1["IDVIDEO"]; ?>" class="mostrarFormulario5 buttonSimposio"
                                             target="contentIframe">
                                             <?php echo strtoupper($row1["VIDEO_TITULO"]); ?>
@@ -70,7 +66,7 @@
             </table>
         </div>
         <div class="contentIframe">
-        <iframe name="contentIframe" frameborder="0"></iframe>
+        <iframe name="contentIframe" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
         </div>
     </div>
 </body>
