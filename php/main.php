@@ -197,7 +197,7 @@ if (isset($_SESSION['useremail'])) {
                             </path>
                         </svg>
                     </a>
-                    <div class="hover-text">CERTIFICADOS</div>
+                    <div class="hover-text">CERTIFICADOS39999999999999999999</div>
                 </div>
                 <?php if (showButtons(3)): ?>
                     <div class="icon-container"> <!-- WORDPRES -->
