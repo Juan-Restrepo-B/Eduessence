@@ -36,7 +36,7 @@
                         </tr>
                         <?php
                         $idCurso = $row["IDCURSOS"];
-                        
+
                         $sql1 = "SELECT IDVIDEO, VIDEO_TITULO
                         FROM UN_CARRERA uc
                         INNER JOIN TR_VIDEOS tv ON uc.CARRERA_IDCURSO = tv.VIDEO_IDCURSO
@@ -66,8 +66,7 @@
             </table>
         </div>
         <div class="contentIframe">
-            <iframe src="" name="contentIframe"
-                frameborder="0"></iframe>
+        <iframe name="contentIframe" frameborder="0"></iframe>
         </div>
     </div>
 </body>
