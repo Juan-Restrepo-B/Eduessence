@@ -71,31 +71,31 @@
     </div>
 </body>
 <script defer>
-    var botones = document.querySelectorAll(".buttonSimposio");
+    // var botones = document.querySelectorAll(".buttonSimposio");
 
-    // Agregar un controlador de eventos clic a cada botón
-    botones.forEach(function (boton) {
-        boton.addEventListener("click", function (event) {
-            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    // // Agregar un controlador de eventos clic a cada botón
+    // botones.forEach(function (boton) {
+    //     boton.addEventListener("click", function (event) {
+    //         event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
-            // Obtener los valores necesarios
-            var useremail = "<?php echo $_SESSION['useremail']; ?>";
-            var ip_cliente = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
-            var simposio = boton.textContent; // Obtener el texto del enlace actual
+    //         // Obtener los valores necesarios
+    //         var useremail = "<?php echo $_SESSION['useremail']; ?>";
+    //         var ip_cliente = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+    //         var simposio = boton.textContent; // Obtener el texto del enlace actual
 
-            // Realizar una solicitud AJAX para insertar los datos en la base de datos
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "insertar_log.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // La solicitud se ha completado con éxito
-                    console.log("Datos insertados en el registro de usuario.");
-                }
-            };
-            xhr.send("useremail=" + useremail + "&ip_cliente=" + ip_cliente + "&simposio=" + simposio);
-        });
-    });
+    //         // Realizar una solicitud AJAX para insertar los datos en la base de datos
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open("POST", "insertar_log.php", true);
+    //         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //         xhr.onreadystatechange = function () {
+    //             if (xhr.readyState === 4 && xhr.status === 200) {
+    //                 // La solicitud se ha completado con éxito
+    //                 console.log("Datos insertados en el registro de usuario.");
+    //             }
+    //         };
+    //         xhr.send("useremail=" + useremail + "&ip_cliente=" + ip_cliente + "&simposio=" + simposio);
+    //     });
+    // });
 
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
