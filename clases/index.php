@@ -50,8 +50,8 @@
                                 ?>
                                 <tr>
                                     <td class="cal">
-                                        <a href="class.php?classId=<?php echo $row1["IDVIDEO"]; ?>" class="mostrarFormulario5 buttonSimposio"
-                                            target="contentIframe">
+                                        <a href="class.php?classId=<?php echo $row1["IDVIDEO"]; ?>"
+                                            class="mostrarFormulario5 buttonSimposio" target="contentIframe">
                                             <?php echo strtoupper($row1["VIDEO_TITULO"]); ?>
                                         </a>
                                     </td>
@@ -66,39 +66,41 @@
             </table>
         </div>
         <div class="contentIframe">
-        <iframe name="contentIframe" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+            <iframe name="contentIframe" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
         </div>
     </div>
 </body>
 <script defer>
     var botones = document.querySelectorAll(".buttonSimposio");
 
-// Agregar un controlador de eventos clic a cada botón
-botones.forEach(function (boton) {
-    boton.addEventListener("click", function (event) {
-        // Obtener los valores necesarios
-        var useremail = "<?php echo $_SESSION['useremail']; ?>";
-        var ip_cliente = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
-        var simposio = boton.textContent; // Obtener el texto del enlace actual
+    // Agregar un controlador de eventos clic a cada botón
+    botones.forEach(function (boton) {
+        boton.addEventListener("click", function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
-        // Realizar una solicitud AJAX para insertar los datos en la base de datos
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "insertar_log.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // La solicitud se ha completado con éxito
-                console.log("Datos insertados en el registro de usuario.");
-            }
-        };
-        xhr.send("useremail=" + useremail + "&ip_cliente=" + ip_cliente + "&simposio=" + simposio);
+            // Obtener los valores necesarios
+            var useremail = "<?php echo $_SESSION['useremail']; ?>";
+            var ip_cliente = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+            var simposio = boton.textContent; // Obtener el texto del enlace actual
 
-        // Permitir que el enlace se abra en el iframe después de ejecutar la tarea
-        setTimeout(function () {
-            window.open(boton.href, "contentIframe");
-        }, 100);
+            // Realizar una solicitud AJAX para insertar los datos en la base de datos
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "insertar_log.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // La solicitud se ha completado con éxito
+                    console.log("Datos insertados en el registro de usuario.");
+                }
+            };
+            xhr.send("useremail=" + useremail + "&ip_cliente=" + ip_cliente + "&simposio=" + simposio);
+
+            // Cargar el enlace en el iframe
+            var iframe = document.querySelector("iframe[name='contentIframe']");
+            iframe.src = boton.href;
+        });
     });
-});
+
 
 
     document.addEventListener('contextmenu', function (e) {
