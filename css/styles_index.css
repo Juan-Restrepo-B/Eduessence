@@ -485,6 +485,7 @@
 }
 
 .btn-summit2 {
+    width: 200px;
     padding: 15px 20px;
     border-radius: 7px;
     border: solid 3px var(--Primario);

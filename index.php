@@ -236,7 +236,7 @@
                             <img src="img/logos/Summin2023.png" alt="">
                         </div>
                         <div class="summit">
-                            <button class="btn-summit2" onclick="redireccionarASummit()">SUMMIT</button>
+                            <button class="btn-summit2">RECUERDOS SUMMIT 2023</button>
                         </div>
                     </div>
                     <div class="derE">
