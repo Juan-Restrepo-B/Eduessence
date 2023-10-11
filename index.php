@@ -236,7 +236,8 @@
                             <img src="img/logos/Summin2023.png" alt="">
                         </div>
                         <div class="summit">
-                            <button class="btn-summit2">RECUERDOS SUMMIT 2023</button>
+                            <button class="btn-summit2" onclick="mostrarFormulario()" id="mostrarFormulario">RECUERDOS
+                                SUMMIT 2023</button>
                         </div>
                     </div>
                     <div class="derE">
@@ -258,29 +259,44 @@
                     </div>
                 </div>
             </div>
+            <div id="formularioEmergente" class="formularioEmergente" style="display: none;">
+                <div class="order">
+                    <div class="formulario">
+                        <h2>RECUERDOS SUMMIT 2023</h2>
+                        <br>
+                        <iframe src="img/album_summit.htm" frameborder="0"></iframe>
+                        <br><br>
+                        <button class="btn-secundary" type="button" name="close"
+                            onclick="ocultarFormulario()">CERRAR</button>
+                    </div>
+                </div>
+            </div>
         </section>
         <section>
             <div class="containerF">
                 <div class="rowF">
                     <h2>SIMPOSIOS COMERCIALES</h2>
                     <div class="videos">
-                        <div>
+                        <div class="video-container">
                             <h3>NATROX</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL NATROX.mp4" controls controlsList="nodownload"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL NATROX.mp4" controls
+                                controlsList="nodownload"></video>
                         </div>
-                        <div>
+                        <div class="video-container">
                             <h3>EPIPROT</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4" controls controlsList="nodownload"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL PRAXIS.mp4" controls
+                                controlsList="nodownload"></video>
                         </div>
-                        <div>
+                        <div class="video-container">
                             <h3>ESSITY</h3>
                             <video id="miVideo"
-                                src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4"
-                                controls controlsList="nodownload"></video>
+                                src="videos/SIMPOSIO COMERCIAL ESSITY EN SUMMIT 2023 18 y 19 de agosto.mp4" controls
+                                controlsList="nodownload"></video>
                         </div>
-                        <div>
+                        <div class="video-container">
                             <h3>CERAVE</h3>
-                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL CERAVE.mp4" controls controlsList="nodownload"></video>
+                            <video id="miVideo" src="videos/SIMPOSIO COMERCIAL CERAVE.mp4" controls
+                                controlsList="nodownload"></video>
                         </div>
                     </div>
                 </div>
@@ -464,6 +480,20 @@
             video.webkitRequestFullscreen(); // Chrome, Safari y Opera
         }
     });
+
+    function mostrarFormulario() {
+        var formularioEmergente = document.getElementById("formularioEmergente");
+        formularioEmergente.style.display = "block";
+        formularioEmergente.style.zIndex = 3; // Un valor mayor que los videos
+    }
+
+    function ocultarFormulario() {
+        var formularioEmergente = document.getElementById("formularioEmergente");
+        formularioEmergente.style.display = "none";
+        formularioEmergente.style.zIndex = 2; // Restaura el valor original
+        window.onload();
+    }
+
 </script>
 
 </html>
