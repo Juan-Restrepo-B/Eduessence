@@ -262,11 +262,10 @@ table {
 }
 
 .formulario {
-  width: 690px;
-  height: 240px;
+  padding: 0 20px 20px 20px;
   text-align: center;
   display: block;
-  margin: 200px auto;
+  margin: 5px auto;
   background-color: var(--Negro);
   border-radius: 15px;
 }
@@ -288,8 +287,63 @@ table {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#name {
-  width: 475px;
+#namEvent {
+  width: 575px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#conferencista {
+  width: 580px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#paisConferencista {
+  width: 200px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#ubicacion {
+  width: 200px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#description {
+  width: 600px;
+  height: 130px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#fechain {
+  width: 250px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--Blanco);
+  color: var(--Negro);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+#fechaout {
+  width: 250px;
   border-radius: 20px;
   padding: 5px 10px;
   background-color: var(--Blanco);
@@ -298,15 +352,6 @@ table {
   font-size: 1.5rem;
 }
 
-#surnames {
-  width: 475px;
-  border-radius: 20px;
-  padding: 5px 10px;
-  background-color: var(--Blanco);
-  color: var(--Negro);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
-}
 
 .btn-primary {
   padding: 10px;

@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+$ip_cliente = $_SERVER['REMOTE_ADDR'];
+$host = "68.178.246.37";
+$user = "Desarrollo";
+$pass = "y9B>^y=>FT+G`C@,";
+$database = "Eduessence_Calendar";
+
+// Conexión a la base de datos
+$conn = mysqli_connect($host, $user, $pass, $database);
+mysqli_set_charset($conn, "utf8");
+
+date_default_timezone_set('America/Bogota');
+
+$datab = isset($_GET['database']) ? $_GET['database'] : 1;
+
+if (isset($_POST['register'])) {
+    // Verificar si se ha presionado el botón "CREAR"
+
+    // Acceder a los datos del formulario solo si se ha enviado
+    $namEvent = $_POST['Evento'];
+    $conferencista = $_POST['Conferencista'];
+    $paisConferencista = $_POST['Paisconferencista'];
+    $ubicacion = $_POST['Ubicacion'];
+    $description = $_POST['Descripcion'];
+    $fechain = $_POST['FechaInicio'];
+    $fechaout = $_POST['FechaFin'];
+
+
+
+    $sql = "INSERT INTO $datab (cal_event, cal_speaker, cal_pais, cal_ubicacion, cal_description, cal_fecha_in,
+    cal_fecha_out) VALUES ('$namEvent', '$conferencista', '$paisConferencista', '$ubicacion', '$description', '$fechain',
+    '$fechaout')";
+
+    // Ejecutar la consulta de inserción
+    if (mysqli_query($conn, $sql)) {
+        echo "Inserción exitosa.";
+    } else {
+        echo "Error en la inserción: " . mysqli_error($conn);
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -62,8 +106,20 @@
             <div class="formulario">
                 <h2>CREAR NUEVO CALENDARIO</h2>
                 <form action="" method="post" id="formulario">
-                    <label for="name">NOMBRE:</label>
-                    <input type="text" id="name" name="name" required=""><br><br>
+                    <label for="namEvent">NOMBRE EVENTO:</label>
+                    <input type="text" id="namEvent" name="Evento" required=""><br><br>
+                    <label for="conferencista">CONFERENCISTA:</label>
+                    <input type="text" id="conferencista" name="Conferencista" required=""><br><br>
+                    <label for="paisConferencista">PAIS DEL CONFERENCISTA:</label>
+                    <input type="text" id="paisConferencista" name="Paisconferencista" required="">
+                    <label for="ubicacion">UBICACIÓN:</label>
+                    <input type="text" id="ubicacion" name="Ubicacion" required=""><br><br>
+                    <label for="description">DESCRIPCIÓN:</label>
+                    <input type="label" id="description" name="Descripcion" required=""><br><br>
+                    <label for="fechain">FECHA INICIO:</label>
+                    <input type="datetime-local" id="fechain" name="FechaInicio" required="">
+                    <label for="fechaout">FECHA FIN:</label>
+                    <input type="datetime-local" id="fechaout" name="FecaFin" required=""><br><br>
                     <button class="btn btn-primary btn-block" type="submit" name="register">CREAR</button>
                     &nbsp;&nbsp;
                     <button class="btn btn-secundary btn-block" type="button" name="close"
@@ -77,22 +133,6 @@
             <div class="row">
                 <table>
                     <?php
-                    session_start();
-                    $ip_cliente = $_SERVER['REMOTE_ADDR'];
-                    $host = "68.178.246.37";
-                    $user = "Desarrollo";
-                    $pass = "y9B>^y=>FT+G`C@,";
-                    $database = "Eduessence_Calendar";
-
-                    // Conexión a la base de datos
-                    $conn = mysqli_connect($host, $user, $pass, $database);
-                    mysqli_set_charset($conn, "utf8");
-
-                    date_default_timezone_set('America/Bogota');
-
-                    $datab = isset($_GET['database']) ? $_GET['database'] : 1;
-
-
                     $sql = "SELECT * FROM $datab";
                     $result = $conn->query($sql);
                     ?>
