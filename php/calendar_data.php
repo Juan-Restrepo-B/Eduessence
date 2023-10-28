@@ -119,7 +119,7 @@ if (isset($_POST['register'])) {
                     <label for="fechain">FECHA INICIO:</label>
                     <input type="datetime-local" id="fechain" name="FechaInicio" required="">
                     <label for="fechaout">FECHA FIN:</label>
-                    <input type="datetime-local" id="fechaout" name="FecaFin" required=""><br><br>
+                    <input type="datetime-local" id="fechaout" name="FechaFin" required=""><br><br>
                     <button class="btn btn-primary btn-block" type="submit" name="register">CREAR</button>
                     &nbsp;&nbsp;
                     <button class="btn btn-secundary btn-block" type="button" name="close"
