@@ -63,19 +63,21 @@ h3{
 .main-left-side{
     max-width: 900px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .main-left-side::after{
     content: "";
     height: 150px;
     width: 5px;
     display: block;
-    /* border-radius: 3px; */
+    border-radius: 3px;
     background-color: var(--Primario);
     position: absolute;
-    
-    top: 1px;
-    left: -1rem;
 
+    top: 140px;
+    left: -1px;
 }
 .main-right-side{
     border-radius:87% 13% 76% 24% / 19% 84% 16% 81%;
@@ -86,6 +88,7 @@ h3{
     height: calc(100vh - 271px);
     width: 30vw;
     background-color: var(--Primario);
+
 } 
 img{
     object-fit: contain;
@@ -123,4 +126,10 @@ img{
     #main-doc-img{
         width: 50vw;
     }
+}
+@media(max-width: 1024px) {
+    .main-left-side::after{
+    top: 10px;
+    left: -1px;
+}
 }
