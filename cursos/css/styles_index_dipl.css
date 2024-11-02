@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+/*Estructura Color y Caligrafia*/
+:root {
+  --Primario: #004aad;
+  --PrimarioClaro: #a2caff;
+  --SecundarioRojo: #d13633;
+  --SecundarioAmarrillo: #ecad43;
+  --Blanco: #FFF;
+  --Gris: #535353;
+  --Negro: #000;
+
+  --FuentePrincipal: 'Montserrat', sans-serif;
+  --FuenteSecundaria: ;
+
+  --PrimarioA40: rgba(0, 75, 173,0.4);
+  --SecundarioRojoA40: rgba(209, 54, 51,0.4);
+
+  --navbar-size: 50px;
+  --icon-size: 25px;
+}
+
+/*Globales*/
+html {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: var(--Negro);
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-family: var(--FuentePrincipal);
+}
+
+
+.title h1 {
+    color: var(--Primario);
+    font-size: 4rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.gallery {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.gallery a {
+    color: #000;
+    text-decoration: none;
+}
+
+.sponsor {
+    width: 230px;
+    margin: 10px;
+    padding: 15px;
+    border: 4px solid var(--PrimarioA40);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.sponsor img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sponsor h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.sponsor p {
+    font-size: 1rem;
+}
+
+.sponsor a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}

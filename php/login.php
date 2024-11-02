@@ -98,6 +98,17 @@ $conn->close();
             <div class="container" id="container">
                 <div class="right-panel-active form-container in-container" id="in-container">
                     <div class="panel-active">
+                        <div class="panel-active__texto">
+                            <h2>¡Eduessence: Tu Puerta al Conocimiento actualizado en el trabajo ilimitado!
+                                <br><br>
+                                ¿Estás listo para desbloquear un mundo de oportunidades? Únete a Eduessence hoy y accede
+                                a eventos de élite, cursos innovadores y conexiones globales. Transforma tu aprendizaje
+                                y alcanza nuevos horizontes.
+                                <br><br>
+                                ¡Inicia sesión y continua tu viaje hacia nuevos conocimientos
+                                practicos!
+                            </h2>
+                        </div>
                         <br>
                         <button class="btn-cuenta" id="btn-cuenta">INICIAR SESION</button>
                     </div>
@@ -109,8 +120,7 @@ $conn->close();
                                 <br><br>
                                 ¿Estás listo para desbloquear un mundo de oportunidades? Únete a Eduessence hoy y accede
                                 a eventos de élite, cursos innovadores y conexiones globales. Transforma tu aprendizaje
-                                y
-                                alcanza nuevos horizontes.
+                                y alcanza nuevos horizontes.
                                 <br><br>
                                 ¡Regístrate ahora y comienza tu viaje hacia nuevos conocimientos
                                 practicos!
@@ -121,22 +131,18 @@ $conn->close();
                     </div>
                 </div>
                 <div class="form-container sign-up-container">
-                    <form action="login.php">
+                    <form action="register.php" method="POST">
                         <img src="../img/logo.png" alt="">
                         <h1>CREAR CUENTA</h1>
-                        <div class="social-container">
-                            <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="" class="social"><i class="fab fa-gooogle-plus-g"></i></a>
-                            <a href="" class="social"><i class="fab fa-likendin-in"></i></a>
-                        </div>
-                        <input type="text" placeholder="Nombres">
-                        <input type="text" placeholder="Apellidos">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <br><br>
-                        <button id="btn-register" class="btn-register">REGISTRARSE</button>
+                        <input type="text" name="nombres" placeholder="Nombres" required>
+                        <input type="text" name="apellidos" placeholder="Apellidos" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password1" placeholder="Password" required>
+                        <br>
+                        <button type="submit" class="btn-register">REGISTRARSE</button>
                     </form>
                 </div>
+
                 <div class="form-container sign-in-container">
                     <form action="login.php" method="POST">
                         <img src="../img/logo.png" alt="">
