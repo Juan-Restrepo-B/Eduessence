@@ -13,13 +13,7 @@ if (isset($_GET['idcurso'])) {
 }
 
 $infCurso = "SELECT 
-                IDCURSOS,
-                CURSO_NOMBRE, 
-                CURSO_LOGOIMG,
-                INFO_MININFO,
-                CURSO_FECHINS,
-                CURSO_FECHSTART,
-                CURSO_FECHFIN
+                *
             FROM
                 TR_CURSOS
                 INNER JOIN TR_INFOCURSO ON INFO_IDCURSO = IDCURSOS
@@ -47,6 +41,24 @@ if ($resultinfoCurso->num_rows > 0) {
     $fechRegistro = $rowinfcurso["CURSO_FECHINS"];
     $fechaRegistro = new DateTime($fechRegistro);
     $fechaActual = new DateTime();
+
+    $aprenderas = $rowinfcurso["INFO_APRENDERAS"];
+    $temas = explode(",", $aprenderas);
+
+    $fechInicio = $rowinfcurso["CURSO_FECHSTART"];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Ejecuta la inserción
+        $inscripcion = "INSERT INTO UN_CARRERA (CARRERA_USUARIO_NOMBRE, CARRERA_IDCURSO, CARRERA_FECHINIT, CARRERA_FECHVENC, CARRERA_CURESTADO, CARRERA_CERTESTADO, CARRERA_IDTIPARTICIPANTE)
+        VALUES ('$usuario', '$idcurso', '$fechInicio', NULL, 'ACTIVO', 'NO', 'ASISTENTE')";
+
+        if ($conn->query($inscripcion) === TRUE) {
+            header("Location: transmision.php?idcurso=" . $idcurso);
+            exit();
+        } else {
+            echo "<script>console.log('Error: " . $conn->error . "');</script>";
+        }
+    }
     ?>
 
     <!DOCTYPE html>
@@ -70,9 +82,11 @@ if ($resultinfoCurso->num_rows > 0) {
             </div>
         </section>
         <section class="pd-10 flx-rig">
-            <div class="infoPrin">
+            <div class="infoPrin item-60">
                 <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
-                <h4><?php echo $rowinfcurso["INFO_MININFO"]; ?></h4>
+                <br>
+                <h4 class="w60"><?php echo $rowinfcurso["INFO_DESCRIPCORTA"]; ?></h4>
+                <br>
                 <div class="flex">
                     <p class="font10">Fecha limite de inscripcion:
                         <?php echo date("d-M-Y", strtotime($rowinfcurso["CURSO_FECHINS"])); ?>
@@ -88,14 +102,16 @@ if ($resultinfoCurso->num_rows > 0) {
                     <p class="font10">Fecha fin curso: <?php echo date("d-M-Y g:i a", $fechaFinCursoMenos30Min); ?></p>
                 </div>
             </div>
-            <div class="sponsor">
+            <div class="sponsor item-40">
                 <img src="../img/logos/<?php echo $rowinfcurso["CURSO_LOGOIMG"]; ?>" alt="Logo Curso">
                 <br>
                 <?php
                 if ($valIdCurso == null) {
                     if ($fechaRegistro > $fechaActual) {
                         ?>
-                        <a href="" class="btn">INSCRIBIRSE</a>
+                        <form id="inscripcionForm" method="POST" action="">
+                            <button type="submit" class="btn">INSCRIBIRSE</button>
+                        </form>
                         <?php
                     }
                 } else {
@@ -106,12 +122,53 @@ if ($resultinfoCurso->num_rows > 0) {
                 ?>
             </div>
         </section>
-        <section class="white w-100">
-
+        <section class="pd-10 tp-1 white w-100">
+            <?php if ($aprenderas != null) { ?>
+                <div class="contenido-aprenderas">
+                    <h2>Lo que aprenderás</h2>
+                    <ul>
+                        <?php foreach ($temas as $index => $tema): ?>
+                            <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
+                                <?php echo trim($tema); ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <a href="#" id="verMas" class="view-toggle" onclick="toggleAprenderas(event)">Ver más <span>▼</span></a>
+                </div>
+            <?php } ?>
         </section>
     </body>
     <?php
 }
 ?>
+
+
+<script>
+    function toggleAprenderas(event) {
+        event.preventDefault(); // Previene el comportamiento de salto del enlace
+
+        const extras = document.querySelectorAll('.extra');
+        const toggleLink = document.getElementById('verMas');
+
+        extras.forEach(item => {
+            item.style.display = (item.style.display === 'none' || item.style.display === '') ? 'list-item' : 'none';
+        });
+
+        if (toggleLink.innerText.includes("Ver más")) {
+            toggleLink.innerHTML = 'Ver menos <span>▲</span>';
+        } else {
+            toggleLink.innerHTML = 'Ver más <span>▼</span>';
+        }
+    }
+</script>
+<script>
+    // Desactivar el menú contextual y la selección de texto
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </html>

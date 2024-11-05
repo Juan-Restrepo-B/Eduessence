@@ -13,13 +13,7 @@ if (isset($_GET['idcurso'])) {
 }
 
 $infCurso = "SELECT 
-                IDCURSOS,
-                CURSO_NOMBRE, 
-                CURSO_LOGOIMG,
-                INFO_MININFO,
-                CURSO_FECHINS,
-                CURSO_FECHSTART,
-                CURSO_FECHFIN
+                *
             FROM
                 TR_CURSOS
                 INNER JOIN TR_INFOCURSO ON INFO_IDCURSO = IDCURSOS
@@ -43,11 +37,20 @@ if ($resultinfoCurso->num_rows > 0) {
 
     $fechFinCurso = $rowinfcurso["CURSO_FECHFIN"];
     $fechaFinCurso = new DateTime($fechFinCurso);
+
+
+    $fechInicio = $rowinfcurso["CURSO_FECHSTART"];
+    $fechaIniCurso = new DateTime($fechInicio);
+
     $fechaActual = new DateTime();
 
     // if ($fechaActual > $fechaFinCurso) {
     //     header("Location: ../clases/index.php");
     // }
+
+    if ($fechaActual < $fechaIniCurso) {
+        header("Location: index.php");
+    }
     ?>
 
     <!DOCTYPE html>
@@ -73,7 +76,12 @@ if ($resultinfoCurso->num_rows > 0) {
         <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
         <div class="container">
             <div class="tramsmi item-60">
-                <video src="" poster="../img/logos/<?php echo $rowinfcurso["CURSO_LOGOIMG"]; ?>"></video>
+                <iframe id="videoPlayer" src="<?php echo $rowinfcurso['CURSO_URLTRANSMI']; ?>" f frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <div class="overlay"
+                    style="position: absolute; top: 0; left: 0; background: transparent; pointer-events: auto;">
+                </div>
             </div>
             <div class="chat item-40">
                 <h2>Preguntas y Respuestas</h2>
@@ -91,7 +99,7 @@ if ($resultinfoCurso->num_rows > 0) {
 }
 ?>
 
-<script>
+<script async>
     // Pasar el nombre del usuario desde PHP a JavaScript
     const usuario = <?php echo json_encode($person); ?>;
 
@@ -127,6 +135,20 @@ if ($resultinfoCurso->num_rows > 0) {
 
     // Cargar mensajes cada 2 segundos
     setInterval(cargarMensajes, 2000);
+</script>
+
+<script async>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
 </script>
 
 </html>

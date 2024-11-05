@@ -30,7 +30,7 @@ $result = $conn->query($sql);
                 <?php
                 if ($result) {
                     while ($row = $result->fetch_assoc()) {
-                        ?> 
+                        ?>
                         <a href="cursos.php?idcurso=<?php echo $row["IDCURSOS"]; ?>" class="sponsor">
                             <div>
                                 <img src="../img/logos/<?php echo $row["CURSO_LOGOIMG"]; ?>" alt="Logo Curso">
@@ -48,5 +48,19 @@ $result = $conn->query($sql);
 
     </section>
 </body>
+
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+</script>
 
 </html>

@@ -42,13 +42,14 @@ body {
     margin: 0;
     font-size: 1.6rem;
     line-height: 1.5;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow: hidden;
     font-family: var(--FuentePrincipal);
-    background-color: var(--PrimarioClaro);
+    background-color: #a2caffa2;
 }
 
 /*scroll */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 12px;
     background-color: var(--Secundario);
     border-left: 2px solid var(--Primario);
@@ -71,7 +72,7 @@ body {
   
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--Primario);
-  }
+  } */
 
 .header {
     padding: 10px 10px 5px 10px;
@@ -83,7 +84,7 @@ body {
 
 .w-100 {
     width: 100%;
-    height: 100vh;
+    height: 62vh;
 }
 
 .font10 {
@@ -93,6 +94,7 @@ body {
 .flex {
     display: flex;
     gap: 2rem;
+    width: 100%;
 }
 
 .pd-10 {
@@ -147,4 +149,84 @@ body {
 
 .btn:hover {
     box-shadow: 0 0 20px var(--Primario);
+}
+
+.item-60 {
+    flex: 0 0 60%;
+}
+
+.item-40 {
+    flex: 0 0 35%; 
+}
+
+h4.w60 {
+    width: 70%;
+    white-space: normal;
+    word-wrap: break-word;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 4rem;
+    width: 70%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.infoPrin p {
+    font-weight: 600;
+}
+
+.tp-1 {
+    padding-top: 10px;
+}
+
+.contenido-aprenderas {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+}
+
+.contenido-aprenderas h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.contenido-aprenderas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+}
+
+.contenido-aprenderas li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.contenido-aprenderas li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #333;
+}
+
+.extra {
+    display: none;
+}
+
+.view-toggle {
+    color: #3333cc;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.view-toggle span {
+    font-size: 1.2em;
 }

@@ -86,6 +86,7 @@ body {
     padding: 10px;
     background-color: #f9f9f9;
     text-align: left;
+    border-radius: 10px;
 }
 
 #formulario {
@@ -136,21 +137,44 @@ body {
     flex: 0 0 35%; 
 }
 
-.tramsmi video {
-    width: 100%;
+h1 {
+    color: var(--Primario);
 }
 
 .tramsmi {
-    background-image: url("ruta/de/tu/imagen.jpg");
-    background-size: cover;
-    background-position: center;
+    position: relative; /* Necesario para posicionar el iframe */
+    width: 100%; /* Hace que el contenedor sea del 100% de ancho */
+    padding-bottom: 31.58%; /* Esto mantiene la relación de aspecto 19:6 */
+    height: 0; /* Se establece en 0 porque el padding-bottom crea el espacio necesario */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
-/* Oculta la imagen de fondo cuando el video está reproduciéndose */
-.tramsmi video:playing {
-    background-image: none;
+.tramsmi iframe {
+    position: absolute; /* Permite posicionar el iframe dentro del contenedor */
+    top: 0; /* Alinea el iframe en la parte superior */
+    left: 0; /* Alinea el iframe a la izquierda */
+    width: 100%; /* Hace que el iframe ocupe todo el ancho del contenedor */
+    height: 100%; /* Hace que el iframe ocupe toda la altura del contenedor */
+    border: solid 1px var(--Primario);
+    border-radius: 10px;
 }
 
-h1 {
-    color: var(--Primario);
+.overlay {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 20%; 
+    background: transparent; 
+    pointer-events: auto; /* Permite que la superposición bloquee clics */
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-right: 5px;
+    cursor: pointer;
 }
