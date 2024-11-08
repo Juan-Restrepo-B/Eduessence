@@ -1,0 +1,11 @@
+{
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "breadcrumbs.enabled": false,
+    "editor.stickyScroll.scrollWithEditor": true,
+    "notebook.stickyScroll.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "explicit"
+}

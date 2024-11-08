@@ -49,7 +49,7 @@ if ($resultinfoCurso->num_rows > 0) {
     // }
 
     if ($fechaActual < $fechaIniCurso) {
-        header("Location: index.php");
+        header("Location: alert.php?idcurso=" . $rowinfcurso["IDCURSOS"]);
     }
     ?>
 
@@ -149,6 +149,47 @@ if ($resultinfoCurso->num_rows > 0) {
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
     });
+</script>
+
+<script>
+    let logInterval;
+    let activityTimeout;
+
+    function resetActivityTimeout() {
+        clearTimeout(activityTimeout);
+        activityTimeout = setTimeout(startLogInterval, 30000); // 30 segundos en milisegundos para pruebas
+    }
+
+    function startLogInterval() {
+        clearInterval(logInterval);
+        logUserActivity(); // Registrar inmediatamente
+        logInterval = setInterval(logUserActivity, 30000); // 30 segundos en milisegundos para pruebas
+        // logInterval = setInterval(logUserActivity, 1800000); // 30 minutos en milisegundos para producción
+    }
+
+    function logUserActivity() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "log_activity.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("useremail=<?php echo $usuario; ?>&ip_cliente=<?php echo $ip_cliente; ?>&idcurso=<?php echo $idcurso; ?>");
+    }
+
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            clearInterval(logInterval);
+        } else {
+            resetActivityTimeout();
+        }
+    }
+
+    document.addEventListener("mousemove", resetActivityTimeout);
+    document.addEventListener("keydown", resetActivityTimeout);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Inicializar el timeout solo si la página está visible
+    if (!document.hidden) {
+        resetActivityTimeout();
+    }
 </script>
 
 </html>

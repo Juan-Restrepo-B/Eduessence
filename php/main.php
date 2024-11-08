@@ -303,6 +303,13 @@ if (isset($_SESSION['useremail'])) {
             </div>
         </div>
     </footer>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sr(a) usuario.</h2>
+            <p>Por favor valide los datos personales estos seran utilizados para la generacion de los certificados.</p>
+        </div>
+    </div>
 </body>
 <script defer src="../js/redirect.js"></script>
 <script>
@@ -316,6 +323,16 @@ if (isset($_SESSION['useremail'])) {
 
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const popup = document.getElementById('popup');
+        const closeBtn = document.querySelector('.close-btn');
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
     });
 </script>
 
