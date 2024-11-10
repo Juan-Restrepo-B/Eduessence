@@ -23,10 +23,12 @@ $rowinfcurso = $resultinfoCurso->fetch_assoc();
             </path>
             <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
         </svg>
-        <h2>Sr(a) usuario.</h2>
+        <h2>Sr(a) usuario(a).</h2>
+        <br>
         <p>Por el momento no se encuentra habilitado el ingreso a visualizar el curso.</p>
         <br>
-        <p>Este se habilitara el <?php echo date("d-M-Y g:i a", strtotime($rowinfcurso["CURSO_FECHSTART"])); ?></p>
+        <p>Este se habilitara el <span><?php echo date("d-M-Y g:i a", strtotime($rowinfcurso["CURSO_FECHSTART"])); ?></span></p>
+        <br>
         <button id="btn-summit" class="btn-summit" onclick="window.location.href='cursos.php?idcurso=<?php echo $idcurso ?>'">Cerrar</button>
     </div>
 </div>
@@ -43,15 +45,14 @@ $rowinfcurso = $resultinfoCurso->fetch_assoc();
         z-index: 1000;
         display: block;
         width: 500px;
-        height: 260px;
         border-radius: 2rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .popup svg {
         margin-bottom: 15px;
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
     }
 
     .popup-content {
@@ -63,10 +64,21 @@ $rowinfcurso = $resultinfoCurso->fetch_assoc();
         height: 100%;
     }
 
+    .popup h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        color: #333;
+    }
+
     .popup p {
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.3rem;
         color: #333;
+    }
+
+    .popup span {
+        color: #004aad;
+        font-weight: 600;
     }
 
     .btn-summit {

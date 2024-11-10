@@ -306,7 +306,7 @@ if (isset($_SESSION['useremail'])) {
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
-            <h2>Sr(a) usuario.</h2>
+            <h2>Sr(a) usuario(a).</h2>
             <p>Por favor valide los datos personales estos seran utilizados para la generacion de los certificados.</p>
         </div>
     </div>

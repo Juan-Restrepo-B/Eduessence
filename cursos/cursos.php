@@ -43,7 +43,13 @@ if ($resultinfoCurso->num_rows > 0) {
     $fechaActual = new DateTime();
 
     $aprenderas = $rowinfcurso["INFO_APRENDERAS"];
-    $temas = explode(",", $aprenderas);
+    $temasAprender = explode(",", $aprenderas);
+
+    $temas = $rowinfcurso['INFO_TEMAS'];
+    $tituloTemas = explode(";", $temas);
+
+    $conferencista = $rowinfcurso["INFO_CONFERENCISTAS"];
+    $conferencistaCurso = explode(",", $conferencista);
 
     $fechInicio = $rowinfcurso["CURSO_FECHSTART"];
 
@@ -59,6 +65,7 @@ if ($resultinfoCurso->num_rows > 0) {
             echo "<script>console.log('Error: " . $conn->error . "');</script>";
         }
     }
+
     ?>
 
     <!DOCTYPE html>
@@ -71,65 +78,117 @@ if ($resultinfoCurso->num_rows > 0) {
     </head>
 
     <body>
-        <section>
-            <div class="header">
-                <a href="index.php">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
-                        <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path>
-                    </svg>
-                </a>
-            </div>
-        </section>
-        <section class="pd-10 flx-rig">
-            <div class="infoPrin item-60">
-                <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
-                <br>
-                <h4 class="w60"><?php echo $rowinfcurso["INFO_DESCRIPCORTA"]; ?></h4>
-                <br>
-                <div class="flex">
-                    <p class="font10">Fecha limite de inscripcion:
-                        <?php echo date("d-M-Y", strtotime($rowinfcurso["CURSO_FECHINS"])); ?>
-                    </p>
-                    <p class="font10">Fecha inicio curso:
-                        <?php echo date("d-M-Y g:i a", strtotime($rowinfcurso["CURSO_FECHSTART"])); ?>
-                    </p>
-                    <?php
-                    // Restar 30 minutos a la fecha de fin del curso
-                    $fechaFinCurso = strtotime($rowinfcurso["CURSO_FECHFIN"]);
-                    $fechaFinCursoMenos30Min = $fechaFinCurso - 1800; // Restar 30 minutos (30*60 segundos)
-                    ?>
-                    <p class="font10">Fecha fin curso: <?php echo date("d-M-Y g:i a", $fechaFinCursoMenos30Min); ?></p>
+        <section class="fon-blue">
+            <section>
+                <div class="header">
+                    <a href="index.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z">
+                            </path>
+                        </svg>
+                    </a>
                 </div>
-            </div>
-            <div class="sponsor item-40">
-                <img src="../img/logos/<?php echo $rowinfcurso["CURSO_LOGOIMG"]; ?>" alt="Logo Curso">
-                <br>
-                <?php
-                if ($valIdCurso == null) {
-                    if ($fechaRegistro > $fechaActual) {
+            </section>
+            <section class="pd-10 flx-rig">
+                <div class="infoPrin item-60">
+                    <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
+                    <br>
+                    <h4 class="w60"><?php echo $rowinfcurso["INFO_DESCRIPCORTA"]; ?></h4>
+                    <br>
+                    <div class="flex">
+                        <p class="font10">Fecha limite de inscripcion: <span class="red">
+                                <?php echo date("d-M-Y", strtotime($rowinfcurso["CURSO_FECHINS"])); ?></span>
+                        </p>
+                        <p class="font10">Fecha inicio curso: <span class="green">
+                                <?php echo date("d-M-Y g:i a", strtotime($rowinfcurso["CURSO_FECHSTART"])); ?></span>
+                        </p>
+                        <?php
+                        // Restar 30 minutos a la fecha de fin del curso
+                        $fechaFinCurso = strtotime($rowinfcurso["CURSO_FECHFIN"]);
+                        $fechaFinCursoMenos30Min = $fechaFinCurso - 1800; // Restar 30 minutos (30*60 segundos)
                         ?>
-                        <form id="inscripcionForm" method="POST" action="">
-                            <button type="submit" class="btn">INSCRIBIRSE</button>
-                        </form>
+                        <p class="font10">Fecha fin curso: <span
+                                class="blue"><?php echo date("d-M-Y g:i a", $fechaFinCursoMenos30Min); ?></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sponsor item-40">
+                    <img src="../img/logos/<?php echo $rowinfcurso["CURSO_LOGOIMG"]; ?>" alt="Logo Curso">
+                    <br>
+                    <?php
+                    if ($valIdCurso == null) {
+                        if ($fechaRegistro > $fechaActual) {
+                            ?>
+                            <form id="inscripcionForm" method="POST" action="">
+                                <button type="submit" class="btn">INSCRIBIRSE</button>
+                            </form>
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <a href="transmision.php?idcurso=<?php echo $rowinfcurso["IDCURSOS"]; ?>" class="btn">VER</a>
                         <?php
                     }
-                } else {
                     ?>
-                    <a href="transmision.php?idcurso=<?php echo $rowinfcurso["IDCURSOS"]; ?>" class="btn">VER</a>
-                    <?php
-                }
-                ?>
-            </div>
+                </div>
+            </section>
         </section>
         <section class="pd-10 tp-1 white w-100">
             <?php if ($aprenderas != null) { ?>
                 <div class="contenido-aprenderas">
-                    <h2>Lo que aprenderás</h2>
+                    <h2>Contenido <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
                     <ul>
-                        <?php foreach ($temas as $index => $tema): ?>
+                        <?php foreach ($temasAprender as $index => $temaAprender): ?>
                             <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
-                                <?php echo trim($tema); ?>
+                                <?php echo trim($temaAprender); ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <a href="#" id="verMas" class="view-toggle" onclick="toggleAprenderas(event)">Ver más <span>▼</span></a>
+                </div>
+            <?php } ?>
+            <?php if ($temas != null) { ?>
+                <div class="course-content tp-3 ">
+                    <h2>Temario del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <?php
+                    echo '<div class="course-content">';
+
+                    // Recorrer cada tema
+                    foreach ($tituloTemas as $tema) {
+                        $partes = explode(":", $tema); // Divide título y subtemas
+                        if (count($partes) == 2) {
+                            $titulo = trim($partes[0]); // Título del tema
+                            $subtemas = explode(",", $partes[1]); // Subtemas separados por coma
+            
+                            echo "<div class='section'>";
+                            echo "<h2 onclick='toggleSection(this)'>" . htmlspecialchars($titulo) . "</h2>";
+                            echo "<div class='lessons' style='display: none;'>";
+                            echo "<ul>";
+
+                            // Recorrer subtemas y mostrarlos en lista
+                            foreach ($subtemas as $subtema) {
+                                echo "<li>" . htmlspecialchars(trim($subtema)) . "</li>";
+                            }
+
+                            echo "</ul>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+
+                    echo '</div>';
+
+                    ?>
+                </div>
+            <?php } ?>
+            <?php if ($conferencista != null) { ?>
+                <div class="contenido-aprenderas">
+                    <h2>conferencista del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <ul>
+                        <?php foreach ($conferencistaCurso as $index => $confe): ?>
+                            <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
+                                <?php echo trim($confe); ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -169,6 +228,16 @@ if ($resultinfoCurso->num_rows > 0) {
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
     });
+</script>
+<script>
+    function toggleSection(header) {
+        const lessons = header.nextElementSibling;
+        if (lessons.style.display === "none") {
+            lessons.style.display = "block";
+        } else {
+            lessons.style.display = "none";
+        }
+    }
 </script>
 
 </html>
