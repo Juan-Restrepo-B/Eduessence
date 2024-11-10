@@ -18,3 +18,4 @@ function redireccionarASummit23() {
 function redireccionarASummit() {
     window.location.href = "php/login.php";
 }
+

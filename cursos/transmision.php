@@ -44,9 +44,9 @@ if ($resultinfoCurso->num_rows > 0) {
 
     $fechaActual = new DateTime();
 
-    // if ($fechaActual > $fechaFinCurso) {
-    //     header("Location: ../clases/index.php");
-    // }
+    if ($fechaActual > $fechaFinCurso) {
+        header("Location: ../clases/index.php");
+    }
 
     if ($fechaActual < $fechaIniCurso) {
         header("Location: alert.php?idcurso=" . $rowinfcurso["IDCURSOS"]);

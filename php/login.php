@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Realizar la consulta SQL para verificar las credenciales
-    $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS INNER JOIN TR_PERSONA ON USUARIO_NOMBRE = PERSONA_CORREO WHERE USUARIO_USER = ? AND PERSONA_ESTADO = 'ACTIVO'";
+    $sql = "SELECT USUARIO_USER, USUARIO_CLAVE, USUARIO_NOMBRE FROM TR_USUARIOS INNER JOIN TR_PERSONA ON USUARIO_NOMBRE = PERSONA_CORREO WHERE (USUARIO_USER = ? OR USUARIO_NOMBRE = ?)AND PERSONA_ESTADO = 'ACTIVO'";
     // Preparar la consulta
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("ss", $email, $email);
     $stmt->execute();
     // Obtener el resultado de la consulta
     $result = $stmt->get_result();
@@ -152,7 +152,7 @@ $conn->close();
                             <a href="" class="social"><i class="fab fa-gooogle-plus-g"></i></a>
                             <a href="" class="social"><i class="fab fa-likendin-in"></i></a>
                         </div>
-                        <input type="text" placeholder="Usuario" name="email" required>
+                        <input type="text" placeholder="Usuario o Email" name="email" required>
                         <input type="password" placeholder="Password" name="password" required>
                         <br>
                         <?php if (isset($error_message)): ?>

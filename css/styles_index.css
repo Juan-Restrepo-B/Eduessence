@@ -456,8 +456,20 @@
     justify-content: center;
     align-items: center;
 }
-
+.izqF {
+    width: 30%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
 .izqE img {
+    width: 60%;
+}
+
+.izqF img {
     width: 85%;
 }
 
@@ -487,6 +499,10 @@
 .logo-marca-item img {
     width: 90%;
     height: 15%;
+}
+
+.logo-marca img {
+    width:300px
 }
 
 .btn-summit2 {
@@ -520,15 +536,16 @@
 
 /* section F */
 .containerF {
-    width: 102%;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 50vh;
 }
 
 .rowF {
+    background-color: var(--PrimarioClaro);
     text-align: center;
     width: 100%;
-    background-color: var(--PrimarioClaro);
-    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
 }
 
 .rowF h2 {
@@ -577,7 +594,7 @@
 }
 
 .sponsor {
-    width: 230px;
+    width: 500px;
     margin: 10px;
     padding: 15px;
     border: 1px solid #ddd;
