@@ -168,7 +168,7 @@ $conn->close();
                             </span>
                         <?php endif; ?>
                         <br>
-                        <span><a href="">Forgot your password?</a></span>
+                        <!-- <span><a href="">Forgot your password?</a></span> -->
                         <br><br>
                         <button id="btn-logging" class="btn-logging">INICIAR</button>
                     </form>
