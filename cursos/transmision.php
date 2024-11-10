@@ -163,8 +163,8 @@ if ($resultinfoCurso->num_rows > 0) {
     function startLogInterval() {
         clearInterval(logInterval);
         logUserActivity(); // Registrar inmediatamente
-        logInterval = setInterval(logUserActivity, 30000); // 30 segundos en milisegundos para pruebas
-        // logInterval = setInterval(logUserActivity, 1800000); // 30 minutos en milisegundos para producción
+        //logInterval = setInterval(logUserActivity, 30000); // 30 segundos en milisegundos para pruebas
+        logInterval = setInterval(logUserActivity, 1800000); // 30 minutos en milisegundos para producción
     }
 
     function logUserActivity() {
