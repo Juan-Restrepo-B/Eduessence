@@ -137,7 +137,7 @@ if ($resultinfoCurso->num_rows > 0) {
         <section class="pd-10 tp-1 white w-100">
             <?php if ($aprenderas != null) { ?>
                 <div class="contenido-aprenderas">
-                    <h2>Contenido <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <h2>CONTENIDO DEL <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
                     <ul>
                         <?php foreach ($temasAprender as $index => $temaAprender): ?>
                             <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
@@ -150,7 +150,7 @@ if ($resultinfoCurso->num_rows > 0) {
             <?php } ?>
             <?php if ($temas != null) { ?>
                 <div class="course-content tp-3 ">
-                    <h2>Temario del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <h2>TEMARIO DEL <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
                     <?php
                     echo '<div class="course-content">';
 
@@ -184,7 +184,7 @@ if ($resultinfoCurso->num_rows > 0) {
             <?php } ?>
             <?php if ($conferencista != null) { ?>
                 <div class="contenido-aprenderas">
-                    <h2>Conferencistas invitados del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <h2>CONFERENCISTAS INVITADOS AL <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
                     <ul>
                         <?php foreach ($conferencistaCurso as $index => $confe): ?>
                             <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
