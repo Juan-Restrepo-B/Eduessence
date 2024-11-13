@@ -184,7 +184,7 @@ if ($resultinfoCurso->num_rows > 0) {
             <?php } ?>
             <?php if ($conferencista != null) { ?>
                 <div class="contenido-aprenderas">
-                    <h2>conferencista del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
+                    <h2>Conferencistas invitados del <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
                     <ul>
                         <?php foreach ($conferencistaCurso as $index => $confe): ?>
                             <li class="<?php echo $index >= 6 ? 'extra' : ''; ?>">
