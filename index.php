@@ -251,6 +251,9 @@
                             <div class="logo-marca">
                                 <img src="img/logos/D-Foot.png" alt="">
                             </div>
+                            <div class="logo-marca">
+                            <img src="img/logos/SIPEHA.png" alt="">
+                            </div>
                             <!-- <div class="logo-marca-item">
                                 <img src="img/logos/Colombia_UniversidadSimonBolivar.png" alt="">
                             </div> -->
@@ -267,6 +270,26 @@
                         <br><br>
                         <button class="btn-secundary" type="button" name="close"
                             onclick="ocultarFormulario()">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="patrocinadores">
+                <h2>PATROCINADORES SIMPOSIO VIRTUAL 2024</h2>
+                <div class="gallery">
+
+                    <div class="sponsor">
+                        <img src="img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
+                            alt="Patrocinador 6">
+                        <!-- <h2>Patrocinador 2</h2>
+                            <p>Descripción del patrocinador 2.</p>
+                            <a href="#">Visitar sitio web</a> -->
+                    </div>
+
+                    <div class="sponsor">
+                        <img src="img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
+                        <!-- <h2>Patrocinador 2</h2>
+                            <p>Descripción del patrocinador 2.</p>
+                            <a href="#">Visitar sitio web</a> -->
                     </div>
                 </div>
             </div>
@@ -301,91 +324,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="patrocinadores">
-                <h2>PATROCINADORES SIMPOSIO VIRTUAL 2024</h2>
-                <div class="gallery">
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
-                            alt="Patrocinador 6">
-                        <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
-                        <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
-                    </div>
-
-                    <!-- <div class="sponsor">
-                        <img src="img/patrocinadores/Logo_Essity-01_2_-removebg-preview.png" alt="Patrocinador 8">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/LOGO_CERAVE-1-removebg-preview CORTA.png" alt="Patrocinador 5">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/LogoViva1AIPS_page-0001-removebg-preview.png" alt="Patrocinador 9">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/cardynal-removebg-preview.png" alt="Patrocinador 1">
-                        <h2>Patrocinador 1</h2>
-                            <p>Descripción del patrocinador 1.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/innovacure-removebg-preview.png" alt="Patrocinador 4">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/HUMAX-removebg-preview.png" alt="Patrocinador 3">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/novo_nordisk-removebg-preview.png" alt="Patrocinador 10">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/logo_diabetrics-removebg-preview.png" alt="Patrocinador 7">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="img/patrocinadores/VICMEGA-removebg-preview.png" alt="Patrocinador 12">
-                        <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a>
-                    </div> -->
-                </div>
-            </div>
-            </div>
             </div>
         </section>
     </main>

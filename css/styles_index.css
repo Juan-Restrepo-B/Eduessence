@@ -488,6 +488,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo-marca-item {
@@ -541,7 +542,6 @@
 }
 
 .rowF {
-    background-color: var(--PrimarioClaro);
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -594,7 +594,7 @@
 }
 
 .sponsor {
-    width: 500px;
+    width: 400px;
     margin: 10px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -602,6 +602,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .sponsor img {
@@ -674,4 +676,8 @@
     width: 90%;
     height: 80%;
     border-radius: 10px;
+}
+
+.patrocinadores {
+    background-color: var(--PrimarioClaro);
 }
