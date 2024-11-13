@@ -241,8 +241,7 @@
                     </div>
                     <div class="derE">
                         <div class="infoE">
-                            <h2>SIMPOSIO EDUESSENCE 2024 PIE DIABETICO,
-                                HERIDAS COMPLEJAS Y SUS COMORBILIDADES</h2>
+                            <h2>SIMPOSIO VIRTUAL EDUESSENCE DE PIE DIABETICO 2024</h2>
                         </div>
                         <br>
                         <div class="logos-marcas">
