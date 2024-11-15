@@ -306,7 +306,7 @@
                                 SUMMIT 2023</button>
                         </div>
                     </div>
-                    <div class="derE">
+                    <div class="derE2">
                         <div class="infoE">
                             <h2>SUMMIT EDUESSENCE 2023 PIE DIABETICO,
                                 HERIDAS COMPLEJAS Y SUS COMORBILIDADES</h2>

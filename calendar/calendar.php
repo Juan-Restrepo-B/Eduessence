@@ -40,6 +40,61 @@ $sql = "SELECT
 	FROM Calendar_Principal WHERE cal_fecha_in >= CONVERT_TZ(NOW(), '+00:00', '-05:00')";
 $resultado = $con->query($sql);
 ?>
+<style>
+	:root {
+		--Primario: #004aad;
+		--PrimarioClaro: #a2caff;
+		--SecundarioRojo: #d13633;
+		--SecundarioAmarrillo: #ecad43;
+		--Blanco: #FFF;
+		--Gris: #535353;
+		--Negro: #000;
+
+		--FuentePrincipal: 'Montserrat', sans-serif;
+		--FuenteSecundaria: ;
+
+		--PrimarioA40: rgba(0, 75, 173, 0.4);
+		--SecundarioRojoA40: rgba(209, 54, 51, 0.4);
+
+		--navbar-size: 50px;
+		--icon-size: 25px;
+	}
+
+	/*scroll */
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: var(--Secundario);
+		border-left: 2px solid var(--Primario);
+	}
+
+	::-webkit-scrollbar-thumb:before {
+		content: "↑";
+		color: var(--Primario);
+		font-size: 12px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: var(--Primario);
+		border-radius: 20px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		transition: background-color 0.2s ease;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: var(--Primario);
+	}
+
+
+	@media (max-width: 768px) {
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+		}
+	}
+</style>
 
 <body>
 
@@ -52,12 +107,12 @@ $resultado = $con->query($sql);
 			?>
 
 			<div class="row row-striped">
-			<div class="col-2 text-center ">
-				<!--ingresar el dia -->
-				<h1 class="display-4 "><span class="badge date-green"><?php echo $mostrar['Dia'] ?></span></h1>
-				<!--Ingresa las tres primeras iniciales del mes-->
-				<h2><?php echo $mesInCapitalizado ?></h2>
-			</div>
+				<div class="col-2 text-center ">
+					<!--ingresar el dia -->
+					<h1 class="display-4 "><span class="badge date-green"><?php echo $mostrar['Dia'] ?></span></h1>
+					<!--Ingresa las tres primeras iniciales del mes-->
+					<h2><?php echo $mesInCapitalizado ?></h2>
+				</div>
 				<div class="col-10">
 					<!--Ingresa nombre titulo de la charla-->
 					<h3 class="text-uppercase"><strong>
@@ -100,14 +155,14 @@ $resultado = $con->query($sql);
 	</div>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script>
-    document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-    });
+		document.addEventListener('contextmenu', function (e) {
+			e.preventDefault();
+		});
 
-    document.addEventListener('selectstart', function (e) {
-        e.preventDefault();
-    });
-</script>
+		document.addEventListener('selectstart', function (e) {
+			e.preventDefault();
+		});
+	</script>
 
 </body>
 

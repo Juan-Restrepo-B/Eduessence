@@ -65,6 +65,66 @@
     align-items: center;
 }
 
+.slider {
+    width: 33vw;
+    height: 512px;
+    border-radius: 7px;
+}
+
+.slide-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    padding: 30px;
+    border-radius: 7px;
+    height: 100%;
+    animation: transition;
+    animation-duration: 4s;
+}
+
+.slide-background {
+    height: 100%;
+    background-color: var(--Primario);
+    padding: 15px;
+    box-shadow: 0 0 15px gray;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.bg-secundario {
+    background-color: var(--SecundarioRojo);
+}
+
+@keyframes transition {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    90% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+.sub-slider {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .sub-slider h2 {
     font-size: 42px;
 }
@@ -86,6 +146,104 @@
 .txt p {
     font-size: 2.1rem;
 }
+
+.txt1 p {
+    font-size: 2rem;
+}
+
+/* Estilos responsivos para resoluciones por debajo de 1440x900 */
+
+@media (max-width: 900px) {
+    .slider {
+        width: 80vw;
+        height: auto;
+    }
+
+    .slide-content {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .sub-slider h2 {
+        font-size: 24px;
+    }
+
+    .txt p,
+    .txt1 p {
+        font-size: 1.2rem;
+    }
+
+    .left-gift {
+        display: none;
+    }
+
+    .rowA {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .rowB3,
+    .fondB3,
+    .containerRowB3 {
+        display: none;
+    }
+
+    .list-rowB {
+        font-size: 2rem;
+    }
+
+    .titleB3,
+    .titleB4 {
+        font-size: 2.5rem;
+    }
+
+    .rowB4 {
+        width: 80%
+    }
+
+    .containerRowB4 h2 {
+        text-align: center;
+    }
+
+    .rowC {
+        flex-direction: column;
+    }
+
+    .tilteC {
+        width: 100%;
+    }
+
+    .rowE {
+        flex-direction: column;
+    }
+}
+
+.sub-slider h2 {
+    font-size: 42px;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.slide-content p {
+    text-align: justify;
+    color: var(--Blanco);
+}
+
+.txt p {
+    font-size: 2.1rem;
+}
+
 .txt1 p {
     font-size: 2rem;
 }
@@ -168,7 +326,7 @@
 /* section A */
 .containerA {
     position: relative;
-    height: 560px;
+    /* height: 560px; */
 }
 
 .rowA {
@@ -257,15 +415,25 @@
     border-radius: 7px;
 }
 
-.rowB3 {
-    width: 40%;
-    height: 100%;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+@media (min-width: 770px) {
+    .rowB3 {
+        width: 40%;
+        height: 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .rowB4 {
+        width: 60%;
+    }
+
+    .containerRowB4 h2 {
+        text-align: left;
+    }
 }
 
 .fondB4 {
@@ -278,7 +446,6 @@
 }
 
 .rowB4 {
-    width: 60%;
     height: 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -294,9 +461,6 @@
     width: 85%;
 }
 
-.containerRowB4 h2 {
-    text-align: left;
-}
 
 .optionB3 {
     width: 80%;
@@ -333,7 +497,6 @@
 
 .titleB3,
 .titleB4 {
-    font-size: 3.5rem;
     text-align: center;
     color: var(--Blanco);
     margin-bottom: 20px;
@@ -344,18 +507,81 @@
     text-decoration: none;
     font-weight: bold;
     list-style: none;
-    font-size: 3rem;
     cursor: pointer;
+}
+
+@media (min-width: 770px) {
+    .list-rowB {
+        font-size: 3rem;
+    }
+
+    .titleB3,
+    .titleB4 {
+        font-size: 3.5rem;
+    }
+
+    .containerC {
+        height: 40vh;
+    }
+
+    .rowC {
+        flex-direction: row;
+    }
+
+    .tilteC {
+        width: 30%;
+    }
+
+    .containerE {
+        height: 50vh;
+    }
+
+    .izqE {
+        width: 30%;
+    }
+
+    .derE {
+        width: 70%;
+        height: 50vh;
+    }
 }
 
 .list-inline-item {
     margin: 10px;
 }
 
+@media (max-width: 400px) {
+    .derE2 {
+        display: none;
+    }
+
+    .optionL ul {
+        display: none;
+    }
+}
+
+@media (min-width: 401px) {
+    .derE2 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .izqF {
+        width: 30%;
+        height: 50vh;
+    }
+
+    .containerF {
+        height: 50vh;
+    }
+}
+
 /* section C */
 .containerC {
     width: 100%;
-    height: 40vh;
 }
 
 .rowC {
@@ -365,13 +591,11 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .tilteC {
-    width: 30%;
     text-align: center;
 }
 
@@ -437,7 +661,6 @@
 /* section E */
 .containerE {
     width: 100%;
-    height: 50vh;
 }
 
 .rowE {
@@ -448,7 +671,6 @@
 }
 
 .izqE {
-    width: 30%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -456,15 +678,15 @@
     justify-content: center;
     align-items: center;
 }
+
 .izqF {
-    width: 30%;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
 }
+
 .izqE img {
     width: 60%;
 }
@@ -503,7 +725,7 @@
 }
 
 .logo-marca img {
-    width:300px
+    width: 300px
 }
 
 .btn-summit2 {
@@ -525,8 +747,6 @@
 }
 
 .derE {
-    width: 70%;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -534,11 +754,9 @@
     align-items: center;
 }
 
-
 /* section F */
 .containerF {
     width: 100%;
-    height: 50vh;
 }
 
 .rowF {
@@ -617,13 +835,83 @@
 }
 
 .sponsor p {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .sponsor a {
     display: inline-block;
     margin-top: 10px;
     padding: 5px 10px;
+
+    .rowF {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .rowF h2 {
+        color: var(--Primario);
+        font-size: 4rem;
+    }
+
+    .rowF h3 {
+        color: var(--Blanco);
+    }
+
+    .patrocinadores h2 {
+        color: var(--Primario);
+        font-size: 4rem;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .videos {
+        padding-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .videos video {
+        border-radius: 7px;
+    }
+
+    /* Estilos para tablets */
+    @media (max-width: 1024px) {
+
+        .rowF h2,
+        .patrocinadores h2 {
+            font-size: 3rem;
+        }
+
+        .videos {
+            flex-direction: column;
+        }
+
+        .videos video {
+            width: 80%;
+        }
+    }
+
+    /* Estilos para móviles */
+    @media (max-width: 768px) {
+
+        .rowF h2,
+        .patrocinadores h2 {
+            font-size: 2rem;
+        }
+
+        .videos video {
+            width: 100%;
+        }
+    }
+
     background-color: #333;
     color: #fff;
     text-decoration: none;
@@ -641,37 +929,39 @@
     color: white;
     display: flex;
     z-index: 2;
-  }
-  .order {
+}
+
+.order {
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .formulario {
+.formulario {
     position: fixed;
     top: 20px;
     width: 95%;
     height: 95%;
     text-align: center;
     display: block;
-    margin: 0  auto;
+    margin: 0 auto;
     background-color: black;
     border-radius: 15px;
-  }
+}
 
-  .formulario h2{
+.formulario h2 {
     padding-top: 35px;
-  }
+}
 
-  .btn-secundary {
+.btn-secundary {
     padding: 10px;
     border-radius: 10px;
     border-color: red;
     background: black;
     color: white;
-  }
+}
+
 .formulario iframe {
     width: 90%;
     height: 80%;
