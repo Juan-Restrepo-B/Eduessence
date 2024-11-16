@@ -786,7 +786,7 @@
 }
 
 
-@media (min-width: 1026px) {
+@media (min-width: 1385px) {
     .izqE {
         width: 30%;
         height: 50vh;
@@ -801,7 +801,7 @@
     }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1385px) {
 
     .rowF h2,
     .patrocinadores h2 {
