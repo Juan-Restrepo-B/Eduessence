@@ -215,7 +215,7 @@ input {
 }
 
 @media (min-width: 1024px) {
-    .panel-active__texto {
+    .panel-active__texto h2 {
         font-size: 1.5rem;
     }
 }
