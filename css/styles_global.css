@@ -38,10 +38,15 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
   line-height: 1.5;
   overflow-x: hidden;
   font-family: var(--FuentePrincipal);
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 1.6rem;
+  }
 }
 
 main {

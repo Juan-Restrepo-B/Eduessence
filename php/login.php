@@ -172,6 +172,8 @@ $conn->close();
                         <br><br> -->
                         <button id="btn-logging" class="btn-logging">INICIAR</button>
                     </form>
+                    <br>
+                    <button class="btn-NewCuenta oc" id="crearCuenta">REGISTRARSE</button>
                 </div>
             </div>
         </section>
@@ -241,6 +243,15 @@ $conn->close();
 
     document.addEventListener('selectstart', function (e) {
         e.preventDefault();
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const btnNewCuenta = document.getElementById("crearCuenta");
+
+        btnNewCuenta.addEventListener("click", function() {
+            window.location.href = "create.php";
+        });
     });
 </script>
 

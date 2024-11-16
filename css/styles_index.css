@@ -151,77 +151,6 @@
     font-size: 2rem;
 }
 
-/* Estilos responsivos para resoluciones por debajo de 1440x900 */
-
-@media (max-width: 900px) {
-    .slider {
-        width: 80vw;
-        height: auto;
-    }
-
-    .slide-content {
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .sub-slider h2 {
-        font-size: 24px;
-    }
-
-    .txt p,
-    .txt1 p {
-        font-size: 1.2rem;
-    }
-
-    .left-gift {
-        display: none;
-    }
-
-    .rowA {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .rowB3,
-    .fondB3,
-    .containerRowB3 {
-        display: none;
-    }
-
-    .list-rowB {
-        font-size: 2rem;
-    }
-
-    .titleB3,
-    .titleB4 {
-        font-size: 2.5rem;
-    }
-
-    .rowB4 {
-        width: 80%
-    }
-
-    .containerRowB4 h2 {
-        text-align: center;
-    }
-
-    .rowC {
-        flex-direction: column;
-    }
-
-    .tilteC {
-        width: 100%;
-    }
-
-    .rowE {
-        flex-direction: column;
-    }
-}
-
 .sub-slider h2 {
     font-size: 42px;
 }
@@ -415,27 +344,6 @@
     border-radius: 7px;
 }
 
-@media (min-width: 770px) {
-    .rowB3 {
-        width: 40%;
-        height: 100%;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    .rowB4 {
-        width: 60%;
-    }
-
-    .containerRowB4 h2 {
-        text-align: left;
-    }
-}
-
 .fondB4 {
     position: absolute;
     width: 90%;
@@ -510,73 +418,9 @@
     cursor: pointer;
 }
 
-@media (min-width: 770px) {
-    .list-rowB {
-        font-size: 3rem;
-    }
-
-    .titleB3,
-    .titleB4 {
-        font-size: 3.5rem;
-    }
-
-    .containerC {
-        height: 40vh;
-    }
-
-    .rowC {
-        flex-direction: row;
-    }
-
-    .tilteC {
-        width: 30%;
-    }
-
-    .containerE {
-        height: 50vh;
-    }
-
-    .izqE {
-        width: 30%;
-    }
-
-    .derE {
-        width: 70%;
-        height: 50vh;
-    }
-}
 
 .list-inline-item {
     margin: 10px;
-}
-
-@media (max-width: 400px) {
-    .derE2 {
-        display: none;
-    }
-
-    .optionL ul {
-        display: none;
-    }
-}
-
-@media (min-width: 401px) {
-    .derE2 {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .izqF {
-        width: 30%;
-        height: 50vh;
-    }
-
-    .containerF {
-        height: 50vh;
-    }
 }
 
 /* section C */
@@ -671,7 +515,6 @@
 }
 
 .izqE {
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -882,36 +725,6 @@
         border-radius: 7px;
     }
 
-    /* Estilos para tablets */
-    @media (max-width: 1024px) {
-
-        .rowF h2,
-        .patrocinadores h2 {
-            font-size: 3rem;
-        }
-
-        .videos {
-            flex-direction: column;
-        }
-
-        .videos video {
-            width: 80%;
-        }
-    }
-
-    /* Estilos para móviles */
-    @media (max-width: 768px) {
-
-        .rowF h2,
-        .patrocinadores h2 {
-            font-size: 2rem;
-        }
-
-        .videos video {
-            width: 100%;
-        }
-    }
-
     background-color: #333;
     color: #fff;
     text-decoration: none;
@@ -970,4 +783,199 @@
 
 .patrocinadores {
     background-color: var(--PrimarioClaro);
+}
+
+
+@media (min-width: 1026px) {
+    .izqE {
+        width: 30%;
+        height: 50vh;
+    }    
+    .containerE {
+        height: 50vh;
+    }
+
+    .derE {
+        width: 70%;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    .rowF h2,
+    .patrocinadores h2 {
+        font-size: 3rem;
+    }
+
+    .videos {
+        flex-direction: column;
+    }
+
+    .videos video {
+        width: 80%;
+    }
+
+    .rowE {
+        flex-direction: column;
+    }
+
+    .left-gift {
+        display: none;
+    }
+
+    .slider {
+        width: 60vw;
+        height: 418px;
+        border-radius: 7px;
+    }
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+
+    .rowF h2,
+    .patrocinadores h2 {
+        font-size: 2rem;
+    }
+
+    .videos video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .derE2 {
+        display: none;
+    }
+
+    .optionL ul {
+        display: none;
+    }
+}
+
+@media (min-width: 431px) {
+    .derE2 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .izqF {
+        width: 30%;
+        height: 50vh;
+    }
+
+    .containerF {
+        height: 50vh;
+    }
+}
+
+@media (min-width: 770px) {
+    .list-rowB {
+        font-size: 3rem;
+    }
+
+    .titleB3,
+    .titleB4 {
+        font-size: 3.5rem;
+    }
+
+    .containerC {
+        height: 40vh;
+    }
+
+    .rowC {
+        flex-direction: row;
+    }
+
+    .tilteC {
+        width: 30%;
+    }
+}
+
+@media (min-width: 770px) {
+    .rowB3 {
+        width: 40%;
+        height: 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .rowB4 {
+        width: 60%;
+    }
+
+    .containerRowB4 h2 {
+        text-align: left;
+    }
+}
+
+@media (max-width: 951px) {
+    .slider {
+        width: 80vw;
+        height: auto;
+    }
+
+    .slide-content {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .sub-slider h2 {
+        font-size: 24px;
+    }
+
+    .txt p,
+    .txt1 p {
+        font-size: 1.2rem;
+    }
+
+    
+
+    .rowA {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .rowB3,
+    .fondB3,
+    .containerRowB3 {
+        display: none;
+    }
+
+    .list-rowB {
+        font-size: 2rem;
+    }
+
+    .titleB3,
+    .titleB4 {
+        font-size: 2.5rem;
+    }
+
+    .rowB4 {
+        width: 80%
+    }
+
+    .containerRowB4 h2 {
+        text-align: center;
+    }
+
+    .rowC {
+        flex-direction: column;
+    }
+
+    .tilteC {
+        width: 100%;
+    }
 }
