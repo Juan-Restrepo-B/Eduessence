@@ -216,12 +216,6 @@ input {
 
 @media (min-width: 1024px) {
     .panel-active__texto h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 1400px) {
-    .panel-active__texto h2 {
         font-size: 2.5rem;
     }
 }
