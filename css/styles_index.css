@@ -808,12 +808,8 @@
         font-size: 3rem;
     }
 
-    .videos {
-        flex-direction: column;
-    }
-
     .videos video {
-        width: 80%;
+        width: 100%;
     }
 
     .rowE {
