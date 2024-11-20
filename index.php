@@ -248,9 +248,9 @@
                             <!-- <div class="logo-marca-item">
                                 <img src="img/logos/Alcaldia-Barranquilla.png" alt="">
                             </div> -->
-                            <div class="logo-marca">
+                            <!-- <div class="logo-marca">
                                 <img src="img/logos/D-Foot.png" alt="">
-                            </div>
+                            </div> -->
                             <div class="logo-marca">
                             <img src="img/logos/SIPEHA.png" alt="">
                             </div>
