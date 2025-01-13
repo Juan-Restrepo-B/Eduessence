@@ -1,11 +1,15 @@
+<?php
+include_once 'model/global/clear_cache.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="68x68" href="img/logo1.png">
-    <link rel="stylesheet" href="css/styles_index.css">
+    <link rel="icon" type="image/png" sizes="68x68" href="view/img/logo1.png">
+    <link rel="stylesheet" href="view/css/index/styles_index.css">
     <title>EDUESSENCE</title>
 </head>
 
@@ -13,11 +17,11 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="img/logo.png" alt="">
+                <img src="view/img/logo.png" alt="">
             </div>
             <div class="option">
                 <div class="start">
-                    <button class="btn-login" onclick="redireccionarALogin()">INICIAR SESIÓN</button>
+                    <button class="btn-login" onclick="redirectLogin()">INICIAR SESIÓN</button>
                 </div>
                 <div class="main">
                     <input type="checkbox" id="btn-main" class="btn-main">
@@ -29,10 +33,10 @@
                 </div>
             </div>
         </nav>
-        <div class="fondMain"></div>
+        <div class="background-menu"></div>
         <ul class="ul-main" id="main-menu">
             <h2>MENÚ</h2>
-            <li><a href="index.php">INICIO</a></li>
+            <li><a href="inicio">INICIO</a></li>
             <li><a href="#services">SERVICIOS</a></li>
             <li><a href="#">CUMBRES</a></li>
             <li><a href="#">CURSOS</a></li>
@@ -44,19 +48,7 @@
                 <div class="rowA">
 
                     <div class="left">
-                        <img class="left-gift" src="img/index/section1/fondogif.gif" alt="companylogo">
-                        <!-- <div class="contecS">
-                            <div class="slider">
-                                <div id="slide-tile1" class="slide titleS">
-                                    <h2>¿QUE ES EL SUMMIT?</h2>
-                                </div>
-                                <div id="slide-title2" class="slide titleS">
-                                    <h2>¿QUIENES SOMOS?</h2>
-                                </div>
-                                
-                                
-                            </div>
-                        </div> -->
+                        <img class="left-gift" src="view/img/index/section1/fondogif.gif" alt="companylogo">
                     </div>
                     <div class="center">
                         <div class="sub-slider">
@@ -105,41 +97,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="slider">
-                            <div class="slide">
-                                <div class="info">
-                                    <h2>Es un espacio dedicado al crecimiento
-                                        profesional tanto teórico como práctico
-                                        por intermedio de la educación continuada
-                                        del personal médico y paramédico.
-                                        Rompiendo paradigmas al compartir
-                                        experiencias con los pares de otras latitudes,
-                                        en iguales o parecidas limitantes.
-                                        Así mismo, la correlación con la
-                                        medicina basada en la evidencia y el
-                                        conocimiento de nuevas tendencias en
-                                        el cuidado integral de las personas.</h2>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="info2">
-                                    <h2>Edu-Essence® Es una compañía que se
-                                        especializa en educación para el trabajo
-                                        y desarrollo humano,teniendo como objetivos,
-                                        promover la formación en la practica del trabajo
-                                        mediante el desarrollo de conocimientos
-                                        técnicos y habilidades para el aprovechamiento
-                                        de competencias laborales especificas,
-                                        contribuyendo al proceso deformación integral
-                                        y permanente en aspectos académicos
-                                        o laborales, mediante programas flexibles
-                                        y coherentes con las necesidades
-                                        y expectativas de la persona, la sociedad,
-                                        las demandas del mercado laboral,
-                                        del sector productivo y del entorno.</h2>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
                 </div>
@@ -159,11 +116,11 @@
                                 </div>
                                 <div class="opcionB3">
                                     <div class="summit">
-                                        <button class="btn-summit" onclick="redireccionarASummit21()">SUMMIT
+                                        <button class="btn-summit" onclick="redirectSummit21()">SUMMIT
                                             2021</button>
                                     </div>
                                     <div class="summit">
-                                        <button class="btn-summit" onclick="redireccionarASummit23()">SUMMIT
+                                        <button class="btn-summit" onclick="redirectLogin()">SUMMIT
                                             2023</button>
                                     </div>
                                 </div>
@@ -198,7 +155,7 @@
                         <h2><span>EVENTOS</span></h2>
                     </div>
                     <div class="calendar">
-                        <iframe src="calendar/calendar.php" frameborder="0"></iframe>
+                        <iframe src="view/pages/calendar/calendar.php" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -233,10 +190,10 @@
                 <div class="rowE">
                     <div class="izqE">
                         <div class="logoE">
-                            <img src="img/logos/Simposio2024.jpeg" alt="">
+                            <img src="view/img/logos/Simposio2024.jpeg" alt="">
                         </div>
                         <div class="summit">
-                            <button class="btn-summit2" onclick="inscribirme()">INSCRIBIRME</button>
+                            <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
                         </div>
                     </div>
                     <div class="derE">
@@ -245,31 +202,22 @@
                         </div>
                         <br>
                         <div class="logos-marcas">
-                            <!-- <div class="logo-marca-item">
-                                <img src="img/logos/Alcaldia-Barranquilla.png" alt="">
-                            </div> -->
-                            <!-- <div class="logo-marca">
-                                <img src="img/logos/D-Foot.png" alt="">
-                            </div> -->
                             <div class="logo-marca">
-                            <img src="img/logos/SIPEHA.png" alt="">
+                                <img src="view/img/logos/SIPEHA.png" alt="">
                             </div>
-                            <!-- <div class="logo-marca-item">
-                                <img src="img/logos/Colombia_UniversidadSimonBolivar.png" alt="">
-                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="formularioEmergente" class="formularioEmergente" style="display: none;">
+            <div id="pop-up-memories-summit-2023" class="pop-up-memories-summit-2023" style="display: none;">
                 <div class="order">
                     <div class="formulario">
                         <h2>RECUERDOS SUMMIT 2023</h2>
                         <br>
-                        <iframe src="img/album_summit.htm" frameborder="0"></iframe>
+                        <iframe src="view/img/album_summit.htm" frameborder="0"></iframe>
                         <br><br>
                         <button class="btn-secundary" type="button" name="close"
-                            onclick="ocultarFormulario()">CERRAR</button>
+                            onclick="hidePopUp()">CERRAR</button>
                     </div>
                 </div>
             </div>
@@ -278,18 +226,12 @@
                 <div class="gallery">
 
                     <div class="sponsor">
-                        <img src="img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
+                        <img src="view/img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
                             alt="Patrocinador 6">
-                        <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
                     </div>
 
                     <div class="sponsor">
-                        <img src="img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
-                        <!-- <h2>Patrocinador 2</h2>
-                            <p>Descripción del patrocinador 2.</p>
-                            <a href="#">Visitar sitio web</a> -->
+                        <img src="view/img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
                     </div>
                 </div>
             </div>
@@ -299,10 +241,10 @@
                 <div class="rowF">
                     <div class="izqF">
                         <div class="logoE">
-                            <img src="img/logos/Summin2023.png" alt="">
+                            <img src="view/img/logos/Summin2023.png" alt="">
                         </div>
                         <div class="summit">
-                            <button class="btn-summit2" onclick="mostrarFormulario()" id="mostrarFormulario">RECUERDOS
+                            <button class="btn-summit2" onclick="enablePopUp()" id="mostrarFormulario">RECUERDOS
                                 SUMMIT 2023</button>
                         </div>
                     </div>
@@ -313,13 +255,13 @@
                         </div>
                         <div class="logos-marcas">
                             <div class="logo-marca-item">
-                                <img src="img/logos/Alcaldia-Barranquilla.png" alt="">
+                                <img src="view/img/logos/Alcaldia-Barranquilla.png" alt="">
                             </div>
                             <div class="logo-marca-item">
-                                <img src="img/logos/D-Foot.png" alt="">
+                                <img src="view/img/logos/D-Foot.png" alt="">
                             </div>
                             <div class="logo-marca-item">
-                                <img src="img/logos/Colombia_UniversidadSimonBolivar.png" alt="">
+                                <img src="view/img/logos/Colombia_UniversidadSimonBolivar.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -332,13 +274,13 @@
             <div class="row">
                 <div class="optionL">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="index.php">INICIO</a></li>
+                        <li class="list-inline-item"><a href="/inicio">INICIO</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#services">SERVICIOS</a></li>
+                        <li class="list-inline-item"><a href="/inicio#services">SERVICIOS</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
                         <li class="list-inline-item"><a href="#">CUMBRES</a></li>
                         <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#form-contact">CURSOS</a></li>
+                        <li class="list-inline-item"><a href="#">CURSOS</a></li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">© Juan Restrepo 2023. All Rights Reserved.</p>
                     <p class="text-muted small mb-4 mb-lg-0">© Diego Bastidas 2023. All Rights Reserved.</p>
@@ -361,7 +303,7 @@
                                     style="fill: rgba(255, 255, 255, 1)">
                                     <path
                                         d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z">
-                                    </path>2
+                                    </path>
                                     <circle cx="11.994" cy="11.979" r="3.003"></circle>
                                 </svg>
                             </a>
@@ -375,73 +317,21 @@
                                     </path>
                                 </svg>
                             </a>
-                            </i>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 </body>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/redirect.js"></script>
-<script src="js/slider.js"></script>
-<script src="js/nav.js"></script>
-<script defer type="text/javascript">
-    document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-    });
 
-    document.addEventListener('selectstart', function (e) {
-        e.preventDefault();
-    });
-    // Obtén el elemento de video
-    var video = document.getElementById("miVideo");
+<script defer src="view/js/global/redirect.js"></script>
+<script defer src="view/js/global/dropdown_menu.js"></script>
+<script defer src="view/js/global/screen_lock.js"></script>
 
-    // Agrega un manejador de eventos para el clic en el video
-    video.addEventListener("click", function () {
-        if (video.paused) {
-            // Si el video está pausado, reproducelo
-            video.play();
-        } else {
-            // Si el video se está reproduciendo, ponlo en pausa
-            video.pause();
-        }
-    });
-
-    // Agrega un manejador de eventos para el doble clic en el video
-    video.addEventListener("dblclick", function () {
-        if (video.requestFullscreen) {
-            // Si el navegador admite la función de pantalla completa, entra en pantalla completa
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen(); // Firefox
-        } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen(); // Chrome, Safari y Opera
-        }
-    });
-
-    function mostrarFormulario() {
-        var formularioEmergente = document.getElementById("formularioEmergente");
-        formularioEmergente.style.display = "block";
-        formularioEmergente.style.zIndex = 3; // Un valor mayor que los videos
-    }
-
-    function ocultarFormulario() {
-        var formularioEmergente = document.getElementById("formularioEmergente");
-        formularioEmergente.style.display = "none";
-        formularioEmergente.style.zIndex = 2; // Restaura el valor original
-        window.onload();
-    }
-
-    function mostrarFormulario() {
-        var formularioEmergente = document.getElementById("formularioEmergente");
-        formularioEmergente.style.display = "block";
-        formularioEmergente.style.zIndex = 3; // Un valor mayor que los videos
-    }
-
-    function inscribirme() {
-    window.location.href = "php/login.php";
-}
-</script>
+<script src="view/js/index/slider.js"></script>
+<script src="view/js/index/pop-up.js"></script>
 
 </html>

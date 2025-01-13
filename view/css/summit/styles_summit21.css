@@ -1,0 +1,135 @@
+@import url(../styles_global.css);
+.test{
+    --Primario: #004aad;
+    --PrimarioClaro: #a2caff;
+    --SecundarioRojo: #d13633;
+    --SecundarioAmarrillo: #ecad43;
+    --Blanco: #FFF;
+    --Gris: #535353;
+    --Negro: #000;
+}
+/* :root {
+    --Primario: #004aad;
+    --PrimarioClaro: #a2caff;
+    --SecundarioRojo: #d13633;
+    --SecundarioAmarrillo: #ecad43;
+    --Blanco: #FFF;
+    --Gris: #535353;
+    --Negro: #000;
+
+    --FuentePrincipal: 'Montserrat', sans-serif;
+    --FuenteSecundaria: ;
+
+    --navbar-size: 50px;
+    --icon-size: 25px;
+} */
+/* general setting */
+h2{
+    font-size: 62px;
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+h3{
+    font-size: 32px;
+    text-align: center;
+}
+.container-row__text-p{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.max-900px{
+    max-width: 900px;
+}
+.c-gray{
+    color: var(--Gris);
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.main-content{
+    padding: 15px;
+}
+.main-left-side{
+    max-width: 900px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-left-side::after{
+    content: "";
+    height: 150px;
+    width: 5px;
+    display: block;
+    border-radius: 3px;
+    background-color: var(--Primario);
+    position: absolute;
+
+    top: 140px;
+    left: -1px;
+}
+.main-right-side{
+    border-radius:87% 13% 76% 24% / 19% 84% 16% 81%;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 271px);
+    width: 30vw;
+    background-color: var(--Primario);
+
+} 
+img{
+    object-fit: contain;
+    width: 80%;
+}
+.container-row__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#viewBtnRepCharlas{
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-color: var(--Primario);
+    background: none;
+    color: var(--Primario);
+    margin: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+#viewBtnRepCharlas:hover {
+    box-shadow: 0 0 20px var(--Primario);
+    text-shadow: 0 0 7px var(--Primario);
+}
+@media screen and (max-width: 1024px) {
+    .main-container{
+        display: block;
+    }
+    .main-right-side{
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+    #main-doc-img{
+        width: 50vw;
+    }
+}
+@media(max-width: 1024px) {
+    .main-left-side::after{
+    top: 10px;
+    left: -1px;
+}
+}
