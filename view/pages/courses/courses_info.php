@@ -53,6 +53,8 @@ if ($resultinfoCurso->num_rows > 0) {
 
     $fechInicio = $rowinfcurso["CURSO_FECHSTART"];
 
+    $precio = $rowinfcurso["INFO_PRECIO"]; 
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecuta la inserción
         $inscripcion = "INSERT INTO UN_CARRERA (CARRERA_USUARIO_NOMBRE, CARRERA_IDCURSO, CARRERA_FECHINIT, CARRERA_FECHVENC, CARRERA_CURESTADO, CARRERA_CERTESTADO, CARRERA_IDTIPARTICIPANTE)
@@ -113,6 +115,13 @@ if ($resultinfoCurso->num_rows > 0) {
                         </p>
                     </div>
                 </div>
+                <?php
+                    if($precio > 0){
+                        $precio = number_format($precio, 0, ',', '.');
+                    } else {
+                        $precio = "GRATIS";
+                    }
+                ?>
                 <div class="sponsor item-40">
                     <?php
                     $blob = $rowinfcurso['CURSO_LOGOIMG'];
@@ -124,14 +133,24 @@ if ($resultinfoCurso->num_rows > 0) {
                         <p>No se pudo cargar la imagen.</p>
                     <?php endif; ?>
                     <br>
+                    <h2 class="font10">Precio: <span class="red"><?php echo $precio; ?></span></h2>
+                    <br>
                     <?php
                     if ($valIdCurso == null) {
                         if ($fechaRegistro > $fechaActual) {
+                            if($precio > 0){
+                            ?>
+                                <form id="" method="POST" action="">
+                                    <button type="submit" class="btn">COMPRAR</button>
+                                </form>
+                            <?php
+                            }else{
                             ?>
                             <form id="inscripcionForm" method="POST" action="">
                                 <button type="submit" class="btn">INSCRIBIRSE</button>
                             </form>
                             <?php
+                            }
                         }
                     } else {
                         ?>
