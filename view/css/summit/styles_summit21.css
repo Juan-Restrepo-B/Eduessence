@@ -83,6 +83,7 @@ h3{
     border-radius:87% 13% 76% 24% / 19% 84% 16% 81%;
     flex: none;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 271px);
@@ -91,6 +92,11 @@ h3{
 
 } 
 img{
+    object-fit: contain;
+    width: 80%;
+}
+video{
+    border-radius: 20px;
     object-fit: contain;
     width: 80%;
 }
@@ -114,6 +120,25 @@ img{
     box-shadow: 0 0 20px var(--Primario);
     text-shadow: 0 0 7px var(--Primario);
 }
+
+.btn-summit2 {
+    width: 200px;
+    padding: 15px 20px;
+    border-radius: 7px;
+    border: solid 3px var(--Blanco);
+    background-color: var(--Primario);
+    color: var(--Blanco);
+    margin: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+
+.btn-summit2:hover {
+    box-shadow: 0 0 40px var(--PrimarioClaro);
+}
+
 @media screen and (max-width: 1024px) {
     .main-container{
         display: block;

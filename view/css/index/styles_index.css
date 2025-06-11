@@ -583,6 +583,7 @@
 /* section F */
 .containerF {
     width: 100%;
+    height: 100%;
 }
 
 .rowF {
@@ -765,6 +766,8 @@
 }
 
 .patrocinadores {
+    width: 100%;
+    height: 5px;
     background-color: var(--PrimarioClaro);
 }
 
@@ -848,7 +851,7 @@
     }
 
     .containerF {
-        height: 50vh;
+        /* height: 50vh; */
     }
 }
 

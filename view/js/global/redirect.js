@@ -12,3 +12,8 @@ function redirectLogin() {
 function redirectSummit21() {
     window.location.href = "summit_2021";
 }
+
+// Redirection to the 2021 summit
+function redirectSummit2025() {
+    window.location.href = "summit-2025";
+}

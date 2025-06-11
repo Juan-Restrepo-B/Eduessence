@@ -190,10 +190,50 @@ include_once 'model/global/clear_cache.php';
                 <div class="rowE">
                     <div class="izqE">
                         <div class="logoE">
-                            <img src="view/img/logos/Simposio2024.jpeg" alt="">
+                            <img src="view/img/logos/Simposio2025.jpeg" alt="">
                         </div>
                         <div class="summit">
                             <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
+                            <button class="btn-summit2" onclick="redirectSummit2025()">Mas Informacion</button>
+                        </div>
+                    </div>
+                    <div class="derE">
+                        <div class="infoE">
+                            <h2>PATROCINADORES SIMPOSIO 2025</h2>
+                        </div>
+                        <div class="gallery">
+
+                            <div class="sponsor">
+                                <img src="view/img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
+                                    alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor">
+                                <img src="view/img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pop-up-memories-summit-2023" class="pop-up-memories-summit-2023" style="display: none;">
+                <div class="order">
+                    <div class="formulario">
+                        <h2>RECUERDOS SUMMIT 2023</h2>
+                        <br>
+                        <iframe src="view/img/album_summit.htm" frameborder="0"></iframe>
+                        <br><br>
+                        <button class="btn-secundary" type="button" name="close" onclick="hidePopUp()">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="patrocinadores"></div>
+        </section>
+        <section>
+            <div class="containerF">
+                <div class="rowE">
+                    <div class="izqE">
+                        <div class="logoE">
+                            <img src="view/img/logos/Simposio2024.jpeg" alt="">
                         </div>
                     </div>
                     <div class="derE">
@@ -208,36 +248,6 @@ include_once 'model/global/clear_cache.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="pop-up-memories-summit-2023" class="pop-up-memories-summit-2023" style="display: none;">
-                <div class="order">
-                    <div class="formulario">
-                        <h2>RECUERDOS SUMMIT 2023</h2>
-                        <br>
-                        <iframe src="view/img/album_summit.htm" frameborder="0"></iframe>
-                        <br><br>
-                        <button class="btn-secundary" type="button" name="close"
-                            onclick="hidePopUp()">CERRAR</button>
-                    </div>
-                </div>
-            </div>
-            <div class="patrocinadores">
-                <h2>PATROCINADORES SIMPOSIO VIRTUAL 2024</h2>
-                <div class="gallery">
-
-                    <div class="sponsor">
-                        <img src="view/img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
-                            alt="Patrocinador 6">
-                    </div>
-
-                    <div class="sponsor">
-                        <img src="view/img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="containerF">
                 <div class="rowF">
                     <div class="izqF">
                         <div class="logoE">
