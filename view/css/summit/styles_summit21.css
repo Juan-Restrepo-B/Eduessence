@@ -86,10 +86,9 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 271px);
+    /* height: calc(100vh - 271px); */
     width: 30vw;
     background-color: var(--Primario);
-
 } 
 img{
     object-fit: contain;
@@ -98,7 +97,7 @@ img{
 video{
     border-radius: 20px;
     object-fit: contain;
-    width: 80%;
+    width: 60%;
 }
 .container-row__button{
     display: flex;
