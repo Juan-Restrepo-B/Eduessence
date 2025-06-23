@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Confirmar la transacción si ambas inserciones fueron exitosas
                     $conn->commit();
                     $_SESSION['useremail'] = $email; // Iniciar sesión automáticamente
-                    header("Location: /main.php"); // Redirigir a la página principal
+                    header("Location: /principal "); // Redirigir a la página principal
                     $stmt_user->close();
                     $stmt_user->close();
                     $stmt_person->close();
