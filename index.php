@@ -194,7 +194,7 @@ include_once 'model/global/clear_cache.php';
                         </div>
                         <div class="summit">
                             <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
-                            <button class="btn-summit2" onclick="redirectSummit2025()">Mas Informacion</button>
+                            <button class="btn-summit2" onclick="redirectSummit2025()">MAS INFORMACIÓN</button>
                         </div>
                     </div>
                     <div class="derE">

@@ -60,10 +60,10 @@
                         </p>
                     </div>
                     <div class="max-900px">
-                        <li>CURSO ESPECIALIZADO EN PODOLOGIA 6 Y 7 DE AGOSTO DE 2025</li>
-                        <li>CURSO ESPECUALIZADO EN UNINORTE 7 DE AGOSTO DE 2025</li>
+                        <li class="list" ><div class="negrilla"> PRE SUMMIT </div>CURSO ESPECIALIZADO EN PODOLOGIA 6 DE AGOSTO DE 2025<div class="negrilla"> EN UNINORTE</div></li>
+                        <li class="list"  ><div class="negrilla"> PRE SUMMIT </div>CURSO ESPECUALIZADO EN PODOLOGIA 7 DE AGOSTO DE 2025</li>
                         <li>SUMMIT EN PIE DIABETICO Y HERIDAS COMPLEJAS 7 Y 8 DE AGOSTO DE 2025</li>
-                        <p class="negrilla">LUGAR DEL EVENTO CENTRO DE CONVENCIONES BLUE GARDENS, BARRNQUILLA COLOMBIA</p>
+                        <p class="negrilla">LUGAR DEL EVENTO CENTRO DE CONVENCIONES BLUE GARDENS, BARRANQUILLA COLOMBIA</p>
                     </div>
                 </div>
 

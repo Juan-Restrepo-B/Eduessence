@@ -212,3 +212,9 @@ video {
 .negrilla {
     font-weight: bold   ;
 }
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
