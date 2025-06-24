@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="48x48" href="../img/logo1.png">
-    <link rel="stylesheet" href="view\css\summit\styles_summit21.css">
+    <link rel="stylesheet" href="view\css\summit\styles_summit25.css">
     <title>EDUESSENCE</title>
 </head>
 
@@ -42,24 +42,33 @@
         <section>
             <div class="main-container">
                 <div class="main-content main-left-side">
-
-                    <div class="container-row__title">
-                        <h2 class="container-row__title-h2">SUMMIT <br> <span>2025</span></h2>
+                    <div class="container-row">
+                        <div class="container-row__title">
+                            <h2 class="container-row__title-h2">SUMMIT <br> <span>2025</span></h2>
+                        </div>
+                        <div class="logos-marcas">
+                            <div class="logo-marca">
+                                <img src="view/img/logos/SIPEHA.png" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="container-row__text">
-                        <p class="container-row__text-p">
+                        <p class="container-row__text-p c-gray">
                             Es un espacio dedicado al crecimiento profesional tanto teórico como práctico por intermedio
                             de la
                             educación continuada del personal médico y paramédico.
                         </p>
                     </div>
                     <div class="max-900px">
-                        <h3 class="c-gray">PIE DIABÉTICO Y HERIDAS COMPLEJA 6, 7 Y 8 DE AGOSTO DE 2025</h3>
+                        <li>CURSO ESPECIALIZADO EN PODOLOGIA 6 Y 7 DE AGOSTO DE 2025</li>
+                        <li>CURSO ESPECUALIZADO EN UNINORTE 7 DE AGOSTO DE 2025</li>
+                        <li>SUMMIT EN PIE DIABETICO Y HERIDAS COMPLEJAS 7 Y 8 DE AGOSTO DE 2025</li>
+                        <p class="negrilla">LUGAR DEL EVENTO CENTRO DE CONVENCIONES BLUE GARDENS, BARRNQUILLA COLOMBIA</p>
                     </div>
                 </div>
 
                 <div class="main-content main-right-side">
-                     <video src="view/video/summit/public_summit_2025.mp4" controls></video>
+                    <video src="view/video/summit/public_summit_2025.mp4" controls></video>
                     <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
                 </div>
             </div>
@@ -127,6 +136,6 @@
 
 <script defer src="view/js/global/redirect.js"></script>
 <script defer src="view/js/global/dropdown_menu.js"></script>
-<script defer src="view/js/global/screen_lock.js"></script>
+<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
 
 </html>

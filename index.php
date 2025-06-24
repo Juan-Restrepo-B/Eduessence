@@ -199,17 +199,42 @@ include_once 'model/global/clear_cache.php';
                     </div>
                     <div class="derE">
                         <div class="infoE">
-                            <h2>PATROCINADORES SIMPOSIO 2025</h2>
+                            <h2>PATROCINADORES SUMMIT 2025</h2>
                         </div>
                         <div class="gallery">
-
+                            
                             <div class="sponsor">
+                                <img src="view/img/logos/SIPEHA.png"
+                                    alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor-d">
                                 <img src="view/img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
                                     alt="Patrocinador 6">
                             </div>
 
-                            <div class="sponsor">
+                            <div class="sponsor-d">
                                 <img src="view/img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
+                            </div>
+                            
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/BAUSCH-HEALTH.jpeg"
+                                    alt="Patrocinador 6">
+                            </div>
+                            
+                            <div class="sponsor">
+                                <img src="view/img/logos/CONVATEC.jpeg"
+                                    alt="Patrocinador 6">
+                            </div>
+                            
+                            <div class="sponsor">
+                                <img src="view/img/logos/PROCAPS.jpeg"
+                                    alt="Patrocinador 6">
+                            </div>
+                            
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/UNIVERSIDAD-NORTE.jpeg"
+                                    alt="Patrocinador 6">
                             </div>
                         </div>
                     </div>

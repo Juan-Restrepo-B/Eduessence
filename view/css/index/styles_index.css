@@ -488,10 +488,12 @@
 /* section E */
 .containerE {
     width: 100%;
+    height: 100%;
 }
 
 .rowE {
     text-align: center;
+    height: 100%;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -638,6 +640,7 @@
     margin: 0 auto;
 }
 
+.sponsor-d,
 .sponsor {
     width: 400px;
     margin: 10px;
@@ -652,6 +655,11 @@
 }
 
 .sponsor img {
+    max-width: 50%;
+    height: auto;
+}
+
+.sponsor-d img {
     max-width: 100%;
     height: auto;
 }
@@ -775,15 +783,10 @@
 @media (min-width: 1385px) {
     .izqE {
         width: 30%;
-        height: 50vh;
     }    
-    .containerE {
-        height: 50vh;
-    }
 
     .derE {
         width: 70%;
-        height: 50vh;
     }
 }
 
