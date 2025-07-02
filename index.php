@@ -376,7 +376,7 @@ include_once 'model/global/clear_cache.php';
 
 <script defer src="view/js/global/redirect.js"></script>
 <script defer src="view/js/global/dropdown_menu.js"></script>
-<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
+<script defer src="view/js/global/screen_lock.js"></script>
 
 <script src="view/js/index/slider.js"></script>
 <script src="view/js/index/pop-up.js"></script>
