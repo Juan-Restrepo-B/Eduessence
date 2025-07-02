@@ -60,10 +60,20 @@
                         </p>
                     </div>
                     <div class="max-900px">
-                        <li class="list" ><div class="negrilla"> PRE SUMMIT </div>CURSO ESPECIALIZADO EN PODOLOGIA 6 DE AGOSTO DE 2025<div class="negrilla"> EN UNINORTE</div></li>
-                        <li class="list"  ><div class="negrilla"> PRE SUMMIT </div>CURSO ESPECUALIZADO EN PODOLOGIA 7 DE AGOSTO DE 2025</li>
-                        <li>SUMMIT EN PIE DIABETICO Y HERIDAS COMPLEJAS 7 Y 8 DE AGOSTO DE 2025</li>
-                        <p class="negrilla">LUGAR DEL EVENTO CENTRO DE CONVENCIONES BLUE GARDENS, BARRANQUILLA COLOMBIA</p>
+                        <li class="list">
+                            <div class="negrilla"> CURSO ESPECIALIZADO EN PODOLOGIA &nbsp; </div> 6 DE AGOSTO DE 2025
+                            &nbsp; <div class="negrilla"> EN UNINORTE</div>
+                        </li>
+                        <li class="list">
+                            <div class="negrilla"> CURSO ESPECUALIZADO EN PODOLOGIA &nbsp; </div> 7 DE AGOSTO DE 2025
+                        </li>
+                        <li class="list">
+                            <div class="negrilla"> SUMMIT EN PIE DIABETICO Y HERIDAS COMPLEJAS &nbsp; </div> 7 Y 8 DE
+                            AGOSTO DE 2025
+                        </li>
+                        <br>
+                        <p class="negrilla">LUGAR DEL EVENTO CENTRO DE CONVENCIONES BLUE GARDENS, BARRANQUILLA COLOMBIA
+                        </p>
                     </div>
                 </div>
 
@@ -74,7 +84,6 @@
             </div>
 
         </section>
-
     </main>
     <footer class="bg-light footer">
         <div class="containerFooter">
@@ -124,7 +133,7 @@
                                     </path>
                                 </svg>
                             </a>
-                            </i>
+                        </i>
                     </ul>
                 </div>
             </div>
@@ -136,6 +145,6 @@
 
 <script defer src="view/js/global/redirect.js"></script>
 <script defer src="view/js/global/dropdown_menu.js"></script>
-<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
+<script defer src="view/js/global/screen_lock.js"></script>
 
 </html>

@@ -779,6 +779,17 @@
     background-color: var(--PrimarioClaro);
 }
 
+.infE {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infE img {
+    height: 80%;
+}
 
 @media (min-width: 1385px) {
     .izqE {

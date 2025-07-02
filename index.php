@@ -187,6 +187,9 @@ include_once 'model/global/clear_cache.php';
         </section>
         <section>
             <div class="containerE">
+                <div class="infE">
+                    <img src="view\img\summit\Summit_25.jpeg" alt="">
+                </div>
                 <div class="rowE">
                     <div class="izqE">
                         <div class="logoE">
@@ -196,16 +199,21 @@ include_once 'model/global/clear_cache.php';
                             <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
                             <button class="btn-summit2" onclick="redirectSummit2025()">MAS INFORMACIÓN</button>
                         </div>
+                        <a href="view\documents\Programa Curso Podología Summit 2025 dia 1.pdf" download>
+                            <button class="btn-summit2"> Descargar Programa Curso Podología Summit 2025 Dia 1</button>
+                        </a>
+                        <a href="view\documents\Programa Curso Podología Summit 2025 dia 2.pdf" download>
+                            <button class="btn-summit2"> Descargar Programa Curso Podología Summit 2025 Dia 2</button>
+                        </a>
                     </div>
                     <div class="derE">
                         <div class="infoE">
                             <h2>PATROCINADORES SUMMIT 2025</h2>
                         </div>
                         <div class="gallery">
-                            
+
                             <div class="sponsor">
-                                <img src="view/img/logos/SIPEHA.png"
-                                    alt="Patrocinador 6">
+                                <img src="view/img/logos/SIPEHA.png" alt="Patrocinador 6">
                             </div>
 
                             <div class="sponsor-d">
@@ -216,25 +224,29 @@ include_once 'model/global/clear_cache.php';
                             <div class="sponsor-d">
                                 <img src="view/img/patrocinadores/PRAXIS Logo.png" alt="Patrocinador 11">
                             </div>
-                            
+
                             <div class="sponsor-d">
-                                <img src="view/img/logos/BAUSCH-HEALTH.jpeg"
-                                    alt="Patrocinador 6">
+                                <img src="view/img/logos/BAUSCH-HEALTH.jpeg" alt="Patrocinador 6">
                             </div>
-                            
+
                             <div class="sponsor">
-                                <img src="view/img/logos/CONVATEC.jpeg"
-                                    alt="Patrocinador 6">
+                                <img src="view/img/logos/CONVATEC.jpeg" alt="Patrocinador 6">
                             </div>
-                            
+
                             <div class="sponsor">
-                                <img src="view/img/logos/PROCAPS.jpeg"
-                                    alt="Patrocinador 6">
+                                <img src="view/img/logos/PROCAPS.jpeg" alt="Patrocinador 6">
                             </div>
-                            
+
                             <div class="sponsor-d">
-                                <img src="view/img/logos/UNIVERSIDAD-NORTE.jpeg"
-                                    alt="Patrocinador 6">
+                                <img src="view/img/logos/UNIVERSIDAD-NORTE.jpeg" alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/lfe_pharma.jpeg" alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor">
+                                <img src="view/img/logos/Pharma.jpeg" alt="Patrocinador 6">
                             </div>
                         </div>
                     </div>
@@ -364,7 +376,7 @@ include_once 'model/global/clear_cache.php';
 
 <script defer src="view/js/global/redirect.js"></script>
 <script defer src="view/js/global/dropdown_menu.js"></script>
-<script defer src="view/js/global/screen_lock.js"></script>
+<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
 
 <script src="view/js/index/slider.js"></script>
 <script src="view/js/index/pop-up.js"></script>
