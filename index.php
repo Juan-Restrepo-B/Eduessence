@@ -152,7 +152,8 @@ include_once 'model/global/clear_cache.php';
                 <div class="rowC">
                     <div class="tilteC">
                         <h2>PROXIMOS</h2>
-                        <h2><span>EVENTOS</span></h2>
+                        <h2>EVENTOS</h2>
+                        <h2><span id="anio"></span></h2>
                     </div>
                     <div class="calendar">
                         <iframe src="view/pages/calendar/calendar.php" frameborder="0"></iframe>
@@ -388,5 +389,8 @@ include_once 'model/global/clear_cache.php';
 
 <script src="view/js/index/slider.js"></script>
 <script src="view/js/index/pop-up.js"></script>
+<script>
+    document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
 
 </html>
