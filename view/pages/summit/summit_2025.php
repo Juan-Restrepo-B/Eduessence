@@ -61,11 +61,10 @@
                     </div>
                     <div class="max-900px">
                         <li class="list">
-                            <div class="negrilla"> CURSO ESPECIALIZADO EN PODOLOGIA &nbsp; </div> 6 DE AGOSTO DE 2025
-                            &nbsp; <div class="negrilla"> EN UNINORTE</div>
+                            <div class="negrilla"> CURSO ESPECIALIZADO EN PODOLOGIA &nbsp; </div> 7 DE AGOSTO DE 2025
                         </li>
                         <li class="list">
-                            <div class="negrilla"> CURSO ESPECUALIZADO EN PODOLOGIA &nbsp; </div> 7 DE AGOSTO DE 2025
+                            <div class="negrilla"> CURSO ESPECUALIZADO EN PODOLOGIA &nbsp; </div> 8 DE AGOSTO DE 2025
                         </li>
                         <li class="list">
                             <div class="negrilla"> SUMMIT EN PIE DIABETICO Y HERIDAS COMPLEJAS &nbsp; </div> 7 Y 8 DE

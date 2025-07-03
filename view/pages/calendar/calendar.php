@@ -51,6 +51,7 @@ include_once '../../../model/calendar/queryInfo.php';
                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;
                             <?php echo $mostrar['HoraIn'] ?>&nbsp;-&nbsp;
                             <?php echo $mostrar['HoraOut'] ?>&nbsp;
+                            GMT-5
                         </li>
                         <!--ingresa ubicaion del evento-->
                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;
