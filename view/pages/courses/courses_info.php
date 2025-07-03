@@ -270,6 +270,8 @@ if ($resultinfoCurso->num_rows > 0) {
             }
         </script>
 
+        <script src="view\js\courses\courses_info.js"></script>
+
         <style>
             .modal {
                 position: fixed;
