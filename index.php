@@ -199,11 +199,11 @@ include_once 'model/global/clear_cache.php';
                             <button class="btn-summit2" onclick="redirectLogin()">INSCRIBIRME</button>
                             <button class="btn-summit2" onclick="redirectSummit2025()">MAS INFORMACIÓN</button>
                         </div>
-                        <a href="view\documents\Programa Curso Podología Summit 2025 dia 1.pdf" download>
-                            <button class="btn-summit2"> Descargar Programa Curso Podología Summit 2025 Dia 1</button>
+                        <a href="view\documents\Programa Curso Podología Summit 2025.pdf" download>
+                            <button class="btn-summit2"> Descargar Programa Curso Podología Summit 2025</button>
                         </a>
-                        <a href="view\documents\Programa Curso Podología Summit 2025 dia 2.pdf" download>
-                            <button class="btn-summit2"> Descargar Programa Curso Podología Summit 2025 Dia 2</button>
+                        <a href="view\documents\Programa Summit 2025.pdf" download>
+                            <button class="btn-summit2"> Descargar Programa Summit 2025</button>
                         </a>
                     </div>
                     <div class="derE">
@@ -242,11 +242,19 @@ include_once 'model/global/clear_cache.php';
                             </div>
 
                             <div class="sponsor-d">
-                                <img src="view/img/logos/lfe_pharma.jpeg" alt="Patrocinador 6">
+                                <img src="view/img/logos/Medtrition.jpeg" alt="Patrocinador 6">
                             </div>
 
                             <div class="sponsor">
                                 <img src="view/img/logos/Pharma.jpeg" alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/Avalon.jpeg" alt="Patrocinador 6">
+                            </div>
+
+                            <div class="sponsor">
+                                <img src="view/img/logos/novo_nordisk.jpeg" alt="Patrocinador 6">
                             </div>
                         </div>
                     </div>
