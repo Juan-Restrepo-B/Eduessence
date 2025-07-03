@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>CALENDARIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../../css/calendar/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/calendar/assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/calendar/assets/css/Bootstrap-Calendar.css">
@@ -58,7 +59,7 @@ include_once '../../../model/calendar/queryInfo.php';
                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;
                             <?php echo $mostrar['cal_ubicacion'] ?>
                         </li>
-                        <li>
+                        <li><i class="fas fa-globe" aria-hidden="true"></i>&nbsp;
                             <?php echo $mostrar['cal_description'] ?>
                         </li>
                     </ul>
