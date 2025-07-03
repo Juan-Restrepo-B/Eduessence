@@ -53,9 +53,13 @@ include_once '../../../model/calendar/queryInfo.php';
                             <?php echo $mostrar['HoraOut'] ?>&nbsp;
                             GMT-5
                         </li>
+                        <br>
                         <!--ingresa ubicaion del evento-->
                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp;
                             <?php echo $mostrar['cal_ubicacion'] ?>
+                        </li>
+                        <li>
+                            <?php echo $mostrar['cal_description'] ?>
                         </li>
                     </ul>
                     <ul class="list-inline"></ul>
@@ -69,9 +73,6 @@ include_once '../../../model/calendar/queryInfo.php';
                     </li>
                     </ul>
                     <!--ingres descripcion del evento-->
-                    <p>
-                        <?php echo $mostrar['cal_description'] ?>
-                    </p>
                 </div>
             </div>
             <?php
