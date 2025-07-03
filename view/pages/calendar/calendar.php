@@ -29,6 +29,19 @@ include_once '../../../model/calendar/queryInfo.php';
         while ($mostrar = $resultado->fetch_assoc()) {
             $mesInCapitalizado = ucwords($mostrar["MesIn"]);
             $lDiaCapitalizado = ucwords($mostrar["LDia"]);
+
+            $fecha = $mostrar['Fecha'];
+            $fechaout = $mostrar['FechaOut'];
+            $startDate = date('Ymd', strtotime($fecha)) . 'T' . str_replace(':', '', $mostrar['HoraIn']) . '00';
+            $endDate = date('Ymd', strtotime($fechaout)) . 'T' . str_replace(':', '', $mostrar['HoraOut']) . '00';
+
+            // Construir enlace a Google Calendar
+            $titulo = urlencode($mostrar['cal_event']);
+            $detalles = urlencode($mostrar['cal_description'] . ' - Conferencista: ' . $mostrar['cal_speaker']);
+            $ubicacion = urlencode($mostrar['cal_ubicacion']);
+
+            $linkGoogleCalendar = "https://www.google.com/calendar/render?action=TEMPLATE&text=$titulo&dates=$startDate/$endDate&details=$detalles&location=$ubicacion&sf=true&output=xml";
+            
             ?>
 
             <div class="row row-striped">
@@ -75,6 +88,9 @@ include_once '../../../model/calendar/queryInfo.php';
                     </ul>
                     <!--ingres descripcion del evento-->
                 </div>
+                <a href="<?php echo $linkGoogleCalendar ?>" target="_blank" class="btn btn-success mt-2">
+                    Agregar a Google Calendar
+                </a>
             </div>
             <?php
         }

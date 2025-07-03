@@ -4,6 +4,8 @@ include_once 'conexionCalendar.php';
 $conn->query("SET lc_time_names = 'es_ES'");
 
 $sql = "SELECT 
+		cal_fecha_in AS Fecha, 
+		cal_fecha_out AS FechaOut,
 		DAY(cal_fecha_in) AS Dia, 
 		DATE_FORMAT(cal_fecha_in, '%b') AS MesIn,
 		DATE_FORMAT(cal_fecha_in, '%W') AS LDia,
@@ -16,6 +18,7 @@ $sql = "SELECT
 $resultado = $conn->query($sql);
 
 if (!$resultado) {
-    die("Query failed: " . $conn->error);
+	die("Query failed: " . $conn->error);
 }
+
 ?>
