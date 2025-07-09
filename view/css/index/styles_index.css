@@ -792,6 +792,12 @@
     height: 80%;
 }
 
+.infE video {
+    margin-left: 30px;
+    height: 80%;
+    border-radius: 20px;
+}
+
 @media (min-width: 1385px) {
     .izqE {
         width: 30%;

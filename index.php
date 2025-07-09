@@ -190,6 +190,7 @@ include_once 'model/global/clear_cache.php';
             <div class="containerE">
                 <div class="infE">
                     <img src="view\img\summit\Summit_25.jpeg" alt="">
+                    <video src="view\video\summit\Summit_25.mp4" controls autoplay muted></video>
                 </div>
                 <div class="rowE">
                     <div class="izqE">

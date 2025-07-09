@@ -135,7 +135,8 @@ $color = isset($_GET['color']) ? $_GET['color'] : null;
                                 <?= $error_message; ?>
                             </span>
                         <?php endif; ?>
-                        <br>
+                        <a href="/forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                        <br><br>
                         <button id="btn-logging" class="btn-logging">INICIAR</button>
                     </form>
                     <br>

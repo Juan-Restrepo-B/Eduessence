@@ -3,6 +3,8 @@ RewriteEngine On
 # Redirigir URLs amigables a los archivos PHP correspondientes
 RewriteRule ^inicio$ index.php [L]
 RewriteRule ^login$ view/pages/login/login.php [L]
+RewriteRule ^forgot_password$ view/pages/login/forgot_password.php [L]
+RewriteRule ^forgot_password_two$ view/pages/login/forgot_password_two.php [L]
 RewriteRule ^register$ view/pages/login/create.php [L]
 RewriteRule ^principal$ view/pages/main/main.php [L]
 RewriteRule ^usuario$ view/pages/users/users_edit.php [L]
