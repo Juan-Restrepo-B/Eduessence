@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+/*Estructura Color y Caligrafia*/
+:root {
+  --Primario: #004aad;
+  --PrimarioClaro: #a2caff;
+  --SecundarioRojo: #d13633;
+  --SecundarioAmarrillo: #ecad43;
+  --Blanco: #FFF;
+  --Gris: #535353;
+  --Negro: #000;
+
+  --FuentePrincipal: 'Montserrat', sans-serif;
+  --FuenteSecundaria: ;
+
+  --PrimarioA40: rgba(0, 75, 173,0.4);
+  --SecundarioRojoA40: rgba(209, 54, 51,0.4);
+
+  --navbar-size: 50px;
+  --icon-size: 25px;
+}
+
+/*Globales*/
+html {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: var(--Negro);
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-family: var(--FuentePrincipal);
+}
+
+/* view/css/courses/styles_courses.css */
+
+/* RESET */
+body, h1, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY GENERAL */
+body {
+    background-color: #f4f6f8;
+    padding: 40px 20px;
+}
+
+/* TÍTULO */
+.title h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #0d47a1;
+    margin-bottom: 30px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.patrocinadores {
+    max-width: 90%;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* TABLA */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background-color: #0d47a1;
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    min-width: 150px;
+}
+
+.table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* BOTONES */
+.btn {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: white;
+    background-color: #2196f3;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1976d2;
+}
+
+.btn.rechazar {
+    background-color: #f44336;
+}
+
+.btn.rechazar:hover {
+    background-color: #d32f2f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+    }
+}

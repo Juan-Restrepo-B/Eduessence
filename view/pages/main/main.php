@@ -74,9 +74,22 @@ include_once '../../../model/main_process/role_confirm.php';
                 <?php endif; ?>
                 <?php if (showButtons(1)): ?>
                     <div class="icon-container">
+                        <a href="/validar_pago_curso" class="menu-icon" target="contentMain">
+                            <!-- validar pago curso -->
+                            <svg class="menu-icon" fill="#000000" viewBox="0 0 24 24" transform="" id="injected-svg">
+                                <path
+                                    d="M21 8H7c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1m-1 8c-1.1 0-2 .9-2 2h-8c0-1.1-.9-2-2-2v-4c1.1 0 2-.9 2-2h8c0 1.1.9 2 2 2z" />
+                                <path d="M18 4H3c-.55 0-1 .45-1 1v11h2V6h14zM14 12a2 2 0 1 0 0 4 2 2 0 1 0 0-4" />
+                            </svg>
+                            <div class="hover-text">VALIDAR PAGOS CURSOS</div>
+                        </a>
+                    </div>
+
+                <?php endif; ?>
+                <?php if (showButtons(1)): ?>
+                    <div class="icon-container">
                         <a href="/curso_update" class="menu-icon" target="contentMain"><!-- CARGAR CURSO -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                style="fill: rgba(0, 0, 0, 1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
                                 <path
                                     d="M12.001 1.993C6.486 1.994 2 6.48 2 11.994c.001 5.514 4.487 10 10 10 5.515 0 10.001-4.486 10.001-10s-4.486-10-10-10.001zM12 19.994c-4.41 0-7.999-3.589-8-8 0-4.411 3.589-8 8.001-8.001 4.411.001 8 3.59 8 8.001s-3.589 8-8.001 8z">
                                 </path>

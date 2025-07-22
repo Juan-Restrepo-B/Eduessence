@@ -255,8 +255,8 @@ include_once 'model/global/clear_cache.php';
                                 <img src="view/img/logos/Avalon.jpeg" alt="Patrocinador 6">
                             </div>
 
-                            <div class="sponsor">
-                                <img src="view/img/logos/novo_nordisk.jpeg" alt="Patrocinador 6">
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/clinicadelpieyspa.png" alt="Patrocinador 6">
                             </div>
                         </div>
                     </div>
