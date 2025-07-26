@@ -22,7 +22,7 @@ window.onload = function () {
                     // Respuesta del servidor
                     console.log(xhr.responseText);
                     // Almacenar el userid en las cookies
-                    setUserId(userid); // La cookie expirará en 30 días
+                    setUserId(cursoId); // La cookie expirará en 30 días
                     window.location.href = 'registroExitosoChekin'; // Redirección a registroExitoso.php
                 } else {
                     console.log('Error en el servidor.');
