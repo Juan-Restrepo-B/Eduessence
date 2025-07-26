@@ -2,7 +2,7 @@
 session_start();
 
 // Registrar el check-in en la base de datos (reemplaza estos datos con los tuyos)
-$host = "72.167.100.192";
+$host = "localhost";
 $user = "Desarrollo_Summit";
 $pass = "y9B>^y=>FT+G`C@,";
 $database = "registro_summit";
