@@ -34,7 +34,6 @@ if (isset($_POST['action'], $_POST['control'])) {
 
         if ($stmt->execute()) {
             echo 'Check-in exitoso para: ' . $userid;
-            setcookie('userid', $userid, time()  + (86400 * 30), '/'); // La cookie expirará en 30 días
         } else {
             echo 'Error al realizar el check-in. Error: ' . $stmt->error;
         } 
