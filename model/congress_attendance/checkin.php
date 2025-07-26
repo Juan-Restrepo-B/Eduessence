@@ -67,18 +67,18 @@ if (isset($_POST['action'], $_POST['control'])) {
         $conn->close();
     } else if ($action === 'checking') {
         // Obtener el valor del userid almacenado en la sesión
-        $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
-    
+        $useridchecking = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
+
         // Verificar si el iduser está presente
-        if (!$userid) {
+        if (!$useriduseridcheckingchecking) {
             echo 'Por favor realizar el check-in primero.';
         } else {
             // Realizar el registro del punto de control
             $stmt = $conn->prepare("INSERT INTO LOG_USERS (LOG_IDUSER, LOG_FECHORA, LOG_PUNTO , LOG_ACCION, LOG_IDCURSO) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $userid, $fechareg, $control, $action, $cursoId);
+            $stmt->bind_param("sssss", $useridchecking, $fechareg, $control, $action, $cursoId);
 
             if ($stmt->execute()) {
-                echo $userid . ' se registró exitosamente: ' . $control;
+                echo $useridchecking . ' se registró exitosamente: ' . $control;
             } else {
                 echo 'Error al realizar el registro del punto de control. Error: ' . $stmt->error;
             }
