@@ -394,4 +394,6 @@ include_once 'model/global/clear_cache.php';
     document.getElementById("anio").textContent = new Date().getFullYear();
 </script>
 
+<script src="view\js\index\congress_attendance.js"></script>
+
 </html>
