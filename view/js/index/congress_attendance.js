@@ -34,7 +34,6 @@ window.onload = function () {
             } else if (action === 'checking' && control) {
                 // Realizar el check-in enviando una solicitud POST a checkin.php
                 const formData = new FormData();
-                formData.append('userid', userid);
                 formData.append('action', action);
                 formData.append('control', control);
                 formData.append('cursoId', cursoId);
