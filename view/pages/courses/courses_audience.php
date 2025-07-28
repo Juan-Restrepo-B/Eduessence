@@ -13,6 +13,12 @@ if (isset($_GET['idcurso'])) {
 $sql = "SELECT IDAUDITORIO, IDCURSO, NOMBRE_AUDITORIO, LLAVE_TRANSMISION FROM TR_AUDITORIOS WHERE IDCURSO = '$idcurso' ORDER BY NOMBRE_AUDITORIO ASC";
 
 $result = $conn->query($sql);
+
+if (!$result || $result->num_rows === 0) {
+    header("Location: /curso_error");
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>

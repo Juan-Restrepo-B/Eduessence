@@ -211,7 +211,7 @@ if ($resultinfoCurso->num_rows > 0) {
     }
 </script>
 
-<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
+<script defer src="view/js/global/screen_lock.js"></script>
 <!-- <script async src="view/js/courses/courses_live.js"></script> -->
 
 <!-- Carga la API de YouTube -->
