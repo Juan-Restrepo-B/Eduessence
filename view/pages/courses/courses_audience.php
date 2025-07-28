@@ -15,10 +15,9 @@ $sql = "SELECT IDAUDITORIO, IDCURSO, NOMBRE_AUDITORIO, LLAVE_TRANSMISION FROM TR
 $result = $conn->query($sql);
 
 if (!$result || $result->num_rows === 0) {
-    header("Location: /curso_error");
+    header("Location: /curso_error?idcurso=" . $idcurso);
     exit;
 }
-
 ?>
 
 <!DOCTYPE html>
