@@ -156,7 +156,7 @@ if ($resultinfoCurso->num_rows > 0) {
                             if ($estadoCompra === 'PENDIENTE CONFIRMACION') {
                                 echo '<button type="button" class="btn" disabled>PAGO PENDIENTE CONFIRMACIÓN</button>';
                             } elseif ($estadoCompra === 'CONFIRMADO') {
-                                echo '<a href="curso_live?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                                echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
                             } elseif ($estadoCompra === 'RECHAZADO') {
                                 echo '<button type="button" class="btn" onclick="abrirModal()">CONFIRMAR PAGO</button>';
                             } else {
@@ -167,13 +167,13 @@ if ($resultinfoCurso->num_rows > 0) {
                             if ($valIdCurso === null) {
                                 echo '<form method="POST"><button type="submit" name="btnInscribir" class="btn">INSCRIBIRSE</button></form>';
                             } else {
-                                echo '<a href="curso_live?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                                echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
                             }
                         }
                     } else {
                         // Fuera de fecha de inscripción
                         if ($valIdCurso !== null || $estadoCompra === 'CONFIRMADO') {
-                            echo '<a href="curso_live?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                            echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
                         }
                     }
                     ?>

@@ -96,10 +96,9 @@ body {
 .btn {
     padding: 15px 20px;
     border-radius: 10px;
-    border-color: var(--Primario);
+    border-color: var(--Primario);  
     background: none;
     color: var(--Primario);
-    margin: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: box-shadow 0.3s;
@@ -112,11 +111,10 @@ body {
 .btn-mg {
     padding: 15px 20px;
     border-radius: 10px;
-    width: 450px;
+    width: 70%;
     border-color: var(--Primario);
     background: none;
     color: var(--Primario);
-    margin: 20px;
     font-weight: bold;
     transition: box-shadow 0.3s;
 }

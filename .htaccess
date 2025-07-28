@@ -1,35 +1,23 @@
+# Redirigir URLs amigables a los archivos PHP correspondientes
 RewriteEngine On
 
-# Redirigir URLs amigables a los archivos PHP correspondientes
+# Redirección para la página de inicio
 RewriteRule ^inicio$ index.php [L]
+
+# Redirección para la página principal
+RewriteRule ^principal$ view/pages/main/main.php [L]
+
+# Redirección para login y registro de usuarios
 RewriteRule ^login$ view/pages/login/login.php [L]
+RewriteRule ^register$ view/pages/login/create.php [L]
 RewriteRule ^forgot_password$ view/pages/login/forgot_password.php [L]
 RewriteRule ^forgot_password_two$ view/pages/login/forgot_password_two.php [L]
-RewriteRule ^register$ view/pages/login/create.php [L]
-RewriteRule ^principal$ view/pages/main/main.php [L]
-RewriteRule ^usuario$ view/pages/users/users_edit.php [L]
-RewriteRule ^calendario$ view/pages/calendar/calendar_edit.php [L]
-RewriteRule ^calendario_edit$ view/pages/calendar/calendar_data.php [L]
-RewriteRule ^cursos$ view/pages/courses/courses.php [L]
-RewriteRule ^curso_info$ view/pages/courses/courses_info.php [L]
-RewriteRule ^curso_live$ view/pages/courses/courses_live.php [L]
-RewriteRule ^curso_grab$ view/pages/courses/courses_recording.php [L]
-RewriteRule ^curso_alert$ view/pages/courses/courses_alert.php [L]
-RewriteRule ^curso_class$ view/pages/courses/courses_class.php [L]
-RewriteRule ^curso_update$ view/pages/courses/courses_update.php [L]
-RewriteRule ^curso_carg$ view/pages/courses/courses_carga.php [L]
-RewriteRule ^validar_pago_curso$ view/pages/courses/validate_course_payment.php [L]
-RewriteRule ^video$ model/courses/video.php [L]
-RewriteRule ^certificado$ view/pages/certificate/certificate.php [L]
-RewriteRule ^diploma$ model/certificate/diplomas.php [L]
-RewriteRule ^diploma_des$ model/certificate/diploma_des.php [L]
+
+# Redirección para la página de información del congreso
 RewriteRule ^summit_2021$ view/pages/summit/summit_2021.php [L]
 RewriteRule ^summit-2025$ view/pages/summit/summit_2025.php [L]
-RewriteRule ^cuadernillo$ view/pages/notebook/notebook.php [L]
-RewriteRule ^notebook_class$ view/pages/notebook/notebook_class.php [L]
 
-# Redirección para el check-in
-RewriteRule ^checkin$ model/congress_attendance/checkin.php [L]
+# Redirección para Validacion de asistencia al congreso
 RewriteRule ^registroExitoso$ view/pages/congress_attendance/registroExitosoRegistro.php [L]
 RewriteRule ^registroExitosoChekin$ view/pages/congress_attendance/registroExitsosoChekin.php [L]
 RewriteRule ^registroFallidoChekin$ view/pages/congress_attendance/registroFallidoChekin.php [L]
@@ -38,3 +26,36 @@ RewriteRule ^entradaCongreso$ view/pages/congress_attendance/entradaCongreso.php
 RewriteRule ^salidaCongreso$ view/pages/congress_attendance/salidaCongreso.php [L]
 RewriteRule ^salaCongreso$ view/pages/congress_attendance/salaCongreso.php [L]
 RewriteRule ^seguimientoCongreso$ view/pages/congress_attendance/seguimientoCongreso.php [L]
+
+RewriteRule ^checkin$ model/congress_attendance/checkin.php [L]
+
+# Redirección para cursos
+RewriteRule ^cursos$ view/pages/courses/courses.php [L]
+RewriteRule ^curso_info$ view/pages/courses/courses_info.php [L]
+RewriteRule ^curso_audience$ view/pages/courses/courses_audience.php [L]
+RewriteRule ^curso_live$ view/pages/courses/courses_live.php [L]
+RewriteRule ^curso_grab$ view/pages/courses/courses_recording.php [L]
+RewriteRule ^curso_alert$ view/pages/courses/courses_alert.php [L]
+RewriteRule ^curso_class$ view/pages/courses/courses_class.php [L]
+RewriteRule ^curso_update$ view/pages/courses/courses_update.php [L]
+RewriteRule ^curso_carg$ view/pages/courses/courses_carga.php [L]
+RewriteRule ^validar_pago_curso$ view/pages/courses/validate_course_payment.php [L]
+
+RewriteRule ^video$ model/courses/video.php [L]
+
+# Redirección para cuadernillos
+RewriteRule ^cuadernillo$ view/pages/notebook/notebook.php [L]
+RewriteRule ^notebook_class$ view/pages/notebook/notebook_class.php [L]
+
+# Redirección para certificados
+RewriteRule ^certificado$ view/pages/certificate/certificate.php [L]
+
+RewriteRule ^diploma$ model/certificate/diplomas.php [L]
+RewriteRule ^diploma_des$ model/certificate/diploma_des.php [L]
+
+# Redirección para calendarios
+RewriteRule ^calendario$ view/pages/calendar/calendar_edit.php [L]
+RewriteRule ^calendario_edit$ view/pages/calendar/calendar_data.php [L]
+
+# Redirección para usuario
+RewriteRule ^usuario$ view/pages/users/users_edit.php [L]

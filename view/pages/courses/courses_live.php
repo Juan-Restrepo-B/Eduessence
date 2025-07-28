@@ -8,8 +8,8 @@ date_default_timezone_set('America/Bogota');
 
 include("../../../model/conexion.php");
 
-if (isset($_GET['idcurso'])) {
-    $idcurso = $_GET['idcurso'];
+if (isset($_GET['idauditorio'])) {
+    $idauditorio = $_GET['idauditorio'];
 }
 
 $infCurso = "SELECT 
@@ -17,8 +17,9 @@ $infCurso = "SELECT
             FROM
                 TR_CURSOS
                 INNER JOIN TR_INFOCURSO ON INFO_IDCURSO = IDCURSOS
+                INNER JOIN TR_AUDITORIOS ON IDCURSOS = IDCURSO
             WHERE
-                IDCURSOS = '" . $idcurso . "' ";
+                IDAUDITORIO = '" . $idauditorio . "' ";
 $resultinfoCurso = $conn->query($infCurso);
 
 $consultaPersona = "SELECT
@@ -51,6 +52,16 @@ if ($resultinfoCurso->num_rows > 0) {
     if ($fechaActual < $fechaIniCurso) {
         header("Location: /curso_alert?idcurso=" . $rowinfcurso["IDCURSOS"]);
     }
+
+    $llave = $rowinfcurso['LLAVE_TRANSMISION'];
+
+    if (strpos($llave, '?') !== false) {
+        // Ya hay parámetros en la URL, usa &
+        $urlVideo = $llave . '&enablejsapi=1';
+    } else {
+        // No hay parámetros aún, usa ?
+        $urlVideo = $llave . '?enablejsapi=1';
+    }
     ?>
 
     <!DOCTYPE html>
@@ -65,7 +76,7 @@ if ($resultinfoCurso->num_rows > 0) {
     <body>
         <section>
             <div class="header">
-                <a href="/curso_info?idcurso=<?php echo $idcurso ?>">
+                <a href="/curso_audience?idcurso=<?php echo $rowinfcurso["IDCURSOS"]; ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
                         <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path>
@@ -75,14 +86,25 @@ if ($resultinfoCurso->num_rows > 0) {
         </section>
         <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
         <div class="container">
-            <div class="tramsmi item-60">
-                <iframe id="videoPlayer" src="<?php echo $rowinfcurso['CURSO_URLTRANSMI']; ?>" f frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <div class="overlay"
-                    style="position: absolute; top: 0; left: 0; background: transparent; pointer-events: auto;">
+            <div class="tramsmi item-60" style="position: relative;">
+                <iframe id="videoPlayer" src="<?php echo $urlVideo; ?>" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen style="width: 100%; height: 100%; display: block;">
+                </iframe>
+
+                <div id="videoOverlay" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: transparent;
+                    pointer-events: auto;
+                    z-index: 2;
+                    cursor: pointer;">
                 </div>
             </div>
+
+
             <div class="chat item-40">
                 <h2>Preguntas y Respuestas</h2>
                 <div id="chat"></div>
@@ -188,7 +210,44 @@ if ($resultinfoCurso->num_rows > 0) {
         resetActivityTimeout();
     }
 </script>
-<script defer src="view/js/global/screen_lock.js"></script>
+
+<!-- <script defer src="view/js/global/screen_lock.js"></script> -->
 <!-- <script async src="view/js/courses/courses_live.js"></script> -->
+
+<!-- Carga la API de YouTube -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+    let player;
+    let isPlaying = false;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videoPlayer', {
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        const overlay = document.getElementById('videoOverlay');
+
+        overlay.addEventListener('click', function () {
+            // Obtener estado del reproductor
+            const state = player.getPlayerState();
+
+            if (state === YT.PlayerState.PLAYING) {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
+            }
+
+            // Si solo quieres permitir un clic:
+            // overlay.style.pointerEvents = 'none';
+        });
+    }
+</script>
+
+
 
 </html>

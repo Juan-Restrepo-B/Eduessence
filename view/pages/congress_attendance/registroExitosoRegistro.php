@@ -11,6 +11,12 @@
 </head>
 <?php
 session_start();
+
+if (isset($_POST['userid'])) {
+    $_SESSION['userid'] = $_POST['userid'];
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit();
+}
 ?>
 
 <body>
@@ -29,7 +35,7 @@ session_start();
                     <div class="text">
                         VISITANTE REGISTRADO
                         <br><br>
-                        <?php echo $_SESSION['userid']; ?>
+                        <?php echo isset($_SESSION['userid']) ? $_SESSION['userid'] : 'Usuario no identificado'; ?>
                     </div>
                 </div>
             </div>
@@ -41,5 +47,26 @@ session_start();
         </p>
     </footer>
 </body>
+
+<script>
+    const userid = localStorage.getItem('userid');
+
+    if (userid && !sessionStorage.getItem('userid_sent')) {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = ''; // misma página
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'userid';
+        input.value = userid;
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+
+        sessionStorage.setItem('userid_sent', 'true');
+        form.submit();
+    }
+</script>
 
 </html>

@@ -22,6 +22,10 @@ if (isset($_POST['action'], $_POST['control'])) {
         $userid = $_POST['userid'];
         $_SESSION['userid'] = $userid;
 
+        if (isset($_POST['userid'])) {
+            $_SESSION['userid'] = $_POST['userid'];
+        }
+
         // Verificar la conexión
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
@@ -36,7 +40,7 @@ if (isset($_POST['action'], $_POST['control'])) {
             echo 'Check-in exitoso para: ' . $userid;
         } else {
             echo 'Error al realizar el check-in. Error: ' . $stmt->error;
-        } 
+        }
 
         // Cerrar la conexión
         $stmt->close();
@@ -68,8 +72,10 @@ if (isset($_POST['action'], $_POST['control'])) {
         // Obtener el valor del userid almacenado en la sesión
         $useridchecking = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
 
+        console . log('useridchecking: ' . $useridchecking);
+
         // Verificar si el iduser está presente
-        if (!$useriduseridcheckingchecking) {
+        if (!$useridchecking) {
             echo 'Por favor realizar el check-in primero.';
         } else {
             // Realizar el registro del punto de control
@@ -81,12 +87,12 @@ if (isset($_POST['action'], $_POST['control'])) {
             } else {
                 echo 'Error al realizar el registro del punto de control. Error: ' . $stmt->error;
             }
-    
+
             // Cerrar la conexión
             $stmt->close();
             $conn->close();
         }
-    
+
     } else {
         echo 'Acción desconocida.';
     }
