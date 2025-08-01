@@ -188,6 +188,9 @@ include_once 'model/global/clear_cache.php';
         </section>
         <section>
             <div class="containerE">
+                <div class="infoZ">
+                    <h2>LA ENTREGA DE ESCARAPELAS SE REALIZA EL JUEVES 7 DE AGOSTO DE 7:30AM A 9:00AM</h2>
+                </div>
                 <div class="infE">
                     <img src="view\img\summit\Summit_25.jpeg" alt="">
                     <video src="view\video\summit\Summit_25.mp4" controls autoplay muted></video>
