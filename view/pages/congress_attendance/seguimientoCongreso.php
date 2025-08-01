@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="68x68" href="view/img/logo1.png">
-    <meta http-equiv="refresh" content="30;url=inicio">
+    <!-- <meta http-equiv="refresh" content="30;url=inicio"> -->
     <link rel="stylesheet" href="view\css\congress_attendance\Style_RegistroE.css">
     <title>Check-in exitoso</title>
 </head>
@@ -30,7 +30,7 @@ session_start();
                             SIMPOCIO REGISTRADO
                         <br>
                         <span>
-                            <?php echo $_SESSION['userid']; ?>
+                            <?php echo $_SESSION['userid'] ?? $_SESSION['useremail'] ?? 'Usuario no registrado'; ?>
                         <br><br>
                         </span>
                     </div>

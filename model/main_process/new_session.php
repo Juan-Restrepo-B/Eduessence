@@ -30,24 +30,25 @@ if (isset($_SESSION['useremail'])) {
         $lastEvent = $row["LU_ACTIONEVNET"];
         $lastResultAction = $row["LU_RESULTACTION"];
 
-        if ($lastEvent === "INICIO DE SESIÓN" && $lastResultAction === "Éxito") {
+        // if ($lastEvent === "INICIO DE SESIÓN" && $lastResultAction === "Éxito") {
 
-            $useremail = $_SESSION['useremail'];
-            $ip_cliente = $_SERVER['REMOTE_ADDR'];
+        //     $useremail = $_SESSION['useremail'];
+        //     $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
-            $sql = "INSERT INTO LOG_USUARIO
-            (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
-            VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Fallido', 'Inicio de sesión fallido ya cuenta con una sesion iniciada', 'ACTIVO')";
+        //     $sql = "INSERT INTO LOG_USUARIO
+        //     (LU_FECHORA, LU_USUARIO_USER, LU_DIRECCIONIP, LU_ACTIONEVNET, LU_RESULTACTION, LU_DETALLE, LU_ESTADO)
+        //     VALUES(NOW(), ?, ?, 'INICIO DE SESIÓN', 'Fallido', 'Inicio de sesión fallido ya cuenta con una sesion iniciada', 'ACTIVO')";
 
-            $stmt = $conn->prepare($sql);
+        //     $stmt = $conn->prepare($sql);
 
-            $stmt->bind_param("ss", $useremail, $ip_cliente);
+        //     $stmt->bind_param("ss", $useremail, $ip_cliente);
 
-            $stmt->execute();
+        //     $stmt->execute();
 
-            header("Location: ../index.php");
-            exit();
-        } elseif ($lastEvent === "CERRAR SESIÓN" && $lastResultAction === "Éxito") {
+        //     header("Location: ../index.php");
+        //     exit();
+        // } else
+        if ($lastEvent === "CERRAR SESIÓN" && $lastResultAction === "Éxito") {
 
             $useremail = $_SESSION['useremail'];
             $ip_cliente = $_SERVER['REMOTE_ADDR'];

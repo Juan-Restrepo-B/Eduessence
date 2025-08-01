@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="30;url=inicio">
+    <!-- <meta http-equiv="refresh" content="30;url=inicio"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="view/css/congress_attendance/Style_RegistroE.css">
     <link rel="icon" type="image/png" sizes="68x68" href="view/img/logo1.png">
@@ -35,7 +35,7 @@ if (isset($_POST['userid'])) {
                     <div class="text">
                         VISITANTE REGISTRADO
                         <br><br>
-                        <?php echo isset($_SESSION['userid']) ? $_SESSION['userid'] : 'Usuario no identificado'; ?>
+                        <?php echo $_SESSION['userid'] ?? $_SESSION['useremail'] ?? 'Usuario no registrado'; ?>
                     </div>
                 </div>
             </div>

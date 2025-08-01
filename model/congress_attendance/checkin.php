@@ -2,7 +2,7 @@
 session_start();
 
 // Registrar el check-in en la base de datos (reemplaza estos datos con los tuyos)
-$host = "localhost";
+$host = "68.178.246.37";
 $user = "Desarrollo_Summit";
 $pass = "y9B>^y=>FT+G`C@,";
 $database = "registro_summit";
@@ -72,7 +72,7 @@ if (isset($_POST['action'], $_POST['control'])) {
         // Obtener el valor del userid almacenado en la sesión
         $useridchecking = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
 
-        console . log('useridchecking: ' . $useridchecking);
+        // console.log('useridchecking: ' . $useridchecking);
 
         // Verificar si el iduser está presente
         if (!$useridchecking) {

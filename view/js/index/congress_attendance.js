@@ -22,7 +22,8 @@ window.onload = function () {
                     // Respuesta del servidor
                     console.log(xhr.responseText);
                     // Almacenar el userid en las cookies
-                    setUserId(userid); // La cookie expirará en 30 días
+                    setCookie('userid', userid, 30);
+
                     window.location.href = 'registroExitosoChekin'; // Redirección a registroExitoso.php
                 } else {
                     console.log('Error en el servidor.');
@@ -34,6 +35,7 @@ window.onload = function () {
     } else if (action === 'checking' && control) {
         // Realizar el check-in enviando una solicitud POST a checkin.php
         const formData = new FormData();
+        formData.append('userid', userid);
         formData.append('action', action);
         formData.append('control', control);
         formData.append('cursoId', cursoId);
@@ -46,8 +48,8 @@ window.onload = function () {
                     // Respuesta del servidor
                     console.log(xhr.responseText);
 
-                    // Obtener el userid desde las cookies
-                    const userid = getUserId();
+                    const userid = getCookie('userid');
+
                     if (!userid) {
                         // Si no se encuentra el userid en las cookies, redirigir a user.php
                         window.location.href = 'userFail';
@@ -72,11 +74,16 @@ window.onload = function () {
 };
 
 // Guardar userId en almacenamiento local persistente
-function setUserId(value) {
-    localStorage.setItem('userid', value);
+function getCookie(name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-// Obtener userId desde almacenamiento local
-function getUserId() {
-    return localStorage.getItem('userid');
+// Función para establecer una cookie
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }

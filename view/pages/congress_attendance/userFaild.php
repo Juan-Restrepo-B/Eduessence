@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="30;url=inicio">
+    <!-- <meta http-equiv="refresh" content="30;url=inicio"> -->
     <link rel="stylesheet" href="view\css\congress_attendance\Style_User.css">
     <link rel="icon" type="image/png" sizes="68x68" href="view/img/logo1.png">
     <title>Check-in fallido</title>

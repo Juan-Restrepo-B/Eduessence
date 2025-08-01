@@ -29,6 +29,7 @@ RewriteRule ^seguimientoCongreso$ view/pages/congress_attendance/seguimientoCong
 RewriteRule ^scan_qr$ view/pages/congress_attendance/scan_qr.php [L]
 
 RewriteRule ^checkin$ model/congress_attendance/checkin.php [L]
+RewriteRule ^procesar$ model/congress_attendance/procesar.php [L]
 
 # Redirección para cursos
 RewriteRule ^cursos$ view/pages/courses/courses.php [L]
