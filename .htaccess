@@ -26,6 +26,7 @@ RewriteRule ^entradaCongreso$ view/pages/congress_attendance/entradaCongreso.php
 RewriteRule ^salidaCongreso$ view/pages/congress_attendance/salidaCongreso.php [L]
 RewriteRule ^salaCongreso$ view/pages/congress_attendance/salaCongreso.php [L]
 RewriteRule ^seguimientoCongreso$ view/pages/congress_attendance/seguimientoCongreso.php [L]
+RewriteRule ^scan_qr$ view/pages/congress_attendance/scan_qr.php [L]
 
 RewriteRule ^checkin$ model/congress_attendance/checkin.php [L]
 
