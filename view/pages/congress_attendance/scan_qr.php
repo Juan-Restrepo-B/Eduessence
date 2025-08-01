@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Escáner QR - Eduessence</title>
     <script src="https://unpkg.com/html5-qrcode"></script>
-    <link rel="stylesheet" href="style.css"> <!-- Si tienes CSS externo -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,14 +18,21 @@
             color: #002c74;
         }
 
-        #reader {
+        #cameraSelect {
+            display: block;
             margin: 0 auto;
-            margin-top: 20px;
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #reader {
+            margin: 20px auto;
             width: 320px;
-            max-width: 90vw;
+            max-width: 95%;
             border: 2px dashed #004aad;
-            padding: 10px;
             border-radius: 10px;
+            padding: 10px;
             background-color: white;
         }
 
@@ -48,6 +54,9 @@
 <body>
 
 <h2>Escanea tu código QR</h2>
+<select id="cameraSelect">
+    <option disabled selected>Selecciona una cámara...</option>
+</select>
 <div id="reader"></div>
 <div id="result"></div>
 
@@ -59,6 +68,10 @@
 </form>
 
 <script>
+    const cameraSelect = document.getElementById("cameraSelect");
+    const readerContainer = document.getElementById("reader");
+    let html5QrCode;
+
     function parseQuery(queryString) {
         const params = new URLSearchParams(queryString);
         const result = {};
@@ -70,13 +83,10 @@
 
     function onScanSuccess(decodedText, decodedResult) {
         if (decodedText.includes("eduessence.com")) {
-            // Detener el escaneo
             html5QrCode.stop().then(() => {
-                // Extraer parámetros de la URL escaneada
                 const query = decodedText.split("?")[1];
                 const params = parseQuery(query);
 
-                // Mostrar mensaje en pantalla
                 const resultDiv = document.getElementById("result");
                 resultDiv.innerHTML = `
                     ✅ <strong>Código QR leído correctamente</strong><br>
@@ -85,47 +95,69 @@
                 resultDiv.style.backgroundColor = "#d4edda";
                 resultDiv.style.color = "#155724";
 
-                // Llenar el formulario
                 if (params.action) document.getElementById("form-action").value = params.action;
                 if (params.control) document.getElementById("form-control").value = params.control;
                 if (params.cursoId) document.getElementById("form-cursoId").value = params.cursoId;
                 if (params.userid) document.getElementById("form-userid").value = params.userid;
 
-                // Enviar el formulario automáticamente
                 setTimeout(() => {
                     document.getElementById("qrForm").submit();
-                }, 1000); // 1 segundo de espera opcional
+                }, 1000);
             });
         }
     }
 
-    const html5QrCode = new Html5Qrcode("reader");
-
+    // Listar cámaras disponibles
     Html5Qrcode.getCameras().then(devices => {
-        if (devices && devices.length) {
-            const cameraId = devices[0].id;
-            html5QrCode.start(
-                cameraId,
-                {
-                    fps: 10,
-                    qrbox: 250
-                },
-                onScanSuccess,
-                (errorMessage) => {
-                    // Ignora fallos frecuentes
-                    console.warn("Falló el intento de escaneo:", errorMessage);
-                }
-            ).catch(err => {
-                console.error("No se pudo iniciar el escaneo:", err);
-                alert("Error al iniciar escaneo de QR.");
-            });
-        } else {
-            alert("No se encontró ninguna cámara.");
+        if (devices.length === 0) {
+            alert("No se encontraron cámaras.");
+            return;
         }
+
+        devices.forEach(device => {
+            const option = document.createElement("option");
+            option.value = device.id;
+            option.text = device.label || `Cámara ${cameraSelect.length}`;
+            cameraSelect.appendChild(option);
+        });
+
+        cameraSelect.addEventListener("change", () => {
+            const selectedCameraId = cameraSelect.value;
+
+            if (html5QrCode) {
+                html5QrCode.stop().then(() => {
+                    html5QrCode.clear();
+                    startCamera(selectedCameraId);
+                }).catch(err => {
+                    console.error("Error al detener cámara anterior:", err);
+                });
+            } else {
+                startCamera(selectedCameraId);
+            }
+        });
     }).catch(err => {
-        console.error("Error al acceder a la cámara:", err);
+        console.error("Error al acceder a las cámaras:", err);
         alert("No se pudo acceder a la cámara. Verifica permisos del navegador.");
     });
+
+    function startCamera(cameraId) {
+        html5QrCode = new Html5Qrcode("reader");
+
+        html5QrCode.start(
+            cameraId,
+            {
+                fps: 10,
+                qrbox: 250
+            },
+            onScanSuccess,
+            (errorMessage) => {
+                console.warn("Falló el intento de escaneo:", errorMessage);
+            }
+        ).catch(err => {
+            console.error("Error al iniciar escaneo:", err);
+            alert("No se pudo iniciar el escaneo con esta cámara.");
+        });
+    }
 </script>
 
 </body>
