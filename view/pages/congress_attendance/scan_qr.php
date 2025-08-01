@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Escáner QR - Eduessence</title>
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 
 <body>
@@ -46,6 +46,15 @@
             white-space: pre-wrap;
         }
 
+        #reader {
+            margin: 20px auto;
+            width: 320px;
+            max-width: 95%;
+            border: 2px dashed #004aad;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+        }
     </style>
     <h2>Escanea tu código QR</h2>
     <div id="reader" style="width:300px;"></div>
