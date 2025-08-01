@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Escáner QR - Eduessence</title>
     <script src="https://unpkg.com/html5-qrcode"></script>
-</head>
-
-<body>
+    <link rel="stylesheet" href="style.css"> <!-- Si tienes CSS externo -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +24,7 @@
             margin-top: 20px;
             width: 320px;
             max-width: 90vw;
-            border: 2px dashed #002c74;
+            border: 2px dashed #004aad;
             padding: 10px;
             border-radius: 10px;
             background-color: white;
@@ -44,82 +41,92 @@
             color: #2a5c2a;
             font-size: 14px;
             white-space: pre-wrap;
-        }
-
-        #reader {
-            margin: 20px auto;
-            width: 320px;
-            max-width: 95%;
-            border: 2px dashed #004aad;
-            border-radius: 10px;
-            padding: 10px;
-            background-color: white;
+            text-align: center;
         }
     </style>
-    <h2>Escanea tu código QR</h2>
-    <div id="reader" style="width:300px;"></div>
-    <div id="result"></div>
+</head>
+<body>
 
-    <form id="qrForm" method="POST" action="procesar.php" style="display:none;">
-        <input type="hidden" name="action" id="form-action">
-        <input type="hidden" name="control" id="form-control">
-        <input type="hidden" name="cursoId" id="form-cursoId">
-        <input type="hidden" name="userid" id="form-userid">
-    </form>
+<h2>Escanea tu código QR</h2>
+<div id="reader"></div>
+<div id="result"></div>
 
-    <script>
-        function parseQuery(queryString) {
-            const params = new URLSearchParams(queryString);
-            const result = {};
-            for (const [key, value] of params.entries()) {
-                result[key] = value;
-            }
-            return result;
+<form id="qrForm" method="POST" action="procesar.php" style="display:none;">
+    <input type="hidden" name="action" id="form-action">
+    <input type="hidden" name="control" id="form-control">
+    <input type="hidden" name="cursoId" id="form-cursoId">
+    <input type="hidden" name="userid" id="form-userid">
+</form>
+
+<script>
+    function parseQuery(queryString) {
+        const params = new URLSearchParams(queryString);
+        const result = {};
+        for (const [key, value] of params.entries()) {
+            result[key] = value;
         }
+        return result;
+    }
 
-        function onScanSuccess(decodedText, decodedResult) {
-            if (decodedText.includes("eduessence.com")) {
-                // Solo detener escaneo después de éxito
-                html5QrcodeScanner.clear();
-
+    function onScanSuccess(decodedText, decodedResult) {
+        if (decodedText.includes("eduessence.com")) {
+            // Detener el escaneo
+            html5QrCode.stop().then(() => {
+                // Extraer parámetros de la URL escaneada
                 const query = decodedText.split("?")[1];
                 const params = parseQuery(query);
 
-                // Mostrar en pantalla (debug)
-                document.getElementById("result").innerText = "Datos escaneados:\n" + JSON.stringify(params, null, 2);
+                // Mostrar mensaje en pantalla
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `
+                    ✅ <strong>Código QR leído correctamente</strong><br>
+                    <small>${decodedText}</small>
+                `;
+                resultDiv.style.backgroundColor = "#d4edda";
+                resultDiv.style.color = "#155724";
 
-                // Llenar el formulario oculto
+                // Llenar el formulario
                 if (params.action) document.getElementById("form-action").value = params.action;
                 if (params.control) document.getElementById("form-control").value = params.control;
                 if (params.cursoId) document.getElementById("form-cursoId").value = params.cursoId;
                 if (params.userid) document.getElementById("form-userid").value = params.userid;
 
-                // Enviar el formulario al servidor PHP
-                document.getElementById("qrForm").submit();
-            }
+                // Enviar el formulario automáticamente
+                setTimeout(() => {
+                    document.getElementById("qrForm").submit();
+                }, 1000); // 1 segundo de espera opcional
+            });
         }
+    }
 
-        const html5QrcodeScanner = new Html5Qrcode("reader");
+    const html5QrCode = new Html5Qrcode("reader");
 
-        Html5Qrcode.getCameras().then(devices => {
-            if (devices && devices.length) {
-                html5QrcodeScanner.start(
-                    { facingMode: "environment" }, // usa la cámara trasera
-                    {
-                        fps: 10,
-                        qrbox: 250
-                    },
-                    onScanSuccess
-                );
-            } else {
-                alert("No se encontró ninguna cámara.");
-            }
-        }).catch(err => {
-            console.error("Error al acceder a la cámara:", err);
-            alert("No se pudo acceder a la cámara. Verifica los permisos del navegador.");
-        });
-    </script>
+    Html5Qrcode.getCameras().then(devices => {
+        if (devices && devices.length) {
+            const cameraId = devices[0].id;
+            html5QrCode.start(
+                cameraId,
+                {
+                    fps: 10,
+                    qrbox: 250
+                },
+                onScanSuccess,
+                (errorMessage) => {
+                    // Ignora fallos frecuentes
+                    console.warn("Falló el intento de escaneo:", errorMessage);
+                }
+            ).catch(err => {
+                console.error("No se pudo iniciar el escaneo:", err);
+                alert("Error al iniciar escaneo de QR.");
+            });
+        } else {
+            alert("No se encontró ninguna cámara.");
+        }
+    }).catch(err => {
+        console.error("Error al acceder a la cámara:", err);
+        alert("No se pudo acceder a la cámara. Verifica permisos del navegador.");
+    });
+</script>
 
 </body>
-
 </html>
