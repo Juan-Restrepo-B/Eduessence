@@ -261,6 +261,10 @@ include_once 'model/global/clear_cache.php';
                             <div class="sponsor-d">
                                 <img src="view/img/logos/clinicadelpieyspa.png" alt="Patrocinador 6">
                             </div>
+
+                            <div class="sponsor-d">
+                                <img src="view/img/logos/ISDIN_LOVE.png" alt="Patrocinador 6">
+                            </div>
                         </div>
                     </div>
                 </div>
