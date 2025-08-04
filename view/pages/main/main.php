@@ -147,34 +147,32 @@ include_once '../../../model/main_process/role_confirm.php';
                     </a>
                     <div class="hover-text">CERTIFICADOS</div>
                 </div>
-                <?php if (showButtons(3)): ?>
-                    <div class="icon-container">
-                        <a href="/scan_qr" class="menu-icon" target="contentMain"> <!-- SCAN QR -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path d="m4,4h4v-2h-4c-1.1,0-2,.9-2,2v4h2v-4Z"></path>
-                                <path d="m4,16h-2v4c0,1.1.9,2,2,2h4v-2h-4v-4Z"></path>
-                                <path d="m20,20h-4v2h4c1.1,0,2-.9,2-2v-4h-2v4Z"></path>
-                                <path d="m20,2h-4v2h4v4h2v-4c0-1.1-.9-2-2-2Z"></path>
-                                <path
-                                    d="m9.5,5h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5Zm-.5,4h-2v-2h2v2Z">
-                                </path>
-                                <path
-                                    d="m9.5,13h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5Zm-.5,4h-2v-2h2v2Z">
-                                </path>
-                                <path
-                                    d="m14.5,11h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5Zm.5-4h2v2h-2v-2Z">
-                                </path>
-                                <path d="M13 13H15V15H13z"></path>
-                                <path d="M15 15H17V17H15z"></path>
-                                <path d="M17 17H19V19H17z"></path>
-                                <path d="M17 13H19V15H17z"></path>
-                            </svg>
-                        </a>
-                        <div class="hover-text">SCANNER QR</div>
-                    </div>
-                <?php endif; ?>
+                <div class="icon-container">
+                    <a href="/scan_qr" class="menu-icon" target="contentMain"> <!-- SCAN QR -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="m4,4h4v-2h-4c-1.1,0-2,.9-2,2v4h2v-4Z"></path>
+                            <path d="m4,16h-2v4c0,1.1.9,2,2,2h4v-2h-4v-4Z"></path>
+                            <path d="m20,20h-4v2h4c1.1,0,2-.9,2-2v-4h-2v4Z"></path>
+                            <path d="m20,2h-4v2h4v4h2v-4c0-1.1-.9-2-2-2Z"></path>
+                            <path
+                                d="m9.5,5h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5Zm-.5,4h-2v-2h2v2Z">
+                            </path>
+                            <path
+                                d="m9.5,13h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5Zm-.5,4h-2v-2h2v2Z">
+                            </path>
+                            <path
+                                d="m14.5,11h3c.83,0,1.5-.67,1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5h-3c-.83,0-1.5.67-1.5,1.5v3c0,.83.67,1.5,1.5,1.5Zm.5-4h2v2h-2v-2Z">
+                            </path>
+                            <path d="M13 13H15V15H13z"></path>
+                            <path d="M15 15H17V17H15z"></path>
+                            <path d="M17 17H19V19H17z"></path>
+                            <path d="M17 13H19V15H17z"></path>
+                        </svg>
+                    </a>
+                    <div class="hover-text">SCANNER QR</div>
+                </div>
                 <?php if (showButtons(3)): ?>
                     <div class="icon-container"> <!-- WORDPRES -->
                         <!-- <a href="#" class="menu-icon" target="contentMain"> -->

@@ -222,7 +222,7 @@ include_once 'model/global/clear_cache.php';
                             </div>
 
                             <div class="sponsor-d">
-                                <img src="view/img/patrocinadores/Logo_Cure_-_Natrox_page-0001-removebg-preview.png"
+                                <img src="view/img/patrocinadores/CEDYC.png"
                                     alt="Patrocinador 6">
                             </div>
 
