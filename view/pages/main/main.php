@@ -30,7 +30,7 @@ if ($usuario === null || $usuario === '') {
                 <img src="view/img/logo.png" alt="">
             </div>
             <div class="containerAlert">
-                <div class="alert">
+                <!-- <div class="alert">
                     <div class="rowAlert">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
                             style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;">
@@ -45,7 +45,7 @@ if ($usuario === null || $usuario === '') {
                             LA CUENTA
                         </h2>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="option">
                 <div class="start">
