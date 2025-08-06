@@ -222,7 +222,7 @@ if ($usuario === null || $usuario === '') {
             </div>
         </Section>
         <section class="main-menu-container">
-            <iframe src="scan_qr" name="contentMain" frameborder="0"></iframe>
+            <iframe id="mainIframe" name="contentMain" frameborder="0"></iframe>
         </section>
     </main>
     <footer class="bg-light footer">
@@ -293,6 +293,19 @@ if ($usuario === null || $usuario === '') {
             popup.style.display = 'none';
         });
     });
+</script>
+
+<script>
+    // Detectar ancho de la ventana
+    const iframe = document.getElementById('mainIframe');
+
+    if (window.innerWidth <= 768) {
+        // Dispositivo móvil
+        iframe.src = 'scan_qr';
+    } else {
+        // PC o tablet
+        iframe.src = 'cursos';
+    }
 </script>
 
 </html>

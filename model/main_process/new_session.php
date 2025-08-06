@@ -63,8 +63,6 @@ if (isset($_SESSION['useremail'])) {
 
             $stmt->execute();
         }
-
-        
     }
 }
 ?>
