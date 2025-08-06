@@ -6,6 +6,10 @@ $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
 include_once '../../../model/main_process/new_session.php';
 include_once '../../../model/main_process/role_confirm.php';
+
+if ($usuario === null || $usuario === '') {
+    header("Location: /login");
+}
 ?>
 
 <!DOCTYPE html>

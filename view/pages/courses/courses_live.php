@@ -34,6 +34,7 @@ $rowConsultaPersona = $resultConsultaPersona->fetch_assoc();
 $person = $rowConsultaPersona["PERSONA_NOMBRES"];
 
 if ($resultinfoCurso->num_rows > 0) {
+
     $rowinfcurso = $resultinfoCurso->fetch_assoc();
 
     $fechFinCurso = $rowinfcurso["CURSO_FECHFIN"];
@@ -54,6 +55,7 @@ if ($resultinfoCurso->num_rows > 0) {
     }
 
     $llave = $rowinfcurso['LLAVE_TRANSMISION'];
+    $idcurso = $rowinfcurso["IDCURSOS"];
 
     if (strpos($llave, '?') !== false) {
         // Ya hay parámetros en la URL, usa &
@@ -86,7 +88,7 @@ if ($resultinfoCurso->num_rows > 0) {
         </section>
         <h1><?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h1>
         <div class="container">
-            <div class="tramsmi item-60" style="position: relative;">
+            <div class="tramsmi item-60" style="position: relative;" id="videoContainer">
                 <iframe id="videoPlayer" src="<?php echo $urlVideo; ?>" frameborder="0" allow="autoplay; encrypted-media"
                     allowfullscreen style="width: 100%; height: 100%; display: block;">
                 </iframe>
@@ -231,9 +233,9 @@ if ($resultinfoCurso->num_rows > 0) {
 
     function onPlayerReady(event) {
         const overlay = document.getElementById('videoOverlay');
+        const container = document.getElementById('videoContainer');
 
         overlay.addEventListener('click', function () {
-            // Obtener estado del reproductor
             const state = player.getPlayerState();
 
             if (state === YT.PlayerState.PLAYING) {
@@ -241,12 +243,21 @@ if ($resultinfoCurso->num_rows > 0) {
             } else {
                 player.playVideo();
             }
+        });
 
-            // Si solo quieres permitir un clic:
-            // overlay.style.pointerEvents = 'none';
+        // Evento de doble clic para activar/desactivar pantalla completa
+        container.addEventListener('dblclick', function () {
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.error(`Error al intentar pantalla completa: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
         });
     }
 </script>
+
 
 
 
