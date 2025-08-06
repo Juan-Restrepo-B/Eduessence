@@ -222,7 +222,7 @@ if ($usuario === null || $usuario === '') {
             </div>
         </Section>
         <section class="main-menu-container">
-            <iframe src="usuario" name="contentMain" frameborder="0"></iframe>
+            <iframe src="scan_qr" name="contentMain" frameborder="0"></iframe>
         </section>
     </main>
     <footer class="bg-light footer">
@@ -271,13 +271,13 @@ if ($usuario === null || $usuario === '') {
         </div>
     </footer>
 
-    <div id="popup" class="popup">
+    <!-- <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
             <h2>Sr(a) usuario(a).</h2>
             <p>Por favor valide los datos personales estos seran utilizados para la generacion de los certificados.</p>
         </div>
-    </div>
+    </div> -->
 
 </body>
 
