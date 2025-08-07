@@ -74,7 +74,5 @@ if ($action === 'checking') {
     exit;
 }
 
-// 🔻 Acción desconocida
-header(header: "Location: registroFallidoChekin");
 exit;
 ?>
