@@ -46,8 +46,7 @@ if ($action === 'checking') {
 
     $stmt = $conn->prepare("INSERT INTO LOG_USERS (LOG_IDUSER, LOG_FECHORA, LOG_PUNTO, LOG_ACCION, LOG_IDCURSO) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $userid, $fechareg, $control, $action, $cursoId);
-
-    if ($stmt->execute()) {
+$stmt->execute();
         // 🔁 Redirección según punto de control
         switch ($control) {
             case 'INGRESO':
@@ -66,9 +65,7 @@ if ($action === 'checking') {
                 header("Location: registroFallidoChekin");
                 break;
         }
-    } else {
-        header("Location: registroFallidoChekin");
-    }
+
 
     $stmt->close();
     $conn->close();
