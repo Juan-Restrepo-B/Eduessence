@@ -46,7 +46,8 @@ if ($action === 'checking') {
 
     $stmt = $conn->prepare("INSERT INTO LOG_USERS (LOG_IDUSER, LOG_FECHORA, LOG_PUNTO, LOG_ACCION, LOG_IDCURSO) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $userid, $fechareg, $control, $action, $cursoId);
-$stmt->execute();
+    
+    if ($stmt->execute()) {
         // 🔁 Redirección según punto de control
         switch ($control) {
             case 'INGRESO':
@@ -55,7 +56,7 @@ $stmt->execute();
             case 'SALIDA':
                 header("Location: salidaCongreso");
                 break;
-            case 'PLEANIRA':
+            case 'PLENARIA':
                 header("Location: salaCongreso");
                 break;
             case 'SIMPOCIO':
@@ -65,6 +66,7 @@ $stmt->execute();
                 header("Location: registroFallidoChekin");
                 break;
         }
+    }
 
 
     $stmt->close();
@@ -73,6 +75,6 @@ $stmt->execute();
 }
 
 // 🔻 Acción desconocida
-header("Location: registroFallidoChekin");
+header(header: "Location: registroFallidoChekin");
 exit;
 ?>
