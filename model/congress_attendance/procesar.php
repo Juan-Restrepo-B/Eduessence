@@ -55,7 +55,7 @@ $stmt->execute();
             case 'SALIDA':
                 header("Location: salidaCongreso");
                 break;
-            case 'SALON':
+            case 'PLEANIRA':
                 header("Location: salaCongreso");
                 break;
             case 'SIMPOCIO':
