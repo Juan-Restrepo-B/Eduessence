@@ -12,7 +12,8 @@ $sql = "SELECT CARRERA_USUARIO_NOMBRE,
         CARRERA_CERTESTADO, 
         CARRERA_IDTIPARTICIPANTE, 
         CURSO_CERTIFICADO,  
-        CURSO_LOGOIMG
+        CURSO_LOGOIMG,
+        CARRERA_IDTIPARTICIPANTE
         FROM UN_CARRERA uc
         INNER JOIN TR_CURSOS tc 
         ON uc.CARRERA_IDCURSO = tc.IDCURSOS 
@@ -52,8 +53,11 @@ $result = $conn->query($sql);
                                 <p>No se pudo cargar la imagen.</p>
                             <?php endif; ?>
                             <h2>
-                                <?php echo strtoupper($row["CURSO_NOMBRE"]); ?>
+                                <?php echo strtoupper($row["CARRERA_IDTIPARTICIPANTE"]); ?>
                             </h2>
+                            <h3>
+                                <?php echo strtoupper($row["CURSO_NOMBRE"]); ?>
+                            </h3>
                             <div class="btn">
                                 <a href="/diploma?idUser=<?php echo $row["CARRERA_USUARIO_NOMBRE"]; ?>&tipA=<?php echo $row["CARRERA_IDTIPARTICIPANTE"]; ?>&idCurso=<?php echo $row["CARRERA_IDCURSO"]; ?>"
                                     target="_blank">Ver</a>

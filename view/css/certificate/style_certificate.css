@@ -82,6 +82,12 @@ body {
 .sponsor h2 {
     font-size: 1.5rem;
     margin: 10px 0;
+    color: var(--Primario);
+}
+
+.sponsor h3 {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 .sponsor p {

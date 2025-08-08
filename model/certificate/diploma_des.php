@@ -41,7 +41,7 @@ class PDF extends FPDF
 
       $consulta_reporte_alquiler = $conexion->query("SELECT PERSONA_NOMBRES,
             PERSONA_APELLIDOS, PERSONA_CORREO, PERSONA_DOCUMENTO,
-            CARRERA_IDCURSO, DIPLOMA_TIPO_ASISTENTE, DIPLOMA_IMGDIPLOMA, CURSO_NOMBRE
+            CARRERA_IDCURSO, DIPLOMA_TIPO_ASISTENTE, DIPLOMA_IMGDIPLOMA, CURSO_NOMBRE, IDCURSOS
             FROM TR_PERSONA tp
             INNER JOIN UN_CARRERA uc
             ON tp.PERSONA_CORREO = uc.CARRERA_USUARIO_NOMBRE
@@ -61,7 +61,8 @@ class PDF extends FPDF
 
         $this->Image('temp/' . $qrFilename, 10.5, 178, 28); //logo de la empresa,moverDerecha,moverAbajo,tamañoIMG
 
-        $this->Ln(72); // Salto de línea
+        if($datos_reporte->IDCURSOS == 4){
+          $this->Ln(72); // Salto de línea
         $this->Cell(83); // Movernos a la derecha
         $this->SetTextColor(0, 0, 0); //color
         //creamos una celda o fila
@@ -72,8 +73,24 @@ class PDF extends FPDF
         /* ID */
         $this->Cell(115); // mover a la derecha
         $this->SetFont('Arial', 'B', 15);
-        $this->Cell(85, 10, mb_convert_encoding("ID: " . $datos_reporte->PERSONA_DOCUMENTO, 'ISO-8859-1', 'UTF-8'), 0, 0, '', 0);
+        $this->Cell(185, 10, mb_convert_encoding("ID: " . $datos_reporte->PERSONA_DOCUMENTO, 'ISO-8859-1', 'UTF-8'), 0, 0, '', 0);
         $this->Ln(10);
+        }
+
+        // $this->Ln(72); // Salto de línea
+        // $this->Cell(83); // Movernos a la derecha
+        // $this->SetTextColor(0, 0, 0); //color
+        // //creamos una celda o fila
+        // $this->Cell(100, 0, mb_convert_encoding($datos_reporte->PERSONA_NOMBRES . " " . $datos_reporte->PERSONA_APELLIDOS, 'ISO-8859-1', 'UTF-8'), 0, 1, 'C', 0); // AnchoCelda,AltoCelda,titulo,borde(1-0),saltoLinea(1-0),posicion(L-C-R),ColorFondo(1-0)
+        // $this->Ln(3); // Salto de línea
+        // $this->SetTextColor(103); //color
+
+        // /* ID */
+        // $this->Cell(115); // mover a la derecha
+        // $this->SetFont('Arial', 'B', 15);
+        // $this->Cell(85, 10, mb_convert_encoding("ID: " . $datos_reporte->PERSONA_DOCUMENTO, 'ISO-8859-1', 'UTF-8'), 0, 0, '', 0);
+        // $this->Ln(10);
+
       } else {
         echo "No se encontraron resultados para el ID proporcionado.";
         echo "idUser: " . $_GET['idUser']; // Mensaje de depuración 
