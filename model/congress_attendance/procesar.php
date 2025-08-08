@@ -59,10 +59,10 @@ if ($action === 'checking') {
             case 'PLENARIA':
                 header("Location: salaCongreso");
                 break;
-            case 'SIMPOSIO CURSO':
+            case 'SIMPOCIO CURSO':
                 header("Location: seguimientoCongreso");
                 break;
-            case 'SIMPOSIO SUMMIT':
+            case 'SIMPOCIO SUMMIT':
                 header("Location: seguimientoCongreso");
                 break;
             default:
