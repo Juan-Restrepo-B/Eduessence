@@ -85,7 +85,6 @@ main {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
 }
 
 .list_class {
@@ -158,4 +157,8 @@ td {
 .titleQuery td {
     background-color: var(--Negro);
     color: #FFF;
+}
+
+.title {
+    padding : 6px;
 }

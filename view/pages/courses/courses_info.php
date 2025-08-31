@@ -105,6 +105,8 @@ if ($resultinfoCurso->num_rows > 0) {
     $precioNum = $rowinfcurso["INFO_PRECIO"];
     $precioTexto = $precioNum > 0 ? number_format($precioNum, 0, ',', '.') : "GRATIS";
 
+    $fechaFin = new DateTime($rowinfcurso["CURSO_FECHFIN"]);
+    $fechaFin->modify('+15 days');
     ?>
 
     <!DOCTYPE html>
@@ -167,13 +169,21 @@ if ($resultinfoCurso->num_rows > 0) {
                             if ($valIdCurso === null) {
                                 echo '<form method="POST"><button type="submit" name="btnInscribir" class="btn">INSCRIBIRSE</button></form>';
                             } else {
-                                echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                                if ($fechaActual < $fechaFin) {
+                                    echo '<a href="curso_grab?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                                } else {
+                                    echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                                }
                             }
                         }
                     } else {
                         // Fuera de fecha de inscripción
                         if ($valIdCurso !== null || $estadoCompra === 'CONFIRMADO') {
-                            echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                            if ($fechaActual > $fechaFin) {
+                                echo '<a href="curso_grab?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                            } else {
+                                echo '<a href="curso_audience?idcurso=' . $idcurso . '" class="btn">VER</a>';
+                            }
                         }
                     }
                     ?>
@@ -181,7 +191,7 @@ if ($resultinfoCurso->num_rows > 0) {
                 </div>
             </section>
         </section>
-<section class="pd-10 tp-1 white w-100">
+        <section class="pd-10 tp-1 white w-100">
             <?php if ($aprenderas != null) { ?>
                 <div class="contenido-aprenderas">
                     <h2>CONTENIDO DEL <?php echo $rowinfcurso["CURSO_NOMBRE"]; ?></h2>
@@ -271,6 +281,7 @@ if ($resultinfoCurso->num_rows > 0) {
         </script>
 
         <script src="view\js\courses\courses_info.js"></script>
+        <script defer src="view/js/global/screen_lock.js"></script>
 
         <style>
             .modal {

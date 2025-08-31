@@ -1,0 +1,17 @@
+{
+    "name": "lenovo/htdocs",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\Htdocs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juan-Restrepo-B",
+            "email": "juanprestrepob@gmail.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.356"
+    }
+}
