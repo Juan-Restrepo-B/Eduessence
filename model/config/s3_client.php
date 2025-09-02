@@ -10,16 +10,15 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $s3Client = new S3Client([
     'version' => 'latest',
-    'region' => 'us-east-1', // tu región
+    'region' => 'us-east-1', 
     'credentials' => [
-        'key' => '',
+        'key'    => '',
         'secret' => '',
     ],
 ]);
 
-$bucketName = "tu-bucket";
+$bucketName = "";
 
-// ✅ Esta reemplaza a la anterior, pero devuelve URL pública
 function generarUrlFirmada($bucket, $key)
 {
     return "https://{$bucket}.s3.amazonaws.com/{$key}";
@@ -38,7 +37,7 @@ function listarArchivos($s3Client, $bucketName, $prefix = "")
             foreach ($result['Contents'] as $objeto) {
                 $archivos[] = [
                     'key' => $objeto['Key'],
-                    'url' => generarUrlFirmada($bucketName, $objeto['Key']) // ✅ usamos la nueva
+                    'url' => generarUrlFirmada($bucketName, $objeto['Key'])
                 ];
             }
         }

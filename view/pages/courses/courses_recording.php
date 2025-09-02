@@ -11,8 +11,6 @@ $usuario = $_SESSION['useremail'];
 $ip_cliente = $_SERVER['REMOTE_ADDR'];
 
 include("../../../model/conexion.php");
-include("../../../model/config/s3_client.php"); // helper que te generó el SDK
-$bucket = "videos-congresos-eduessence";
 
 // Obtener idcurso de forma segura
 $idcurso = isset($_GET['idcurso']) ? intval($_GET['idcurso']) : 0;
@@ -47,29 +45,25 @@ if ($stmt = $conn->prepare($sql)) {
  * CONSULTA: videos del curso (prepared statement)
  */
 $videos = [];
-$sql1 = "SELECT tv.IDVIDEO, tv.VIDEO_TITULO, tv.VIDEO_RUTA
+$sql1 = "SELECT tv.IDVIDEO, tv.VIDEO_TITULO, tv.VIDEO_RUTA, tv.VIDEO_PATH
          FROM UN_CARRERA uc
          INNER JOIN TR_VIDEOS tv ON uc.CARRERA_IDCURSO = tv.VIDEO_IDCURSO
          WHERE CARRERA_CURESTADO = 'ACTIVO'
            AND CARRERA_IDTIPARTICIPANTE = 'ASISTENTE'
            AND tv.VIDEO_IDCURSO = ?
-         GROUP BY tv.IDVIDEO, tv.VIDEO_TITULO, tv.VIDEO_RUTA
+         GROUP BY tv.IDVIDEO, tv.VIDEO_TITULO, tv.VIDEO_RUTA, tv.VIDEO_PATH
          ORDER BY tv.IDVIDEO";
 if ($stmt1 = $conn->prepare($sql1)) {
     $stmt1->bind_param('i', $idcurso);
     $stmt1->execute();
     $res1 = $stmt1->get_result();
     while ($r = $res1->fetch_assoc()) {
-        $ruta = $r['VIDEO_RUTA'];
-        $urlFirmada = null;
-        if (!empty($ruta)) {
-            $urlFirmada = generarUrlFirmada($bucket, $ruta, $presign_seconds);
-        }
+        $ruta = $r['VIDEO_PATH']; // aquí viene el link directo
         $videos[] = [
             'id' => (int)$r['IDVIDEO'],
             'titulo' => $r['VIDEO_TITULO'],
             'ruta' => $ruta,
-            'url' => $urlFirmada
+            'url' => $ruta // usamos la ruta directamente
         ];
     }
     $stmt1->close();
@@ -158,18 +152,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Grabar log por AJAX (incluye video_id)
+            // Grabar log por AJAX
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "model/courses/insertar_log.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    // opcional: manejar respuesta del servidor
-                    if (xhr.status !== 200) {
-                        console.warn('No se pudo guardar el log. status=', xhr.status);
-                    }
-                }
-            };
             var params = "useremail=" + encodeURIComponent(useremail) +
                          "&ip_cliente=" + encodeURIComponent(ip_cliente) +
                          "&simposio=" + encodeURIComponent(titulo) +
@@ -180,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
             playerSource.src = url;
             videoPlayer.load();
             videoPlayer.play().catch(function (err) {
-                // Normalmente el navegador evita autoplay; el usuario debe interactuar.
                 console.log('No se pudo iniciar reproducción automática:', err);
             });
         });
