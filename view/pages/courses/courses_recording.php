@@ -60,7 +60,7 @@ if ($stmt1 = $conn->prepare($sql1)) {
     while ($r = $res1->fetch_assoc()) {
         $ruta = $r['VIDEO_PATH']; // aquí viene el link directo
         $videos[] = [
-            'id' => (int)$r['IDVIDEO'],
+            'id' => (int) $r['IDVIDEO'],
             'titulo' => $r['VIDEO_TITULO'],
             'ruta' => $ruta,
             'url' => $ruta // usamos la ruta directamente
@@ -73,27 +73,16 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars(strtoupper($curso_nombre ?: 'CURSO')); ?></title>
     <link rel="stylesheet" href="view/css/courses/styles_courses_recording.css">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .topbar { display:flex; align-items:center; gap:.5rem; padding: .75rem; border-bottom:1px solid #eee; }
-        .container { display:flex; gap:1rem; width:100%; padding:1rem; box-sizing:border-box; }
-        .list_class { width:320px; max-height:80vh; overflow:auto; border-right:1px solid #ddd; padding-right:1rem; }
-        .list_class table { width:100%; border-collapse: collapse; }
-        .title { font-weight:700; font-size:1.05rem; padding: 0.5rem 0; }
-        .cal { padding:0.35rem 0; }
-        .cal a { text-decoration:none; display:block; padding: .5rem; border-radius:6px; color:#111; background:transparent; }
-        .cal a:hover { background:#f3f3f3; }
-        .contentIframe { flex:1; padding-left:1rem; }
-        video { width:90%; background:#000; border-radius:6px; }
-        .no-videos { padding:1rem; color:#666; }
-    </style>
 </head>
+
 <body>
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 20rem;">
         <a href="/curso_info?idcurso=<?php echo $idcurso ?>" style="margin-top: 1rem; margin-left: 1rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
@@ -101,19 +90,25 @@ $conn->close();
             </svg>
         </a>
 
+        <h2 style="font-size: 2rem; font-weight: 500; color: #004aad;">
+            <?php echo htmlspecialchars(strtoupper($curso_nombre ?: 'CURSO')); ?>
+        </h2>
+    </div>
     <div class="container">
         <div class="list_class">
             <table>
                 <?php if (empty($videos)): ?>
-                    <tr><td class="no-videos">No hay videos disponibles para este curso.</td></tr>
+                    <tr>
+                        <td class="no-videos">No hay videos disponibles para este curso.</td>
+                    </tr>
                 <?php else: ?>
                     <?php foreach ($videos as $v): ?>
                         <tr>
                             <td class="cal">
                                 <a href="#" class="mostrarFormulario5 buttonSimposio"
-                                   data-url="<?php echo htmlspecialchars($v['url']); ?>"
-                                   data-videoid="<?php echo (int)$v['id']; ?>"
-                                   data-titulo="<?php echo htmlspecialchars($v['titulo']); ?>">
+                                    data-url="<?php echo htmlspecialchars($v['url']); ?>"
+                                    data-videoid="<?php echo (int) $v['id']; ?>"
+                                    data-titulo="<?php echo htmlspecialchars($v['titulo']); ?>">
                                     <?php echo htmlspecialchars(strtoupper($v['titulo'])); ?>
                                 </a>
                             </td>
@@ -122,56 +117,59 @@ $conn->close();
                 <?php endif; ?>
             </table>
         </div>
-
         <div class="contentIframe">
-            <video id="videoPlayer" controls preload="metadata">
+            <video id="videoPlayer" class="videoPlayer" controls preload="metadata" style="border: 2px solid #004aad;
+               border-radius: 20px;
+               width: 100%;
+               height: 90%;">
                 <source id="playerSource" src="" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
             </video>
         </div>
     </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var botones = document.querySelectorAll(".buttonSimposio");
-    var videoPlayer = document.getElementById("videoPlayer");
-    var playerSource = document.getElementById("playerSource");
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var botones = document.querySelectorAll(".buttonSimposio");
+            var videoPlayer = document.getElementById("videoPlayer");
+            var playerSource = document.getElementById("playerSource");
 
-    botones.forEach(function (boton) {
-        boton.addEventListener("click", function (event) {
-            event.preventDefault();
+            botones.forEach(function (boton) {
+                boton.addEventListener("click", function (event) {
+                    event.preventDefault();
 
-            var url = boton.getAttribute("data-url");
-            var titulo = boton.getAttribute("data-titulo");
-            var videoId = boton.getAttribute("data-videoid");
-            var useremail = "<?php echo addslashes($_SESSION['useremail']); ?>";
-            var ip_cliente = "<?php echo addslashes($_SERVER['REMOTE_ADDR']); ?>";
+                    var url = boton.getAttribute("data-url");
+                    var titulo = boton.getAttribute("data-titulo");
+                    var videoId = boton.getAttribute("data-videoid");
+                    var useremail = "<?php echo addslashes($_SESSION['useremail']); ?>";
+                    var ip_cliente = "<?php echo addslashes($_SERVER['REMOTE_ADDR']); ?>";
 
-            if (!url) {
-                alert('No se pudo obtener la URL del video. Contacta al administrador.');
-                return;
-            }
+                    if (!url) {
+                        alert('No se pudo obtener la URL del video. Contacta al administrador.');
+                        return;
+                    }
 
-            // Grabar log por AJAX
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "model/courses/insertar_log.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            var params = "useremail=" + encodeURIComponent(useremail) +
-                         "&ip_cliente=" + encodeURIComponent(ip_cliente) +
-                         "&simposio=" + encodeURIComponent(titulo) +
-                         "&video_id=" + encodeURIComponent(videoId);
-            xhr.send(params);
+                    // Grabar log por AJAX
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "model/courses/insertar_log.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    var params = "useremail=" + encodeURIComponent(useremail) +
+                        "&ip_cliente=" + encodeURIComponent(ip_cliente) +
+                        "&simposio=" + encodeURIComponent(titulo) +
+                        "&video_id=" + encodeURIComponent(videoId);
+                    xhr.send(params);
 
-            // Cargar video en player y reproducir
-            playerSource.src = url;
-            videoPlayer.load();
-            videoPlayer.play().catch(function (err) {
-                console.log('No se pudo iniciar reproducción automática:', err);
+                    // Cargar video en player y reproducir
+                    playerSource.src = url;
+                    videoPlayer.load();
+                    videoPlayer.play().catch(function (err) {
+                        console.log('No se pudo iniciar reproducción automática:', err);
+                    });
+                });
             });
         });
-    });
-});
-</script>
+    </script>
 
 </body>
+
 </html>
